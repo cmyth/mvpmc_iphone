@@ -1,0 +1,333 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* mvpmcAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 455}}";
+			sepNavSelRange = "{916, 0}";
+			sepNavVisRange = "{0, 280}";
+		};
+	};
+	1D3623250D0F684500981E51 /* mvpmcAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 2067}}";
+			sepNavSelRange = "{4594, 0}";
+			sepNavVisRange = "{0, 309}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* mvpmc */ = {
+		activeExec = 0;
+		executables = (
+			BF5846F610D9BAD000EE0B3E /* mvpmc */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = BF5846F610D9BAD000EE0B3E /* mvpmc */;
+		activeSDKPreference = iphonesimulator3.1.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* mvpmc */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* mvpmc */,
+		);
+		codeSenseManager = BF58470310D9BAEF00EE0B3E /* Code sense */;
+		executables = (
+			BF5846F610D9BAD000EE0B3E /* mvpmc */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					338,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 282704592;
+			PBXWorkspaceStateSaveDate = 282704592;
+		};
+		perUserProjectItems = {
+			BF58472410D9C2F400EE0B3E /* XCBuildMessageTextBookmark */ = BF58472410D9C2F400EE0B3E /* XCBuildMessageTextBookmark */;
+			BF58472510D9C2F400EE0B3E /* PBXTextBookmark */ = BF58472510D9C2F400EE0B3E /* PBXTextBookmark */;
+			BF58472A10D9C2F600EE0B3E /* PBXTextBookmark */ = BF58472A10D9C2F600EE0B3E /* PBXTextBookmark */;
+			BF58472B10D9C2F600EE0B3E /* PBXTextBookmark */ = BF58472B10D9C2F600EE0B3E /* PBXTextBookmark */;
+			BF58472C10D9C2F600EE0B3E /* PlistBookmark */ = BF58472C10D9C2F600EE0B3E /* PlistBookmark */;
+			BF58472D10D9C2F600EE0B3E /* PBXTextBookmark */ = BF58472D10D9C2F600EE0B3E /* PBXTextBookmark */;
+			BF58472E10D9C2F600EE0B3E /* PBXBookmark */ = BF58472E10D9C2F600EE0B3E /* PBXBookmark */;
+			BF58472F10D9C2F600EE0B3E /* XCBuildMessageTextBookmark */ = BF58472F10D9C2F600EE0B3E /* XCBuildMessageTextBookmark */;
+			BF58473010D9C2F600EE0B3E /* PBXTextBookmark */ = BF58473010D9C2F600EE0B3E /* PBXTextBookmark */;
+			BF58474410D9C8A900EE0B3E /* PBXTextBookmark */ = BF58474410D9C8A900EE0B3E /* PBXTextBookmark */;
+			BF58474510D9C8A900EE0B3E /* PlistBookmark */ = BF58474510D9C8A900EE0B3E /* PlistBookmark */;
+			BF58475410D9DE8000EE0B3E /* PlistBookmark */ = BF58475410D9DE8000EE0B3E /* PlistBookmark */;
+			BF58475510D9DE8000EE0B3E /* PBXTextBookmark */ = BF58475510D9DE8000EE0B3E /* PBXTextBookmark */;
+			BF58475710D9DE8000EE0B3E /* PlistBookmark */ = BF58475710D9DE8000EE0B3E /* PlistBookmark */;
+			BF58475910D9DE8000EE0B3E /* PlistBookmark */ = BF58475910D9DE8000EE0B3E /* PlistBookmark */;
+			BF58476110D9DEC400EE0B3E /* PlistBookmark */ = BF58476110D9DEC400EE0B3E /* PlistBookmark */;
+			BF58476310D9DF7100EE0B3E /* PlistBookmark */ = BF58476310D9DF7100EE0B3E /* PlistBookmark */;
+		};
+		sourceControlManager = BF58470210D9BAEF00EE0B3E /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	BF5846F610D9BAD000EE0B3E /* mvpmc */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = mvpmc;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	BF58470210D9BAEF00EE0B3E /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	BF58470310D9BAEF00EE0B3E /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	BF58470610D9BB9200EE0B3E /* SettingsViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 245}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 238}";
+		};
+	};
+	BF58470D10D9BC4600EE0B3E /* MythViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 245}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 235}";
+		};
+	};
+	BF58472410D9C2F400EE0B3E /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Cannot find protocol declaration for 'ITabBarControllerDelegate'";
+		fRef = 1D3623240D0F684500981E51 /* mvpmcAppDelegate.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 9;
+		rType = 1;
+	};
+	BF58472510D9C2F400EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* mvpmcAppDelegate.h */;
+		name = "mvpmcAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 916;
+		rType = 0;
+		vrLen = 392;
+		vrLoc = 0;
+	};
+	BF58472A10D9C2F600EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF58470610D9BB9200EE0B3E /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 238;
+		vrLoc = 0;
+	};
+	BF58472B10D9C2F600EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF58470D10D9BC4600EE0B3E /* MythViewController.h */;
+		name = "MythViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 235;
+		vrLoc = 0;
+	};
+	BF58472C10D9C2F600EE0B3E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF58472D10D9C2F600EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* mvpmcAppDelegate.m */;
+		name = "mvpmcAppDelegate.m: 146";
+		rLen = 0;
+		rLoc = 4594;
+		rType = 0;
+		vrLen = 309;
+		vrLoc = 0;
+	};
+	BF58472E10D9C2F600EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF58471F10D9C13A00EE0B3E /* tab.png */;
+	};
+	BF58472F10D9C2F600EE0B3E /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Cannot find protocol declaration for 'ITabBarControllerDelegate'";
+		fRef = 1D3623240D0F684500981E51 /* mvpmcAppDelegate.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 9;
+		rType = 1;
+	};
+	BF58473010D9C2F600EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* mvpmcAppDelegate.h */;
+		name = "mvpmcAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 916;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 0;
+	};
+	BF58474410D9C8A900EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* mvpmcAppDelegate.h */;
+		name = "mvpmcAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 916;
+		rType = 0;
+		vrLen = 462;
+		vrLoc = 0;
+	};
+	BF58474510D9C8A900EE0B3E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIconFile,
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF58475410D9DE8000EE0B3E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIconFile,
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF58475510D9DE8000EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF58475610D9DE8000EE0B3E /* Root.strings */;
+		name = "Root.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 272;
+		vrLoc = 0;
+	};
+	BF58475610D9DE8000EE0B3E /* Root.strings */ = {
+		isa = PBXFileReference;
+		name = Root.strings;
+		path = /Users/gettler/iphone/mvpmc/Settings.bundle/en.lproj/Root.strings;
+		sourceTree = "<absolute>";
+	};
+	BF58475710D9DE8000EE0B3E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF58475810D9DE8000EE0B3E /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF58475810D9DE8000EE0B3E /* Root.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Root.plist;
+		path = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		sourceTree = "<absolute>";
+	};
+	BF58475910D9DE8000EE0B3E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF58475A10D9DE8000EE0B3E /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF58475A10D9DE8000EE0B3E /* Root.plist */ = {
+		isa = PBXFileReference;
+		name = Root.plist;
+		path = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		sourceTree = "<absolute>";
+	};
+	BF58476110D9DEC400EE0B3E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF58475810D9DE8000EE0B3E /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF58476310D9DF7100EE0B3E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF58475A10D9DE8000EE0B3E /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+}
