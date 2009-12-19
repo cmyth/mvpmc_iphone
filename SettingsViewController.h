@@ -10,7 +10,16 @@
 
 
 @interface SettingsViewController : UIViewController {
-
+	IBOutlet UITextField *host;
+	IBOutlet UITextField *port;
+	IBOutlet UIButton *test;
 }
+
+-(IBAction)hideKeyboard:(id)sender;
+-(IBAction)test_connection:(id)sender;
+
+@property (retain,nonatomic) UITextField *host;
+@property (retain,nonatomic) UITextField *port;
+@property (retain,nonatomic) UIButton *test;
 
 @end

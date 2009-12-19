@@ -23,7 +23,27 @@
 		BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */; };
 		BF58472010D9C13A00EE0B3E /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471F10D9C13A00EE0B3E /* tab.png */; };
 		BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF58474910D9DDE900EE0B3E /* Settings.bundle */; };
+		BF58477210D9E3C100EE0B3E /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58477010D9E3C100EE0B3E /* AlbumViewController.m */; };
+		BF58477310D9E3C100EE0B3E /* AlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58477110D9E3C100EE0B3E /* AlbumView.xib */; };
+		BF5848E610DC54F900EE0B3E /* libcmyth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58485710DC4F0300EE0B3E /* libcmyth.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF58485610DC4F0300EE0B3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libcmyth.a */;
+			remoteInfo = cmyth;
+		};
+		BF58486010DC4F5000EE0B3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* cmyth */;
+			remoteInfo = cmyth;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,6 +68,10 @@
 		BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mvpmc_logo.png; sourceTree = "<group>"; };
 		BF58471F10D9C13A00EE0B3E /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
 		BF58474910D9DDE900EE0B3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BF58476F10D9E3C100EE0B3E /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		BF58477010D9E3C100EE0B3E /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		BF58477110D9E3C100EE0B3E /* AlbumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumView.xib; sourceTree = "<group>"; };
+		BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cmyth.xcodeproj; path = ../cmyth/cmyth/cmyth.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +83,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
+				BF5848E610DC54F900EE0B3E /* libcmyth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +110,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -96,6 +122,9 @@
 				BF58470D10D9BC4600EE0B3E /* MythViewController.h */,
 				BF58470E10D9BC4600EE0B3E /* MythViewController.m */,
 				BF58470F10D9BC4600EE0B3E /* MythView.xib */,
+				BF58476F10D9E3C100EE0B3E /* AlbumViewController.h */,
+				BF58477010D9E3C100EE0B3E /* AlbumViewController.m */,
+				BF58477110D9E3C100EE0B3E /* AlbumView.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -134,6 +163,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF58485010DC4F0300EE0B3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF58485710DC4F0300EE0B3E /* libcmyth.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +185,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BF58486110DC4F5000EE0B3E /* PBXTargetDependency */,
 			);
 			name = mvpmc;
 			productName = mvpmc;
@@ -164,12 +202,28 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BF58485010DC4F0300EE0B3E /* Products */;
+					ProjectRef = BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* mvpmc */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BF58485710DC4F0300EE0B3E /* libcmyth.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcmyth.a;
+			remoteRef = BF58485610DC4F0300EE0B3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -183,6 +237,7 @@
 				BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */,
 				BF58472010D9C13A00EE0B3E /* tab.png in Resources */,
 				BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */,
+				BF58477310D9E3C100EE0B3E /* AlbumView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,10 +253,19 @@
 				28C3AD8A0F43EF2300507BA6 /* mvpmc.xcdatamodel in Sources */,
 				BF58470910D9BB9200EE0B3E /* SettingsViewController.m in Sources */,
 				BF58471010D9BC4600EE0B3E /* MythViewController.m in Sources */,
+				BF58477210D9E3C100EE0B3E /* AlbumViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF58486110DC4F5000EE0B3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cmyth;
+			targetProxy = BF58486010DC4F5000EE0B3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -246,6 +310,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../cmyth/cmyth,
+					../cmyth/include,
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.2;
 			};
@@ -259,6 +327,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../cmyth/cmyth,
+					../cmyth/include,
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.2;
 			};

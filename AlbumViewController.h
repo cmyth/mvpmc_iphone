@@ -1,5 +1,5 @@
 //
-//  MythViewController.h
+//  AlbumViewController.h
 //  mvpmc
 //
 //  Created by Jon Gettler on 12/16/09.
@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import <api.h>
 
-@interface MythViewController : UITableViewController {
-	cmyth *myth;
-	cmyth_proglist_t list;
+@interface AlbumViewController : UIViewController {
+
 }
 
 @end

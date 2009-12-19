@@ -7,6 +7,7 @@
 //
 
 #import "MythViewController.h"
+#import "api.h"
 
 
 @implementation MythViewController
@@ -20,14 +21,18 @@
 }
 */
 
-/*
 - (void)viewDidLoad {
-    [super viewDidLoad];
-
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSString *host = [userDefaults stringForKey:@"myth_host"];
+	NSString *port = [userDefaults stringForKey:@"myth_port"];
+
+	myth = [[cmyth alloc] server:host port:port.intValue];
+
+	[super viewDidLoad];
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -80,7 +85,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 1;
 }
 
 
@@ -88,6 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
+    int ver;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -95,6 +101,16 @@
     }
     
     // Set up the cell...
+
+    if (myth != nil) {
+	    ver = [myth protocol_version];
+
+	    NSString *string = [NSString stringWithFormat:@"%d", ver];
+
+	    [[cell textLabel] setText:string];
+    } else {
+	    [[cell textLabel] setText:@"error"];
+    }
 	
     return cell;
 }
@@ -149,7 +165,10 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+	if (myth != nil) {
+		[myth release];
+	}
+	[super dealloc];
 }
 
 
