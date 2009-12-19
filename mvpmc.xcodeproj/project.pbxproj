@@ -26,6 +26,9 @@
 		BF58477210D9E3C100EE0B3E /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58477010D9E3C100EE0B3E /* AlbumViewController.m */; };
 		BF58477310D9E3C100EE0B3E /* AlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58477110D9E3C100EE0B3E /* AlbumView.xib */; };
 		BF5848E610DC54F900EE0B3E /* libcmyth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58485710DC4F0300EE0B3E /* libcmyth.a */; };
+		BF58498E10DD299E00EE0B3E /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58498D10DD299E00EE0B3E /* 19-gear.png */; };
+		BF58499210DD2A0A00EE0B3E /* 70-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58499110DD2A0A00EE0B3E /* 70-tv.png */; };
+		BF58499410DD2A4000EE0B3E /* 31-ipod.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58499310DD2A4000EE0B3E /* 31-ipod.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		BF58477010D9E3C100EE0B3E /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		BF58477110D9E3C100EE0B3E /* AlbumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumView.xib; sourceTree = "<group>"; };
 		BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cmyth.xcodeproj; path = ../cmyth/cmyth/cmyth.xcodeproj; sourceTree = SOURCE_ROOT; };
+		BF58498D10DD299E00EE0B3E /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "19-gear.png"; path = "icons/19-gear.png"; sourceTree = "<group>"; };
+		BF58499110DD2A0A00EE0B3E /* 70-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "70-tv.png"; path = "icons/70-tv.png"; sourceTree = "<group>"; };
+		BF58499310DD2A4000EE0B3E /* 31-ipod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "31-ipod.png"; path = "icons/31-ipod.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF58499310DD2A4000EE0B3E /* 31-ipod.png */,
+				BF58499110DD2A0A00EE0B3E /* 70-tv.png */,
+				BF58498D10DD299E00EE0B3E /* 19-gear.png */,
 				BF58474910D9DDE900EE0B3E /* Settings.bundle */,
 				BF58471F10D9C13A00EE0B3E /* tab.png */,
 				BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */,
@@ -238,6 +247,9 @@
 				BF58472010D9C13A00EE0B3E /* tab.png in Resources */,
 				BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */,
 				BF58477310D9E3C100EE0B3E /* AlbumView.xib in Resources */,
+				BF58498E10DD299E00EE0B3E /* 19-gear.png in Resources */,
+				BF58499210DD2A0A00EE0B3E /* 70-tv.png in Resources */,
+				BF58499410DD2A4000EE0B3E /* 31-ipod.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

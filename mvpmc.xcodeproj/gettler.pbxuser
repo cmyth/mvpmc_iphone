@@ -23,7 +23,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = BF5846F610D9BAD000EE0B3E /* mvpmc */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* mvpmc */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* mvpmc */,
@@ -158,6 +158,16 @@
 			BF58498510DD227300EE0B3E /* PBXTextBookmark */ = BF58498510DD227300EE0B3E /* PBXTextBookmark */;
 			BF58498810DD247B00EE0B3E /* PBXTextBookmark */ = BF58498810DD247B00EE0B3E /* PBXTextBookmark */;
 			BF58498B10DD257C00EE0B3E /* PBXTextBookmark */ = BF58498B10DD257C00EE0B3E /* PBXTextBookmark */;
+			BF58499710DD2A6000EE0B3E /* PBXTextBookmark */ = BF58499710DD2A6000EE0B3E /* PBXTextBookmark */;
+			BF58499810DD2A6000EE0B3E /* PBXBookmark */ = BF58499810DD2A6000EE0B3E /* PBXBookmark */;
+			BF58499910DD2A6000EE0B3E /* PBXBookmark */ = BF58499910DD2A6000EE0B3E /* PBXBookmark */;
+			BF58499A10DD2A6000EE0B3E /* PBXBookmark */ = BF58499A10DD2A6000EE0B3E /* PBXBookmark */;
+			BF58499B10DD2A6000EE0B3E /* PBXBookmark */ = BF58499B10DD2A6000EE0B3E /* PBXBookmark */;
+			BF5849A110DD2BD300EE0B3E /* PBXBookmark */ = BF5849A110DD2BD300EE0B3E /* PBXBookmark */;
+			BF5849A210DD2BD300EE0B3E /* PBXBookmark */ = BF5849A210DD2BD300EE0B3E /* PBXBookmark */;
+			BF5849B010DD2C6800EE0B3E /* PBXBookmark */ = BF5849B010DD2C6800EE0B3E /* PBXBookmark */;
+			BF5849B510DD2CCE00EE0B3E /* PBXBookmark */ = BF5849B510DD2CCE00EE0B3E /* PBXBookmark */;
+			BF5849B810DD2D4D00EE0B3E /* PBXBookmark */ = BF5849B810DD2D4D00EE0B3E /* PBXBookmark */;
 		};
 		sourceControlManager = BF58470210D9BAEF00EE0B3E /* Source Control */;
 		userBuildSettings = {
@@ -216,9 +226,9 @@
 	};
 	BF58470710D9BB9200EE0B3E /* SettingsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 1365}}";
-			sepNavSelRange = "{2664, 0}";
-			sepNavVisRange = "{740, 859}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 1404}}";
+			sepNavSelRange = "{2665, 0}";
+			sepNavVisRange = "{680, 362}";
 		};
 	};
 	BF58470D10D9BC4600EE0B3E /* MythViewController.h */ = {
@@ -1077,5 +1087,69 @@
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 740;
+	};
+	BF58499710DD2A6000EE0B3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF58470710D9BB9200EE0B3E /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 108";
+		rLen = 0;
+		rLoc = 2664;
+		rType = 0;
+		vrLen = 859;
+		vrLoc = 740;
+	};
+	BF58499810DD2A6000EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF58498D10DD299E00EE0B3E /* 19-gear.png */;
+	};
+	BF58499910DD2A6000EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF58499110DD2A0A00EE0B3E /* 70-tv.png */;
+	};
+	BF58499A10DD2A6000EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF58499310DD2A4000EE0B3E /* 31-ipod.png */;
+	};
+	BF58499B10DD2A6000EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF58499310DD2A4000EE0B3E /* 31-ipod.png */;
+	};
+	BF5849A110DD2BD300EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF58498D10DD299E00EE0B3E /* 19-gear.png */;
+	};
+	BF5849A210DD2BD300EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF5849A310DD2BD300EE0B3E /* 19-gear.png */;
+	};
+	BF5849A310DD2BD300EE0B3E /* 19-gear.png */ = {
+		isa = PBXFileReference;
+		name = "19-gear.png";
+		path = "/Users/gettler/iphone/mvpmc/19-gear.png";
+		sourceTree = "<absolute>";
+	};
+	BF5849B010DD2C6800EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF5849B110DD2C6800EE0B3E;
+	};
+	BF5849B110DD2C6800EE0B3E = {
+		isa = PBXFileReference;
+		sourceTree = "<group>";
+	};
+	BF5849B510DD2CCE00EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF5849B610DD2CCE00EE0B3E;
+	};
+	BF5849B610DD2CCE00EE0B3E = {
+		isa = PBXFileReference;
+		sourceTree = "<group>";
+	};
+	BF5849B810DD2D4D00EE0B3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF5849B910DD2D4D00EE0B3E;
+	};
+	BF5849B910DD2D4D00EE0B3E = {
+		isa = PBXFileReference;
+		sourceTree = "<group>";
 	};
 }

@@ -45,7 +45,7 @@
 	}
 
 	alert = [[UIAlertView alloc]
-			initWithTitle:@"Connectiviy test"
+			initWithTitle:@"Connectivity test"
 			message:message
 			delegate: nil
 			cancelButtonTitle:@"Ok"
