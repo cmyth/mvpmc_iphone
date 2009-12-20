@@ -28,8 +28,32 @@
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString *host = [userDefaults stringForKey:@"myth_host"];
 	NSString *port = [userDefaults stringForKey:@"myth_port"];
+	UIAlertView *alert;
+	NSString *message = nil;
 
-	myth = [[cmyth alloc] server:host port:port.intValue];
+	if (port == nil) {
+		port = @"0";
+	}
+
+	if (host != nil) {
+		myth = [[cmyth alloc] server:host port:port.intValue];
+		if (myth == nil) {
+			message = @"Server not responding!";
+		}
+	} else {
+		message = @"Server not defined!";
+	}
+
+	if (message != nil) {
+		alert = [[UIAlertView alloc]
+				initWithTitle:@"Error"
+				message:message
+				delegate: nil
+				cancelButtonTitle:@"Ok"
+				otherButtonTitles: nil];
+		[alert show];
+		[alert release];
+	}
 
 	[super viewDidLoad];
 }
@@ -79,15 +103,20 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+	static int n = 1;
+    return n++;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+	static int n = 1;
+    return n++;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return @"section";
+}
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -108,8 +137,6 @@
 	    NSString *string = [NSString stringWithFormat:@"%d", ver];
 
 	    [[cell textLabel] setText:string];
-    } else {
-	    [[cell textLabel] setText:@"error"];
     }
 	
     return cell;

@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -265,11 +267,13 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
+								<string>1CC0EA4004350EF90041110B</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>0</integer>
+									<integer>21</integer>
+									<integer>15</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -308,30 +312,19 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Root.plist</string>
+								<string>&lt;No Editor&gt;</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
-										<key>PBXProjectModuleLabel</key>
-										<string>Root.plist</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>BF584B7510DDBF7A00EE0B3E</string>
 										<key>history</key>
 										<array>
 											<string>BF58472D10D9C2F600EE0B3E</string>
 											<string>BF58472E10D9C2F600EE0B3E</string>
 											<string>BF58474410D9C8A900EE0B3E</string>
-											<string>BF58475410D9DE8000EE0B3E</string>
-											<string>BF58475510D9DE8000EE0B3E</string>
-											<string>BF58496B10DD1C1000EE0B3E</string>
-											<string>BF58498010DD21F200EE0B3E</string>
 											<string>BF5849A110DD2BD300EE0B3E</string>
-											<string>BF584A5210DD7B2800EE0B3E</string>
 											<string>BF584B2810DDB96E00EE0B3E</string>
 											<string>BF584B2910DDB96E00EE0B3E</string>
 											<string>BF584B4910DDBBD700EE0B3E</string>
@@ -339,7 +332,12 @@
 											<string>BF584B5710DDBD2F00EE0B3E</string>
 											<string>BF584B5810DDBD2F00EE0B3E</string>
 											<string>BF584B5910DDBD2F00EE0B3E</string>
-											<string>BF584B5A10DDBD2F00EE0B3E</string>
+											<string>BF584BDE10DE735B00EE0B3E</string>
+											<string>BF584BDF10DE735B00EE0B3E</string>
+											<string>BF584BE010DE735B00EE0B3E</string>
+											<string>BF584C0010DEA0FC00EE0B3E</string>
+											<string>BF584C0810DEA22B00EE0B3E</string>
+											<string>BF584CE310DED4C400EE0B3E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -566,7 +564,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>URLViewController.m</string>
+								<string>api.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

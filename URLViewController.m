@@ -30,8 +30,8 @@
 	UIAlertView *alert;
 	NSString *message = nil;
 
-	if (self.url.text.length > 0) {
-		URL = [NSURL URLWithString: self.url.text];
+	if (url.text.length > 0) {
+		URL = [NSURL URLWithString: url.text];
 
 		if (URL) {
 			if ([URL scheme]) {

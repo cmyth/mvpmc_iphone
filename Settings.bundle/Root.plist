@@ -46,7 +46,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>URL</string>
+			<string>Movie</string>
 			<key>Key</key>
 			<string>movie_url</string>
 			<key>DefaultValue</key>

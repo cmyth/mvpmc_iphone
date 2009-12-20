@@ -12,7 +12,7 @@
 
 @interface MythViewController : UITableViewController {
 	cmyth *myth;
-	cmyth_proglist_t list;
+	cmythProgramList *list;
 }
 
 @end

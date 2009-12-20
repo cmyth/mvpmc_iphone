@@ -10,7 +10,13 @@
 
 
 @interface aboutViewController : UIViewController {
-
+	IBOutlet UIButton *link;
+	IBOutlet UILabel *version;
 }
+
+-(IBAction)jump:(id)sender;
+
+@property (retain,nonatomic) UIButton *link;
+@property (retain,nonatomic) UILabel *version;
 
 @end
