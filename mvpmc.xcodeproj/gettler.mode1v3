@@ -266,16 +266,19 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
+									<integer>26</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 575}}</string>
+							<string>{{0, 20}, {186, 575}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -310,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>19-gear.png</string>
+								<string>URLViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -318,11 +321,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>19-gear.png</string>
+										<string>URLViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF5849B810DD2D4D00EE0B3E</string>
+										<string>BF584B0C10DDB58700EE0B3E</string>
 										<key>history</key>
 										<array>
 											<string>BF58472A10D9C2F600EE0B3E</string>
@@ -331,14 +334,15 @@
 											<string>BF58474410D9C8A900EE0B3E</string>
 											<string>BF58475410D9DE8000EE0B3E</string>
 											<string>BF58475510D9DE8000EE0B3E</string>
-											<string>BF5847BA10DB352C00EE0B3E</string>
 											<string>BF5847BB10DB352C00EE0B3E</string>
 											<string>BF58490E10DC5A1D00EE0B3E</string>
-											<string>BF58495F10DD170000EE0B3E</string>
 											<string>BF58496B10DD1C1000EE0B3E</string>
 											<string>BF58498010DD21F200EE0B3E</string>
 											<string>BF58499710DD2A6000EE0B3E</string>
 											<string>BF5849A110DD2BD300EE0B3E</string>
+											<string>BF584A5210DD7B2800EE0B3E</string>
+											<string>BF584AAA10DDABF800EE0B3E</string>
+											<string>BF584AEE10DDB18000EE0B3E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -565,7 +569,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SettingsViewController.m</string>
+								<string>URLViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -878,6 +882,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -888,18 +894,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {650, 209}}</string>
+								<string>{{0, 0}, {655, 566}}</string>
 								<key>RubberWindowFrame</key>
-								<string>347 543 650 250 0 0 1440 878 </string>
+								<string>347 186 655 607 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
 							<key>Proportion</key>
-							<string>209pt</string>
+							<string>566pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>209pt</string>
+					<string>566pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -919,7 +925,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>347 543 650 250 0 0 1440 878 </string>
+			<string>347 186 655 607 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

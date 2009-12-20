@@ -23,12 +23,14 @@
 		BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */; };
 		BF58472010D9C13A00EE0B3E /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471F10D9C13A00EE0B3E /* tab.png */; };
 		BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF58474910D9DDE900EE0B3E /* Settings.bundle */; };
-		BF58477210D9E3C100EE0B3E /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58477010D9E3C100EE0B3E /* AlbumViewController.m */; };
-		BF58477310D9E3C100EE0B3E /* AlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58477110D9E3C100EE0B3E /* AlbumView.xib */; };
+		BF58477210D9E3C100EE0B3E /* URLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58477010D9E3C100EE0B3E /* URLViewController.m */; };
+		BF58477310D9E3C100EE0B3E /* URLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58477110D9E3C100EE0B3E /* URLView.xib */; };
 		BF5848E610DC54F900EE0B3E /* libcmyth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF58485710DC4F0300EE0B3E /* libcmyth.a */; };
 		BF58498E10DD299E00EE0B3E /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58498D10DD299E00EE0B3E /* 19-gear.png */; };
 		BF58499210DD2A0A00EE0B3E /* 70-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58499110DD2A0A00EE0B3E /* 70-tv.png */; };
 		BF58499410DD2A4000EE0B3E /* 31-ipod.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58499310DD2A4000EE0B3E /* 31-ipod.png */; };
+		BF584A4210DD7A4400EE0B3E /* 45-movie1.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584A4110DD7A4400EE0B3E /* 45-movie1.png */; };
+		BF584AB410DDACD100EE0B3E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF584AB310DDACD100EE0B3E /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,13 +73,15 @@
 		BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mvpmc_logo.png; sourceTree = "<group>"; };
 		BF58471F10D9C13A00EE0B3E /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
 		BF58474910D9DDE900EE0B3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		BF58476F10D9E3C100EE0B3E /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
-		BF58477010D9E3C100EE0B3E /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
-		BF58477110D9E3C100EE0B3E /* AlbumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumView.xib; sourceTree = "<group>"; };
+		BF58476F10D9E3C100EE0B3E /* URLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLViewController.h; sourceTree = "<group>"; };
+		BF58477010D9E3C100EE0B3E /* URLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLViewController.m; sourceTree = "<group>"; };
+		BF58477110D9E3C100EE0B3E /* URLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = URLView.xib; sourceTree = "<group>"; };
 		BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cmyth.xcodeproj; path = ../cmyth/cmyth/cmyth.xcodeproj; sourceTree = SOURCE_ROOT; };
 		BF58498D10DD299E00EE0B3E /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "19-gear.png"; path = "icons/19-gear.png"; sourceTree = "<group>"; };
 		BF58499110DD2A0A00EE0B3E /* 70-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "70-tv.png"; path = "icons/70-tv.png"; sourceTree = "<group>"; };
 		BF58499310DD2A4000EE0B3E /* 31-ipod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "31-ipod.png"; path = "icons/31-ipod.png"; sourceTree = "<group>"; };
+		BF584A4110DD7A4400EE0B3E /* 45-movie1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "45-movie1.png"; path = "icons/45-movie1.png"; sourceTree = "<group>"; };
+		BF584AB310DDACD100EE0B3E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
 				BF5848E610DC54F900EE0B3E /* libcmyth.a in Frameworks */,
+				BF584AB410DDACD100EE0B3E /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,9 +133,9 @@
 				BF58470D10D9BC4600EE0B3E /* MythViewController.h */,
 				BF58470E10D9BC4600EE0B3E /* MythViewController.m */,
 				BF58470F10D9BC4600EE0B3E /* MythView.xib */,
-				BF58476F10D9E3C100EE0B3E /* AlbumViewController.h */,
-				BF58477010D9E3C100EE0B3E /* AlbumViewController.m */,
-				BF58477110D9E3C100EE0B3E /* AlbumView.xib */,
+				BF58476F10D9E3C100EE0B3E /* URLViewController.h */,
+				BF58477010D9E3C100EE0B3E /* URLViewController.m */,
+				BF58477110D9E3C100EE0B3E /* URLView.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF584A4110DD7A4400EE0B3E /* 45-movie1.png */,
 				BF58499310DD2A4000EE0B3E /* 31-ipod.png */,
 				BF58499110DD2A0A00EE0B3E /* 70-tv.png */,
 				BF58498D10DD299E00EE0B3E /* 19-gear.png */,
@@ -164,6 +170,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF584AB310DDACD100EE0B3E /* MediaPlayer.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -246,10 +253,11 @@
 				BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */,
 				BF58472010D9C13A00EE0B3E /* tab.png in Resources */,
 				BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */,
-				BF58477310D9E3C100EE0B3E /* AlbumView.xib in Resources */,
+				BF58477310D9E3C100EE0B3E /* URLView.xib in Resources */,
 				BF58498E10DD299E00EE0B3E /* 19-gear.png in Resources */,
 				BF58499210DD2A0A00EE0B3E /* 70-tv.png in Resources */,
 				BF58499410DD2A4000EE0B3E /* 31-ipod.png in Resources */,
+				BF584A4210DD7A4400EE0B3E /* 45-movie1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +273,7 @@
 				28C3AD8A0F43EF2300507BA6 /* mvpmc.xcdatamodel in Sources */,
 				BF58470910D9BB9200EE0B3E /* SettingsViewController.m in Sources */,
 				BF58471010D9BC4600EE0B3E /* MythViewController.m in Sources */,
-				BF58477210D9E3C100EE0B3E /* AlbumViewController.m in Sources */,
+				BF58477210D9E3C100EE0B3E /* URLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

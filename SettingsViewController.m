@@ -33,7 +33,7 @@
 	NSString *port = [userDefaults stringForKey:@"myth_port"];
 	cmyth *myth;
 	UIAlertView *alert;
-	NSString *message, *title;
+	NSString *message;
 
 	myth = [[cmyth alloc] server:host port:port.intValue];
 

@@ -1,15 +1,61 @@
 //
-//  AlbumViewController.m
+//  URLViewController.m
 //  mvpmc
 //
 //  Created by Jon Gettler on 12/16/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "AlbumViewController.h"
+#import "URLViewController.h"
 
 
-@implementation AlbumViewController
+@implementation URLViewController
+
+@synthesize url;
+@synthesize play;
+
+-(IBAction) hideKeyboard:(id) sender
+{
+	[url resignFirstResponder];
+}
+
+-(IBAction)play_movie:(id)sender
+{
+	MPMoviePlayerController *player;
+	NSURL *URL;
+	UIAlertView *alert;
+	NSString *message = nil;
+
+	if (self.url.text.length > 0) {
+		URL = [NSURL URLWithString: self.url.text];
+
+		if (URL) {
+			if ([URL scheme]) {
+				player = [[MPMoviePlayerController alloc]
+						 initWithContentURL: URL];
+
+				[player play];
+			} else {
+				message = @"URL scheme is invalid";
+			}
+		} else {
+			message = @"URL is invalid";
+		}
+	} else {
+		message = @"URL is empty";
+	}
+
+	if (message != nil) {
+		alert = [[UIAlertView alloc]
+				initWithTitle:@"Error!"
+				message:message
+				delegate: nil
+				cancelButtonTitle:@"Ok"
+				otherButtonTitles: nil];
+		[alert show];
+		[alert release];
+	}
+}
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -50,7 +96,8 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+	[url release];
+	[super dealloc];
 }
 
 
