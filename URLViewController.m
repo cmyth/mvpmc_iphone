@@ -16,6 +16,10 @@
 
 -(IBAction) hideKeyboard:(id) sender
 {
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+	[userDefaults setObject:url.text forKey:@"movie_url"];
+
 	[url resignFirstResponder];
 }
 
@@ -67,12 +71,15 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSString *URL = [userDefaults stringForKey:@"movie_url"];
+
+	url.text = URL;
+
+	[super viewDidLoad];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.

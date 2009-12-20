@@ -42,6 +42,24 @@
 			<key>AutocorrectionType</key>
 			<string>No</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>URL</string>
+			<key>Key</key>
+			<string>movie_url</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
 	</array>
 </dict>
 </plist>

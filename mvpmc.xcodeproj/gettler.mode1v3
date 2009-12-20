@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -310,7 +308,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>aboutViewController.h</string>
+								<string>Root.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -318,30 +316,30 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>aboutViewController.h</string>
+										<string>Root.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF584B3E10DDBA5300EE0B3E</string>
+										<string>BF584B7510DDBF7A00EE0B3E</string>
 										<key>history</key>
 										<array>
-											<string>BF58472A10D9C2F600EE0B3E</string>
 											<string>BF58472D10D9C2F600EE0B3E</string>
 											<string>BF58472E10D9C2F600EE0B3E</string>
 											<string>BF58474410D9C8A900EE0B3E</string>
 											<string>BF58475410D9DE8000EE0B3E</string>
 											<string>BF58475510D9DE8000EE0B3E</string>
-											<string>BF5847BB10DB352C00EE0B3E</string>
-											<string>BF58490E10DC5A1D00EE0B3E</string>
 											<string>BF58496B10DD1C1000EE0B3E</string>
 											<string>BF58498010DD21F200EE0B3E</string>
-											<string>BF58499710DD2A6000EE0B3E</string>
 											<string>BF5849A110DD2BD300EE0B3E</string>
 											<string>BF584A5210DD7B2800EE0B3E</string>
-											<string>BF584AAA10DDABF800EE0B3E</string>
 											<string>BF584B2810DDB96E00EE0B3E</string>
 											<string>BF584B2910DDB96E00EE0B3E</string>
-											<string>BF584B2A10DDB96E00EE0B3E</string>
+											<string>BF584B4910DDBBD700EE0B3E</string>
+											<string>BF584B5610DDBD2F00EE0B3E</string>
+											<string>BF584B5710DDBD2F00EE0B3E</string>
+											<string>BF584B5810DDBD2F00EE0B3E</string>
+											<string>BF584B5910DDBD2F00EE0B3E</string>
+											<string>BF584B5A10DDBD2F00EE0B3E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

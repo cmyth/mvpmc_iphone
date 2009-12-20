@@ -129,23 +129,12 @@
 			isa = PBXGroup;
 			children = (
 				BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */,
+				BF584B4C10DDBBF400EE0B3E /* Views */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				BF58470610D9BB9200EE0B3E /* SettingsViewController.h */,
-				BF58470710D9BB9200EE0B3E /* SettingsViewController.m */,
-				BF58470810D9BB9200EE0B3E /* SettingsView.xib */,
-				BF58470D10D9BC4600EE0B3E /* MythViewController.h */,
-				BF58470E10D9BC4600EE0B3E /* MythViewController.m */,
-				BF58470F10D9BC4600EE0B3E /* MythView.xib */,
-				BF58476F10D9E3C100EE0B3E /* URLViewController.h */,
-				BF58477010D9E3C100EE0B3E /* URLViewController.m */,
-				BF58477110D9E3C100EE0B3E /* URLView.xib */,
-				BF584B2010DDB8DD00EE0B3E /* aboutViewController.h */,
-				BF584B2110DDB8DD00EE0B3E /* aboutViewController.m */,
-				BF584B2210DDB8DD00EE0B3E /* aboutView.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -162,6 +151,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF584B2210DDB8DD00EE0B3E /* aboutView.xib */,
+				BF58477110D9E3C100EE0B3E /* URLView.xib */,
+				BF58470F10D9BC4600EE0B3E /* MythView.xib */,
+				BF58470810D9BB9200EE0B3E /* SettingsView.xib */,
 				BF584B2510DDB95100EE0B3E /* 108-badge.png */,
 				BF584A4110DD7A4400EE0B3E /* 45-movie1.png */,
 				BF58499310DD2A4000EE0B3E /* 31-ipod.png */,
@@ -196,6 +189,21 @@
 				BF58485710DC4F0300EE0B3E /* libcmyth.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BF584B4C10DDBBF400EE0B3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF58476F10D9E3C100EE0B3E /* URLViewController.h */,
+				BF58477010D9E3C100EE0B3E /* URLViewController.m */,
+				BF584B2010DDB8DD00EE0B3E /* aboutViewController.h */,
+				BF584B2110DDB8DD00EE0B3E /* aboutViewController.m */,
+				BF58470D10D9BC4600EE0B3E /* MythViewController.h */,
+				BF58470E10D9BC4600EE0B3E /* MythViewController.m */,
+				BF58470710D9BB9200EE0B3E /* SettingsViewController.m */,
+				BF58470610D9BB9200EE0B3E /* SettingsViewController.h */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
