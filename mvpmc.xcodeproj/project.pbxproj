@@ -31,6 +31,9 @@
 		BF58499410DD2A4000EE0B3E /* 31-ipod.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58499310DD2A4000EE0B3E /* 31-ipod.png */; };
 		BF584A4210DD7A4400EE0B3E /* 45-movie1.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584A4110DD7A4400EE0B3E /* 45-movie1.png */; };
 		BF584AB410DDACD100EE0B3E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF584AB310DDACD100EE0B3E /* MediaPlayer.framework */; };
+		BF584B2310DDB8DD00EE0B3E /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF584B2110DDB8DD00EE0B3E /* aboutViewController.m */; };
+		BF584B2410DDB8DD00EE0B3E /* aboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF584B2210DDB8DD00EE0B3E /* aboutView.xib */; };
+		BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584B2510DDB95100EE0B3E /* 108-badge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,10 @@
 		BF58499310DD2A4000EE0B3E /* 31-ipod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "31-ipod.png"; path = "icons/31-ipod.png"; sourceTree = "<group>"; };
 		BF584A4110DD7A4400EE0B3E /* 45-movie1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "45-movie1.png"; path = "icons/45-movie1.png"; sourceTree = "<group>"; };
 		BF584AB310DDACD100EE0B3E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		BF584B2010DDB8DD00EE0B3E /* aboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutViewController.h; sourceTree = "<group>"; };
+		BF584B2110DDB8DD00EE0B3E /* aboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutViewController.m; sourceTree = "<group>"; };
+		BF584B2210DDB8DD00EE0B3E /* aboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aboutView.xib; sourceTree = "<group>"; };
+		BF584B2510DDB95100EE0B3E /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "108-badge.png"; path = "icons/108-badge.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +143,9 @@
 				BF58476F10D9E3C100EE0B3E /* URLViewController.h */,
 				BF58477010D9E3C100EE0B3E /* URLViewController.m */,
 				BF58477110D9E3C100EE0B3E /* URLView.xib */,
+				BF584B2010DDB8DD00EE0B3E /* aboutViewController.h */,
+				BF584B2110DDB8DD00EE0B3E /* aboutViewController.m */,
+				BF584B2210DDB8DD00EE0B3E /* aboutView.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -152,6 +162,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF584B2510DDB95100EE0B3E /* 108-badge.png */,
 				BF584A4110DD7A4400EE0B3E /* 45-movie1.png */,
 				BF58499310DD2A4000EE0B3E /* 31-ipod.png */,
 				BF58499110DD2A0A00EE0B3E /* 70-tv.png */,
@@ -258,6 +269,8 @@
 				BF58499210DD2A0A00EE0B3E /* 70-tv.png in Resources */,
 				BF58499410DD2A4000EE0B3E /* 31-ipod.png in Resources */,
 				BF584A4210DD7A4400EE0B3E /* 45-movie1.png in Resources */,
+				BF584B2410DDB8DD00EE0B3E /* aboutView.xib in Resources */,
+				BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +287,7 @@
 				BF58470910D9BB9200EE0B3E /* SettingsViewController.m in Sources */,
 				BF58471010D9BC4600EE0B3E /* MythViewController.m in Sources */,
 				BF58477210D9E3C100EE0B3E /* URLViewController.m in Sources */,
+				BF584B2310DDB8DD00EE0B3E /* aboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
