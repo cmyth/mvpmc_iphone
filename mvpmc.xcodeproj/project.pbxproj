@@ -35,6 +35,7 @@
 		BF584B2410DDB8DD00EE0B3E /* aboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF584B2210DDB8DD00EE0B3E /* aboutView.xib */; };
 		BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584B2510DDB95100EE0B3E /* 108-badge.png */; };
 		BF584BAF10DE633900EE0B3E /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584BAE10DE633900EE0B3E /* splash2.png */; };
+		BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,14 +43,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libcmyth.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = cmyth;
 		};
 		BF58486010DC4F5000EE0B3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* cmyth */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = cmyth;
 		};
 /* End PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		BF584B2210DDB8DD00EE0B3E /* aboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aboutView.xib; sourceTree = "<group>"; };
 		BF584B2510DDB95100EE0B3E /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "108-badge.png"; path = "icons/108-badge.png"; sourceTree = "<group>"; };
 		BF584BAE10DE633900EE0B3E /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = SOURCE_ROOT; };
+		BF584E8B10DF2DE500EE0B3E /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BF584E8B10DF2DE500EE0B3E /* entitlements.plist */,
 				BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */,
 				BF584B4C10DDBBF400EE0B3E /* Views */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -283,6 +286,7 @@
 				BF584B2410DDB8DD00EE0B3E /* aboutView.xib in Resources */,
 				BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */,
 				BF584BAF10DE633900EE0B3E /* splash2.png in Resources */,
+				BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,11 +352,13 @@
 			};
 			name = Release;
 		};
-		C01FCF4F08A954540054247B /* Debug */ = {
+		BF584E5B10DF2C3500EE0B3E /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jonathan Gettler";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -361,6 +367,45 @@
 					../cmyth/include,
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "679B0EF2-693D-4F1E-A662-47DC5407D76A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "679B0EF2-693D-4F1E-A662-47DC5407D76A";
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = AdHoc;
+		};
+		BF584E5C10DF2C3500EE0B3E /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Volumes/Skiiing2/CD/ViewBased/Unknown Path/System/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mvpmc_Prefix.pch;
+				INFOPLIST_FILE = "mvpmc-Info.plist";
+				PRODUCT_NAME = mvpmc;
+			};
+			name = AdHoc;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../cmyth/cmyth,
+					../cmyth/include,
+				);
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1A26C78B-AE63-4C26-8367-1CFCBB6140A2";
 				SDKROOT = iphoneos3.1.2;
 			};
 			name = Debug;
@@ -369,7 +414,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -378,6 +425,8 @@
 					../cmyth/include,
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1A26C78B-AE63-4C26-8367-1CFCBB6140A2";
 				SDKROOT = iphoneos3.1.2;
 			};
 			name = Release;
@@ -390,6 +439,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				BF584E5C10DF2C3500EE0B3E /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -399,6 +449,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				BF584E5B10DF2C3500EE0B3E /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
