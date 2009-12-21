@@ -12,6 +12,84 @@
 
 @implementation MythViewController
 
+-(void)connect
+{
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSString *host = [userDefaults stringForKey:@"myth_host"];
+	NSString *port = [userDefaults stringForKey:@"myth_port"];
+	UIAlertView *alert;
+	NSString *message = nil;
+
+	if (port == nil) {
+		port = @"0";
+	}
+
+	if (host != nil) {
+		myth = [[cmyth alloc] server:host port:port.intValue];
+	}
+}
+
+-(void)populateTable
+{
+	int i, j, n;
+
+	if (myth == nil) {
+		[self connect];
+	}
+
+	if (myth == nil) {
+		return;
+	}
+
+	if (list == nil) {
+		list = [myth programList];
+	}
+
+	n = [list count];
+
+	if (n == 0) {
+		UIAlertView *alert;
+
+		alert = [[UIAlertView alloc]
+				initWithTitle:@"Error"
+				message:@"No recordings found!"
+				delegate: nil
+				cancelButtonTitle:@"Ok"
+				otherButtonTitles: nil];
+		[alert show];
+		[alert release];
+		return;
+	}
+
+	NSMutableSet *set = [[NSMutableSet alloc] init];
+
+	for (i=0; i<n; i++) {
+		cmythProgram *program = [list progitem:i];
+		NSString *title = [program title];
+		[set addObject:title];
+	}
+
+	sections = [[NSMutableArray alloc] initWithArray:[set allObjects]];
+	counts = [[NSMutableArray alloc] init];
+
+	[set release];
+
+	n = [list count];
+
+	for (i=0; i<[sections count]; i++) {
+		int count = 0;
+		NSString *sec = [sections indexOfObject:i];
+		for (j=0; j<n; j++) {
+			cmythProgram *program = [list progitem:j];
+			NSString *title = [program title];
+			if ([sec isEqualToString: title]) {
+				count++;
+			}
+		}
+		[counts addObject:count];
+	}
+}
+
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -25,34 +103,23 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	NSString *host = [userDefaults stringForKey:@"myth_host"];
-	NSString *port = [userDefaults stringForKey:@"myth_port"];
-	UIAlertView *alert;
-	NSString *message = nil;
-
-	if (port == nil) {
-		port = @"0";
+	if (myth == nil) {
+		[self connect];
 	}
 
-	if (host != nil) {
-		myth = [[cmyth alloc] server:host port:port.intValue];
-		if (myth == nil) {
-			message = @"Server not responding!";
-		}
-	} else {
-		message = @"Server not defined!";
-	}
+	if (myth == nil) {
+		UIAlertView *alert;
 
-	if (message != nil) {
 		alert = [[UIAlertView alloc]
 				initWithTitle:@"Error"
-				message:message
+				message:@"Server not responding!"
 				delegate: nil
 				cancelButtonTitle:@"Ok"
 				otherButtonTitles: nil];
 		[alert show];
 		[alert release];
+	} else {
+		[self populateTable];
 	}
 
 	[super viewDidLoad];
@@ -103,19 +170,18 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	static int n = 1;
-    return n++;
+	return [sections count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	static int n = 1;
-    return n++;
+	int n = [counts objectAtIndex:section];
+	return n;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"section";
+	return [sections objectAtIndex:section];
 }
 
 // Customize the appearance of table view cells.
@@ -195,6 +261,8 @@
 	if (myth != nil) {
 		[myth release];
 	}
+	[sections release];
+	[counts release];
 	[super dealloc];
 }
 

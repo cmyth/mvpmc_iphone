@@ -13,6 +13,11 @@
 @interface MythViewController : UITableViewController {
 	cmyth *myth;
 	cmythProgramList *list;
+	NSMutableArray *sections;
+	NSMutableArray *counts;
 }
+
+-(void)connect;
+-(void)populateTable;
 
 @end
