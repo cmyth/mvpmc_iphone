@@ -76,9 +76,11 @@
 
 	n = [list count];
 
-	for (i=0; i<[sections count]; i++) {
+	int limit = [sections count];
+
+	for (i=0; i<limit; i++) {
 		int count = 0;
-		NSString *sec = [sections indexOfObject:i];
+		NSString *sec = [sections objectAtIndex:i];
 		for (j=0; j<n; j++) {
 			cmythProgram *program = [list progitem:j];
 			NSString *title = [program title];
@@ -86,7 +88,7 @@
 				count++;
 			}
 		}
-		[counts addObject:count];
+		[counts addObject:[NSNumber numberWithInteger:count]];
 	}
 }
 
@@ -176,8 +178,8 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	int n = [counts objectAtIndex:section];
-	return n;
+	NSNumber *num = [counts objectAtIndex:section];
+	return [num intValue];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -187,25 +189,44 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    int ver;
+	static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+	}
     
-    // Set up the cell...
+	// Set up the cell...
 
-    if (myth != nil) {
-	    ver = [myth protocol_version];
+	if (myth != nil) {
+		int i, n, count, limit;
+		NSString *subtitle = nil;
 
-	    NSString *string = [NSString stringWithFormat:@"%d", ver];
+		n = [list count];
+		limit = [sections count];
+		count = 0;
+		NSString *sec = [sections objectAtIndex:indexPath.section];
 
-	    [[cell textLabel] setText:string];
-    }
+		for (i=0; i<n; i++) {
+			cmythProgram *program = [list progitem:i];
+			NSString *title = [program title];
+			if ([sec isEqualToString: title] == YES) {
+				if (count == indexPath.row) {
+					subtitle = [program subtitle];
+					break;
+				}
+				count++;
+			}
+		}
+
+		if (subtitle == nil) {
+			[[cell textLabel] setText:@""];
+		} else {
+			[[cell textLabel] setText:subtitle];
+		}
+	}
 	
-    return cell;
+	return cell;
 }
 
 
@@ -214,6 +235,19 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+		UIAlertView *alert;
+		NSString *message;
+
+		message = [NSString stringWithFormat:@"section %d row %d", indexPath.section, indexPath.row];
+
+		alert = [[UIAlertView alloc]
+				initWithTitle:@"Selection"
+				message:message
+				delegate: nil
+				cancelButtonTitle:@"Ok"
+				otherButtonTitles: nil];
+		[alert show];
+		[alert release];
 }
 
 

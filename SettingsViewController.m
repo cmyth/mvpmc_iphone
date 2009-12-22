@@ -35,13 +35,17 @@
 	UIAlertView *alert;
 	NSString *message;
 
-	myth = [[cmyth alloc] server:host port:port.intValue];
-
-	if (myth != nil) {
-		[myth release];
-		message = @"Connection Succeeded!";
+	if (host == nil) {
+		message = @"IP Address not specified!";
 	} else {
-		message = @"Connection Failed!";
+		myth = [[cmyth alloc] server:host port:port.intValue];
+
+		if (myth != nil) {
+			[myth release];
+			message = @"Connection Succeeded!";
+		} else {
+			message = @"Connection Failed!";
+		}
 	}
 
 	alert = [[UIAlertView alloc]
