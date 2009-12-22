@@ -17,8 +17,6 @@
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString *host = [userDefaults stringForKey:@"myth_host"];
 	NSString *port = [userDefaults stringForKey:@"myth_port"];
-	UIAlertView *alert;
-	NSString *message = nil;
 
 	if (port == nil) {
 		port = @"0";
@@ -27,6 +25,10 @@
 	if (host != nil) {
 		myth = [[cmyth alloc] server:host port:port.intValue];
 	}
+
+	[host release];
+	[port release];
+	[userDefaults release];
 }
 
 -(void)populateTable
@@ -67,6 +69,7 @@
 		cmythProgram *program = [list progitem:i];
 		NSString *title = [program title];
 		[set addObject:title];
+		[program release];
 	}
 
 	sections = [[NSMutableArray alloc] initWithArray:[set allObjects]];
@@ -87,8 +90,11 @@
 			if ([sec isEqualToString: title]) {
 				count++;
 			}
+//			[program release];
+//			[title release];
 		}
 		[counts addObject:[NSNumber numberWithInteger:count]];
+//		[sec release];
 	}
 }
 
@@ -179,7 +185,11 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSNumber *num = [counts objectAtIndex:section];
-	return [num intValue];
+	int n = [num intValue];
+
+	[num release];
+
+	return n;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -217,12 +227,17 @@
 				}
 				count++;
 			}
+//			[program release];
+//			[title release];
 		}
+
+//		[sec release];
 
 		if (subtitle == nil) {
 			[[cell textLabel] setText:@""];
 		} else {
 			[[cell textLabel] setText:subtitle];
+//			[subtitle release];
 		}
 	}
 	
@@ -248,6 +263,7 @@
 				otherButtonTitles: nil];
 		[alert show];
 		[alert release];
+		[message release];
 }
 
 
@@ -292,9 +308,7 @@
 
 
 - (void)dealloc {
-	if (myth != nil) {
-		[myth release];
-	}
+	[myth release];
 	[sections release];
 	[counts release];
 	[super dealloc];
