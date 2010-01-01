@@ -163,38 +163,35 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-	if (myth == nil) {
-		[self connect];
-	}
-
-	if (myth == nil) {
-		UIAlertView *alert;
-
-		alert = [[UIAlertView alloc]
-				initWithTitle:@"Error"
-				message:@"Server not responding!"
-				delegate: nil
-				cancelButtonTitle:@"Ok"
-				otherButtonTitles: nil];
-		[alert show];
-		[alert release];
-	} else {
-		[self populateTable];
-	}
-
 	[super viewDidLoad];
 }
 
-/*
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+	if (myth == nil) {
+		[self connect];
+
+		if (myth == nil) {
+			UIAlertView *alert;
+
+			alert = [[UIAlertView alloc]
+					initWithTitle:@"Error"
+					message:@"Server not responding!"
+					delegate: nil
+					cancelButtonTitle:@"Ok"
+					otherButtonTitles: nil];
+			[alert show];
+			[alert release];
+		} else {
+			[self populateTable];
+		}
+	}
+	[super viewWillAppear:animated];
 }
-*/
-/*
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
