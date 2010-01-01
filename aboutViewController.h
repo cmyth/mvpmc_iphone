@@ -12,11 +12,13 @@
 @interface aboutViewController : UIViewController {
 	IBOutlet UIButton *link;
 	IBOutlet UILabel *version;
+	IBOutlet UILabel *ip;
 }
 
 -(IBAction)jump:(id)sender;
 
 @property (retain,nonatomic) UIButton *link;
 @property (retain,nonatomic) UILabel *version;
+@property (retain,nonatomic) UILabel *ip;
 
 @end

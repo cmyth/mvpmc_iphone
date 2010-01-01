@@ -19,5 +19,8 @@
 
 -(void)connect;
 -(void)populateTable;
+-(void)play_movie:(int)port;
+
+-(cmythProgram*)atSection:(int)section atRow:(int)row;
 
 @end

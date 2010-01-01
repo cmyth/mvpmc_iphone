@@ -48,6 +48,10 @@
 		}
 	}
 
+//	[userDefaults release];
+//	[host release];
+//	[port release];
+
 	alert = [[UIAlertView alloc]
 			initWithTitle:@"Connectivity test"
 			message:message

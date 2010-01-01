@@ -6,12 +6,48 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
 #import "MythViewController.h"
 #import "api.h"
 
 
 @implementation MythViewController
 
+-(void)play_movie:(int)port
+{
+	MPMoviePlayerController *player;
+	NSURL *URL;
+	UIAlertView *alert;
+	NSString *message = nil;
+	NSString *url;
+
+	url = [NSString stringWithFormat:@"http://127.0.0.1:%d/foo.m4v",port];
+	URL = [NSURL URLWithString: url];
+
+	if (URL) {
+		if ([URL scheme]) {
+			player = [[MPMoviePlayerController alloc]
+					 initWithContentURL: URL];
+
+			[player play];
+		} else {
+			message = @"URL scheme is invalid";
+		}
+	} else {
+		message = @"URL is invalid";
+	}
+
+	if (message != nil) {
+		alert = [[UIAlertView alloc]
+				initWithTitle:@"Error!"
+				message:message
+				delegate: nil
+				cancelButtonTitle:@"Ok"
+				otherButtonTitles: nil];
+		[alert show];
+		[alert release];
+	}
+}
 -(void)connect
 {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -25,10 +61,6 @@
 	if (host != nil) {
 		myth = [[cmyth alloc] server:host port:port.intValue];
 	}
-
-	[host release];
-	[port release];
-	[userDefaults release];
 }
 
 -(void)populateTable
@@ -69,13 +101,10 @@
 		cmythProgram *program = [list progitem:i];
 		NSString *title = [program title];
 		[set addObject:title];
-		[program release];
 	}
 
 	sections = [[NSMutableArray alloc] initWithArray:[set allObjects]];
 	counts = [[NSMutableArray alloc] init];
-
-	[set release];
 
 	n = [list count];
 
@@ -90,12 +119,35 @@
 			if ([sec isEqualToString: title]) {
 				count++;
 			}
-//			[program release];
-//			[title release];
 		}
 		[counts addObject:[NSNumber numberWithInteger:count]];
-//		[sec release];
 	}
+}
+
+-(cmythProgram*) atSection:(int) section
+		    atRow:(int) row
+{
+	int i, n, count, limit;
+	NSString *subtitle = nil;
+	cmythProgram *rc = nil;
+
+	n = [list count];
+	limit = [sections count];
+	count = 0;
+	NSString *sec = [sections objectAtIndex:section];
+
+	for (i=0; i<n; i++) {
+		cmythProgram *program = [list progitem:i];
+		NSString *title = [program title];
+		if ([sec isEqualToString: title] == YES) {
+			if (count == row) {
+				rc = program;
+				break;
+			}
+			count++;
+		}
+	}
+	return rc;
 }
 
 /*
@@ -187,8 +239,6 @@
 	NSNumber *num = [counts objectAtIndex:section];
 	int n = [num intValue];
 
-	[num release];
-
 	return n;
 }
 
@@ -208,39 +258,11 @@
     
 	// Set up the cell...
 
-	if (myth != nil) {
-		int i, n, count, limit;
-		NSString *subtitle = nil;
+	cmythProgram *p = [self atSection:indexPath.section atRow:indexPath.row];
+	NSString *subtitle = [p subtitle];
 
-		n = [list count];
-		limit = [sections count];
-		count = 0;
-		NSString *sec = [sections objectAtIndex:indexPath.section];
+	[[cell textLabel] setText:subtitle];
 
-		for (i=0; i<n; i++) {
-			cmythProgram *program = [list progitem:i];
-			NSString *title = [program title];
-			if ([sec isEqualToString: title] == YES) {
-				if (count == indexPath.row) {
-					subtitle = [program subtitle];
-					break;
-				}
-				count++;
-			}
-//			[program release];
-//			[title release];
-		}
-
-//		[sec release];
-
-		if (subtitle == nil) {
-			[[cell textLabel] setText:@""];
-		} else {
-			[[cell textLabel] setText:subtitle];
-//			[subtitle release];
-		}
-	}
-	
 	return cell;
 }
 
@@ -250,11 +272,21 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
-		UIAlertView *alert;
-		NSString *message;
 
-		message = [NSString stringWithFormat:@"section %d row %d", indexPath.section, indexPath.row];
+	cmythProgram *p = [self atSection:indexPath.section atRow:indexPath.row];
+	cmythFile *f = [[cmythFile alloc] openWith:p];
 
+	UIAlertView *alert;
+	NSString *message = nil;
+
+	if (f != nil) {
+		int port = [f portNumber];
+		[self play_movie:port];
+	} else {
+		message = @"openWith failed!";
+	}
+
+	if (message) {
 		alert = [[UIAlertView alloc]
 				initWithTitle:@"Selection"
 				message:message
@@ -263,7 +295,7 @@
 				otherButtonTitles: nil];
 		[alert show];
 		[alert release];
-		[message release];
+	}
 }
 
 
