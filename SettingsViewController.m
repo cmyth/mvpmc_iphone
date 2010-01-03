@@ -23,20 +23,17 @@
 	[userDefaults setObject:port.text forKey:@"myth_port"];
 
 	[userDefaults setObject:vlc_host.text forKey:@"vlc_host"];
-	[userDefaults setObject:vlc_port.text forKey:@"vlc_port"];
 	[userDefaults setObject:vlc_path.text forKey:@"vlc_path"];
 
-	if (vlc.on == YES) {
-		[userDefaults setObject:@"1" forKey:@"vlc"];
-	} else {
-		[userDefaults setObject:@"0" forKey:@"vlc"];
-	}
+	[userDefaults setObject:www_host.text forKey:@"www_host"];
+	[userDefaults setObject:www_path.text forKey:@"www_path"];
 
 	[host resignFirstResponder];
 	[port resignFirstResponder];
 	[vlc_host resignFirstResponder];
-	[vlc_port resignFirstResponder];
 	[vlc_path resignFirstResponder];
+	[www_host resignFirstResponder];
+	[www_path resignFirstResponder];
 }
 
 -(IBAction) test_connection:(id) sender
@@ -88,22 +85,15 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	NSString *vlc_on;
 
 	host.text = [userDefaults stringForKey:@"myth_host"];
 	port.text = [userDefaults stringForKey:@"myth_port"];
 
 	vlc_host.text = [userDefaults stringForKey:@"vlc_host"];
-	vlc_port.text = [userDefaults stringForKey:@"vlc_port"];
 	vlc_path.text = [userDefaults stringForKey:@"vlc_path"];
 
-	vlc_on = [userDefaults stringForKey:@"vlc"];
-
-	if ([vlc_on isEqualToString: @"1"]) {
-		vlc.on = YES;
-	} else {
-		vlc.on = NO;
-	}
+	www_host.text = [userDefaults stringForKey:@"www_host"];
+	www_path.text = [userDefaults stringForKey:@"www_path"];
 
 	[super viewDidLoad];
 }

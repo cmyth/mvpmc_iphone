@@ -37,6 +37,10 @@
 		BF584BAF10DE633900EE0B3E /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584BAE10DE633900EE0B3E /* splash2.png */; };
 		BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */; };
 		BF8FF0ED10EECC9200094FD8 /* Myth_tv_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */; };
+		BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF17A10F1291200094FD8 /* ProgramViewController.m */; };
+		BF8FF17D10F1291200094FD8 /* ProgramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF17B10F1291200094FD8 /* ProgramView.xib */; };
+		BF8FF28F10F15C6600094FD8 /* VLC_media_player_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */; };
+		BF8FF29110F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,11 @@
 		BF584BAE10DE633900EE0B3E /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = SOURCE_ROOT; };
 		BF584E8B10DF2DE500EE0B3E /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Myth_tv_logo.png; sourceTree = "<group>"; };
+		BF8FF17910F1291200094FD8 /* ProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramViewController.h; sourceTree = "<group>"; };
+		BF8FF17A10F1291200094FD8 /* ProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramViewController.m; sourceTree = "<group>"; };
+		BF8FF17B10F1291200094FD8 /* ProgramView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramView.xib; sourceTree = "<group>"; };
+		BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VLC_media_player_icon.png; sourceTree = "<group>"; };
+		BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "500px-WWW_logo_by_Robert_Cailliau.svg.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +167,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */,
+				BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */,
 				BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */,
 				BF584BAE10DE633900EE0B3E /* splash2.png */,
 				BF584B2210DDB8DD00EE0B3E /* aboutView.xib */,
@@ -176,6 +187,7 @@
 				28C3AD890F43EF2300507BA6 /* mvpmc.xcdatamodel */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* mvpmc-Info.plist */,
+				BF8FF17B10F1291200094FD8 /* ProgramView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -203,6 +215,8 @@
 		BF584B4C10DDBBF400EE0B3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF17910F1291200094FD8 /* ProgramViewController.h */,
+				BF8FF17A10F1291200094FD8 /* ProgramViewController.m */,
 				BF58476F10D9E3C100EE0B3E /* URLViewController.h */,
 				BF58477010D9E3C100EE0B3E /* URLViewController.m */,
 				BF584B2010DDB8DD00EE0B3E /* aboutViewController.h */,
@@ -291,6 +305,9 @@
 				BF584BAF10DE633900EE0B3E /* splash2.png in Resources */,
 				BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */,
 				BF8FF0ED10EECC9200094FD8 /* Myth_tv_logo.png in Resources */,
+				BF8FF17D10F1291200094FD8 /* ProgramView.xib in Resources */,
+				BF8FF28F10F15C6600094FD8 /* VLC_media_player_icon.png in Resources */,
+				BF8FF29110F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +325,7 @@
 				BF58471010D9BC4600EE0B3E /* MythViewController.m in Sources */,
 				BF58477210D9E3C100EE0B3E /* URLViewController.m in Sources */,
 				BF584B2310DDB8DD00EE0B3E /* aboutViewController.m in Sources */,
+				BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

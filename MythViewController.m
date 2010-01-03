@@ -8,6 +8,7 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 #import "MythViewController.h"
+#import "ProgramViewController.h"
 #import "api.h"
 
 
@@ -27,33 +28,6 @@
 	[alert release];
 }
 
--(void)play_movie:(int)port
-{
-	MPMoviePlayerController *player;
-	NSURL *URL;
-	NSString *message = nil;
-	NSString *url;
-
-	url = [NSString stringWithFormat:@"http://127.0.0.1:%d/foo.m4v",port];
-	URL = [NSURL URLWithString: url];
-
-	if (URL) {
-		if ([URL scheme]) {
-			player = [[MPMoviePlayerController alloc]
-					 initWithContentURL: URL];
-
-			[player play];
-		} else {
-			message = @"URL scheme is invalid";
-		}
-	} else {
-		message = @"URL is invalid";
-	}
-
-	if (message != nil) {
-		[self popup:@"Error!" message:message];
-	}
-}
 -(void)connect
 {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -302,6 +276,8 @@
 
 	[[cell textLabel] setText:subtitle];
 
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
 	return cell;
 }
 
@@ -312,21 +288,11 @@
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
 
+	ProgramViewController *programViewController = [[ProgramViewController alloc] initWithNibName:@"ProgramView" bundle:nil];
 	cmythProgram *p = [self atSection:indexPath.section atRow:indexPath.row];
-	cmythFile *f = [[cmythFile alloc] openWith:p];
-
-	NSString *message = nil;
-
-	if (f != nil) {
-		int port = [f portNumber];
-		[self play_movie:port];
-	} else {
-		message = @"openWith failed!";
-	}
-
-	if (message) {
-		[self popup:@"Selection" message:message];
-	}
+	programViewController.prog = p;
+	[self presentModalViewController:programViewController animated:YES];
+	[programViewController release];
 }
 
 
