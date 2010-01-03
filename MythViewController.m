@@ -13,11 +13,24 @@
 
 @implementation MythViewController
 
+-(void)popup:(NSString*)title
+     message:(NSString*)message
+{
+	UIAlertView *alert;
+	alert = [[UIAlertView alloc]
+			initWithTitle:title
+			message:message
+			delegate: nil
+			cancelButtonTitle:@"Ok"
+			otherButtonTitles: nil];
+	[alert show];
+	[alert release];
+}
+
 -(void)play_movie:(int)port
 {
 	MPMoviePlayerController *player;
 	NSURL *URL;
-	UIAlertView *alert;
 	NSString *message = nil;
 	NSString *url;
 
@@ -38,14 +51,7 @@
 	}
 
 	if (message != nil) {
-		alert = [[UIAlertView alloc]
-				initWithTitle:@"Error!"
-				message:message
-				delegate: nil
-				cancelButtonTitle:@"Ok"
-				otherButtonTitles: nil];
-		[alert show];
-		[alert release];
+		[self popup:@"Error!" message:message];
 	}
 }
 -(void)connect
@@ -82,16 +88,7 @@
 	n = [list count];
 
 	if (n == 0) {
-		UIAlertView *alert;
-
-		alert = [[UIAlertView alloc]
-				initWithTitle:@"Error"
-				message:@"No recordings found!"
-				delegate: nil
-				cancelButtonTitle:@"Ok"
-				otherButtonTitles: nil];
-		[alert show];
-		[alert release];
+		[self popup:@"Error" message:@"No recordings found!"];
 		return;
 	}
 
@@ -124,6 +121,23 @@
 	}
 }
 
+-(void)eraseTable
+{
+	if (sections) {
+		[sections release];
+	}
+	if (counts) {
+		[counts release];
+	}
+	if (list) {
+		[list release];
+		list = nil;
+	}
+
+	sections = [[NSMutableArray alloc] init];
+	counts = [[NSMutableArray alloc] init];
+}
+
 -(cmythProgram*) atSection:(int) section
 		    atRow:(int) row
 {
@@ -133,6 +147,9 @@
 
 	n = [list count];
 	limit = [sections count];
+	if (limit == 0) {
+		return nil;
+	}
 	count = 0;
 	NSString *sec = [sections objectAtIndex:section];
 
@@ -171,18 +188,41 @@
 		[self connect];
 
 		if (myth == nil) {
-			UIAlertView *alert;
-
-			alert = [[UIAlertView alloc]
-					initWithTitle:@"Error"
-					message:@"Server not responding!"
-					delegate: nil
-					cancelButtonTitle:@"Ok"
-					otherButtonTitles: nil];
-			[alert show];
-			[alert release];
+			[self popup:@"Error" message:@"Server not responding!"];
+			[self eraseTable];
 		} else {
 			[self populateTable];
+		}
+	} else {
+		cmyth_event_t e;
+		if ([myth getEvent:&e] == 0) {
+			switch (e) {
+			case CMYTH_EVENT_UNKNOWN:
+			case CMYTH_EVENT_SCHEDULE_CHANGE:
+			case CMYTH_EVENT_QUIT_LIVETV:
+			case CMYTH_EVENT_DONE_RECORDING:
+			case CMYTH_EVENT_LIVETV_CHAIN_UPDATE:
+			case CMYTH_EVENT_SIGNAL:
+			case CMYTH_EVENT_ASK_RECORDING:
+				break;
+			case CMYTH_EVENT_CLOSE:
+			case CMYTH_EVENT_RECORDING_LIST_CHANGE:
+				[myth release];
+				[self connect];
+				if (myth == nil) {
+					[self eraseTable];
+					[self.tableView reloadData];
+
+					[self popup:@"Error"
+					      message:@"Server not responding!"];
+				} else {
+					[self populateTable];
+					[self.tableView reloadData];
+				}
+				break;
+			default:
+				break;
+			}
 		}
 	}
 	[super viewWillAppear:animated];
@@ -192,11 +232,10 @@
     [super viewDidAppear:animated];
 }
 
-/*
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 }
-*/
+
 /*
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
@@ -240,6 +279,9 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	if ([sections count] == 0) {
+		return nil;
+	}
 	return [sections objectAtIndex:section];
 }
 
@@ -273,7 +315,6 @@
 	cmythProgram *p = [self atSection:indexPath.section atRow:indexPath.row];
 	cmythFile *f = [[cmythFile alloc] openWith:p];
 
-	UIAlertView *alert;
 	NSString *message = nil;
 
 	if (f != nil) {
@@ -284,14 +325,7 @@
 	}
 
 	if (message) {
-		alert = [[UIAlertView alloc]
-				initWithTitle:@"Selection"
-				message:message
-				delegate: nil
-				cancelButtonTitle:@"Ok"
-				otherButtonTitles: nil];
-		[alert show];
-		[alert release];
+		[self popup:@"Selection" message:message];
 	}
 }
 

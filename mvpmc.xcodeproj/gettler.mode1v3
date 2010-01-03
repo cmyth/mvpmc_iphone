@@ -264,13 +264,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>BF584B4C10DDBBF400EE0B3E</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>3</integer>
+									<integer>24</integer>
+									<integer>6</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -310,7 +310,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>api.m</string>
+								<string>mvpmc-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -318,11 +318,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>api.m</string>
+										<string>mvpmc-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF8FF01310EE69A200094FD8</string>
+										<string>BF8FF14510EFB8EE00094FD8</string>
 										<key>history</key>
 										<array>
 											<string>BF58472E10D9C2F600EE0B3E</string>
@@ -332,19 +332,21 @@
 											<string>BF584B2910DDB96E00EE0B3E</string>
 											<string>BF584B4910DDBBD700EE0B3E</string>
 											<string>BF584B5810DDBD2F00EE0B3E</string>
-											<string>BF584BDF10DE735B00EE0B3E</string>
-											<string>BF584BE010DE735B00EE0B3E</string>
 											<string>BF584EBB10DF328100EE0B3E</string>
-											<string>BFCE7D2410DFC20D009D8722</string>
-											<string>BFCE7D9410E0706A009D8722</string>
 											<string>BFF0ED0310E40C3600A2CC94</string>
 											<string>BF9D84AD10E6DEE9009ADE21</string>
-											<string>BF9D84AE10E6DEE9009ADE21</string>
 											<string>BF8FED0D10EBF19000094FD8</string>
-											<string>BF8FEDC110ED2D2000094FD8</string>
 											<string>BF8FEF2B10ED5F4B00094FD8</string>
 											<string>BF8FEF2C10ED5F4B00094FD8</string>
-											<string>BF8FEFFF10EE68B700094FD8</string>
+											<string>BF8FF08410EEC06800094FD8</string>
+											<string>BF8FF0AE10EEC43700094FD8</string>
+											<string>BF8FF0F410EED78300094FD8</string>
+											<string>BF8FF0F510EED78300094FD8</string>
+											<string>BF8FF13510EFB73D00094FD8</string>
+											<string>BF8FF13610EFB73D00094FD8</string>
+											<string>BF8FF13710EFB73D00094FD8</string>
+											<string>BF8FF14410EFB8EE00094FD8</string>
+											<string>BF8FF07610EEBF3D00094FD8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -366,8 +368,6 @@
 							<string>357pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -544,7 +544,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>BF8FF01410EE69A200094FD8</string>
 		<string>BF8FED1F10EBF67200094FD8</string>
 		<string>BF8FED2010EBF67200094FD8</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -574,7 +573,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>api.m</string>
+								<string>SettingsViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

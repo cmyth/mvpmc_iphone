@@ -19,7 +19,9 @@
 
 -(void)connect;
 -(void)populateTable;
+-(void)eraseTable;
 -(void)play_movie:(int)port;
+-(void)popup:(NSString*)title message:(NSString*)message;
 
 -(cmythProgram*)atSection:(int)section atRow:(int)row;
 

@@ -12,6 +12,10 @@
 @interface SettingsViewController : UIViewController {
 	IBOutlet UITextField *host;
 	IBOutlet UITextField *port;
+	IBOutlet UITextField *vlc_host;
+	IBOutlet UITextField *vlc_port;
+	IBOutlet UITextField *vlc_path;
+	IBOutlet UISwitch *vlc;
 	IBOutlet UIButton *test;
 }
 
@@ -20,6 +24,10 @@
 
 @property (retain,nonatomic) UITextField *host;
 @property (retain,nonatomic) UITextField *port;
+@property (retain,nonatomic) UITextField *vlc_host;
+@property (retain,nonatomic) UITextField *vlc_port;
+@property (retain,nonatomic) UITextField *vlc_path;
+@property (retain,nonatomic) UISwitch *vlc;
 @property (retain,nonatomic) UIButton *test;
 
 @end

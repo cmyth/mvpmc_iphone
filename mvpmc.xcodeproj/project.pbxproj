@@ -36,6 +36,7 @@
 		BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584B2510DDB95100EE0B3E /* 108-badge.png */; };
 		BF584BAF10DE633900EE0B3E /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584BAE10DE633900EE0B3E /* splash2.png */; };
 		BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */; };
+		BF8FF0ED10EECC9200094FD8 /* Myth_tv_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		BF584B2510DDB95100EE0B3E /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "108-badge.png"; path = "icons/108-badge.png"; sourceTree = "<group>"; };
 		BF584BAE10DE633900EE0B3E /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = SOURCE_ROOT; };
 		BF584E8B10DF2DE500EE0B3E /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
+		BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Myth_tv_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */,
 				BF584BAE10DE633900EE0B3E /* splash2.png */,
 				BF584B2210DDB8DD00EE0B3E /* aboutView.xib */,
 				BF58477110D9E3C100EE0B3E /* URLView.xib */,
@@ -287,6 +290,7 @@
 				BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */,
 				BF584BAF10DE633900EE0B3E /* splash2.png in Resources */,
 				BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */,
+				BF8FF0ED10EECC9200094FD8 /* Myth_tv_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
