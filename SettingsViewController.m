@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "HelpViewController.h"
 #import "api.h"
 
 
@@ -15,12 +16,27 @@
 @synthesize host;
 @synthesize port;
 
+-(void)popup:(NSString*)title
+     message:(NSString*)message
+{
+	UIAlertView *alert;
+	alert = [[UIAlertView alloc]
+			initWithTitle:title
+			message:message
+			delegate: nil
+			cancelButtonTitle:@"Ok"
+			otherButtonTitles: nil];
+	[alert show];
+	[alert release];
+}
+
 -(IBAction) hideKeyboard:(id) sender
 {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
 	[userDefaults setObject:host.text forKey:@"myth_host"];
 	[userDefaults setObject:port.text forKey:@"myth_port"];
+	[userDefaults setObject:path.text forKey:@"myth_path"];
 
 	[userDefaults setObject:vlc_host.text forKey:@"vlc_host"];
 	[userDefaults setObject:vlc_path.text forKey:@"vlc_path"];
@@ -30,46 +46,31 @@
 
 	[host resignFirstResponder];
 	[port resignFirstResponder];
+	[path resignFirstResponder];
 	[vlc_host resignFirstResponder];
 	[vlc_path resignFirstResponder];
 	[www_host resignFirstResponder];
 	[www_path resignFirstResponder];
 }
 
--(IBAction) test_connection:(id) sender
+-(IBAction) display_help:(id) sender
 {
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	NSString *host = [userDefaults stringForKey:@"myth_host"];
-	NSString *port = [userDefaults stringForKey:@"myth_port"];
-	cmyth *myth;
-	UIAlertView *alert;
-	NSString *message;
+	HelpViewController *helpViewController = [[HelpViewController alloc] initWithNibName:@"HelpView" bundle:nil];
+	[self presentModalViewController:helpViewController animated:YES];
+	[helpViewController release];
+}
 
-	if (host == nil) {
-		message = @"IP Address not specified!";
+-(void)busy:(BOOL)on
+{
+	if (on == YES) {
+		active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+		[active setCenter:CGPointMake(160.0f, 208.0f)];
+		[active setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+		[active startAnimating];
+		[[self view] addSubview:active];
 	} else {
-		myth = [[cmyth alloc] server:host port:port.intValue];
-
-		if (myth != nil) {
-			[myth release];
-			message = @"Connection Succeeded!";
-		} else {
-			message = @"Connection Failed!";
-		}
+		[active stopAnimating];
 	}
-
-//	[userDefaults release];
-//	[host release];
-//	[port release];
-
-	alert = [[UIAlertView alloc]
-			initWithTitle:@"Connectivity test"
-			message:message
-			delegate: nil
-			cancelButtonTitle:@"Ok"
-			otherButtonTitles: nil];
-	[alert show];
-	[alert release];
 }
 
 /*
@@ -88,12 +89,17 @@
 
 	host.text = [userDefaults stringForKey:@"myth_host"];
 	port.text = [userDefaults stringForKey:@"myth_port"];
+	path.text = [userDefaults stringForKey:@"myth_path"];
 
 	vlc_host.text = [userDefaults stringForKey:@"vlc_host"];
 	vlc_path.text = [userDefaults stringForKey:@"vlc_path"];
 
 	www_host.text = [userDefaults stringForKey:@"www_host"];
 	www_path.text = [userDefaults stringForKey:@"www_path"];
+
+	www_host.delegate = self;
+	www_path.delegate = self;
+	vlc_path.delegate = self;
 
 	[super viewDidLoad];
 }
@@ -118,6 +124,49 @@
 	// e.g. self.myOutlet = nil;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+	[super viewDidDisappear:animated];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+	NSLog(@"edit begin...");
+	[self animateTextField: textField up: YES];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+	NSLog(@"edit end...");
+	[self animateTextField: textField up: NO];
+}
+
+-(void)animateTextField:(UITextField*)textField up:(BOOL)up
+{
+	int distance;
+	float duration = 0.3f;
+
+	if (textField == www_host) {
+		distance = 110;
+	} else if (textField == www_path) {
+		distance = 150;
+	} else if (textField == vlc_path) {
+		distance = 40;
+	} else {
+		return;
+	}
+
+	int movement = (up ? -distance : distance);
+
+	[UIView beginAnimations: @"anim" context: nil];
+	[UIView setAnimationBeginsFromCurrentState: YES];
+	[UIView setAnimationDuration: duration];
+	self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+	[UIView commitAnimations];
+}
 
 - (void)dealloc {
 	[host release];

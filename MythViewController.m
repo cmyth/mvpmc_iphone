@@ -14,6 +14,8 @@
 
 @implementation MythViewController
 
+@synthesize lock;
+
 -(void)popup:(NSString*)title
      message:(NSString*)message
 {
@@ -41,6 +43,8 @@
 	if (host != nil) {
 		myth = [[cmyth alloc] server:host port:port.intValue];
 	}
+
+	[host release];
 }
 
 -(void)populateTable
@@ -91,7 +95,9 @@
 				count++;
 			}
 		}
-		[counts addObject:[NSNumber numberWithInteger:count]];
+		NSNumber *num = [[NSNumber alloc] initWithInteger:count];
+		[counts addObject:num];
+		[num release];
 	}
 }
 
@@ -99,17 +105,16 @@
 {
 	if (sections) {
 		[sections release];
+		sections = nil;
 	}
 	if (counts) {
 		[counts release];
+		sections = nil;
 	}
 	if (list) {
 		[list release];
 		list = nil;
 	}
-
-	sections = [[NSMutableArray alloc] init];
-	counts = [[NSMutableArray alloc] init];
 }
 
 -(cmythProgram*) atSection:(int) section
@@ -141,23 +146,26 @@
 	return rc;
 }
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style]) {
-    }
-    return self;
+-(void)busy:(BOOL)on
+{
+	if (on == YES) {
+		active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+		[active setCenter:CGPointMake(160.0f, 208.0f)];
+		[active setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+		[active startAnimating];
+		[[self tableView] addSubview:active];
+	} else {
+		[active stopAnimating];
+		[active release];
+		active = nil;
+	}
 }
-*/
 
-- (void)viewDidLoad {
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+-(void)loadData
+{
+	BOOL reload = NO;
 
-	[super viewDidLoad];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
+	[lock lock];
 	if (myth == nil) {
 		[self connect];
 
@@ -167,6 +175,8 @@
 		} else {
 			[self populateTable];
 		}
+
+		reload = YES;
 	} else {
 		cmyth_event_t e;
 		if ([myth getEvent:&e] == 0) {
@@ -185,36 +195,75 @@
 				[self connect];
 				if (myth == nil) {
 					[self eraseTable];
-					[self.tableView reloadData];
 
 					[self popup:@"Error"
 					      message:@"Server not responding!"];
 				} else {
 					[self populateTable];
-					[self.tableView reloadData];
 				}
+				reload = YES;
 				break;
 			default:
 				break;
 			}
 		}
 	}
+	[self busy:NO];
+	[lock unlock];
+
+	if (reload == YES) {
+		[self.tableView reloadData];
+	}
+}
+
+/*
+- (id)initWithStyle:(UITableViewStyle)style {
+    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+    if (self = [super initWithStyle:style]) {
+    }
+    return self;
+}
+*/
+
+- (void)viewDidLoad {
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+	[super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSString *host = [userDefaults stringForKey:@"myth_host"];
+
 	[super viewWillAppear:animated];
+	[lock lock];
+	if (active == nil) {
+		[self busy:YES];
+		if (![host isEqualToString: ip]) {
+			[myth release];
+			myth = nil;
+			[self eraseTable];
+			[self.tableView reloadData];
+		}
+		ip = host;
+		[NSThread detachNewThreadSelector:@selector(loadData)
+			  toTarget:self withObject:nil];
+	}
+	[lock unlock];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+	[super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 }
 
-/*
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -246,17 +295,30 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSNumber *num = [counts objectAtIndex:section];
-	int n = [num intValue];
+	int n = 0;
+
+	[lock lock];
+	if ([counts count] > section) {
+		NSNumber *num = [counts objectAtIndex:section];
+		n = [num intValue];
+	}
+	[lock unlock];
 
 	return n;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	NSString *ret;
+
+	[lock lock];
 	if ([sections count] == 0) {
-		return nil;
+		ret = nil;
+	} else {
+		ret =  [sections objectAtIndex:section];
 	}
-	return [sections objectAtIndex:section];
+	[lock unlock];
+
+	return ret;
 }
 
 // Customize the appearance of table view cells.

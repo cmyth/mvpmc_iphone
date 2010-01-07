@@ -91,6 +91,7 @@
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString *vlc_host = [userDefaults stringForKey:@"vlc_host"];
 	NSString *vlc_path = [userDefaults stringForKey:@"vlc_path"];
+	NSString *myth_path = [userDefaults stringForKey:@"myth_path"];
 
 	if (([vlc_host isEqualToString: @""]) ||
 	    ([vlc_path isEqualToString: @""])) {
@@ -100,11 +101,13 @@
 
 	cmythFile *f = [[cmythFile alloc]
 			       transcodeWith:prog
+			       mythPath:myth_path
 			       vlcHost:vlc_host vlcPath:vlc_path];
 
-	if (f == nil) {
+	if (f) {
+		[self popup:@"Started!" message:@"VLC transcode is underway!"];
+	} else {
 		[self popup:@"Error!" message:@"VLC transcode failed!"];
-		return;
 	}
 }
 

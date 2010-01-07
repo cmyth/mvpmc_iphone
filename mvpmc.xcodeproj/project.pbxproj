@@ -41,6 +41,8 @@
 		BF8FF17D10F1291200094FD8 /* ProgramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF17B10F1291200094FD8 /* ProgramView.xib */; };
 		BF8FF28F10F15C6600094FD8 /* VLC_media_player_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */; };
 		BF8FF29110F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */; };
+		BF8FF2B710F170A900094FD8 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF2B510F170A900094FD8 /* HelpViewController.m */; };
+		BF8FF2B810F170A900094FD8 /* HelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF2B610F170A900094FD8 /* HelpView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,9 @@
 		BF8FF17B10F1291200094FD8 /* ProgramView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramView.xib; sourceTree = "<group>"; };
 		BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VLC_media_player_icon.png; sourceTree = "<group>"; };
 		BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "500px-WWW_logo_by_Robert_Cailliau.svg.png"; sourceTree = "<group>"; };
+		BF8FF2B410F170A900094FD8 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		BF8FF2B510F170A900094FD8 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		BF8FF2B610F170A900094FD8 /* HelpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +172,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF2B610F170A900094FD8 /* HelpView.xib */,
 				BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */,
 				BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */,
 				BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */,
@@ -215,6 +221,8 @@
 		BF584B4C10DDBBF400EE0B3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF2B410F170A900094FD8 /* HelpViewController.h */,
+				BF8FF2B510F170A900094FD8 /* HelpViewController.m */,
 				BF8FF17910F1291200094FD8 /* ProgramViewController.h */,
 				BF8FF17A10F1291200094FD8 /* ProgramViewController.m */,
 				BF58476F10D9E3C100EE0B3E /* URLViewController.h */,
@@ -308,6 +316,7 @@
 				BF8FF17D10F1291200094FD8 /* ProgramView.xib in Resources */,
 				BF8FF28F10F15C6600094FD8 /* VLC_media_player_icon.png in Resources */,
 				BF8FF29110F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png in Resources */,
+				BF8FF2B810F170A900094FD8 /* HelpView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +335,7 @@
 				BF58477210D9E3C100EE0B3E /* URLViewController.m in Sources */,
 				BF584B2310DDB8DD00EE0B3E /* aboutViewController.m in Sources */,
 				BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */,
+				BF8FF2B710F170A900094FD8 /* HelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
