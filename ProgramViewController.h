@@ -15,6 +15,7 @@
 	IBOutlet UILabel *subtitle;
 	IBOutlet UITextView *description;
 	IBOutlet UILabel *date;
+	IBOutlet UILabel *length;
 	IBOutlet UIButton *back;
 	cmythProgram *prog;
 }
@@ -23,6 +24,7 @@
 @property (retain,nonatomic) UILabel *subtitle;
 @property (retain,nonatomic) UITextView *description;
 @property (retain,nonatomic) UILabel *date;
+@property (retain,nonatomic) UILabel *length;
 @property (retain,nonatomic) UIButton *back;
 @property (nonatomic, retain) cmythProgram *prog;
 
@@ -30,6 +32,7 @@
 -(IBAction) playOriginal:(id) sender;
 -(IBAction) playTranscoded:(id) sender;
 -(IBAction) transcode:(id) sender;
+-(IBAction) stopTranscode:(id) sender;
 
 -(void)popup:(NSString*)title message:(NSString*)message;
 -(void)play_movie:(int)port;

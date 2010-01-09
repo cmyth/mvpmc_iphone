@@ -111,6 +111,10 @@
 	}
 }
 
+-(IBAction) stopTranscode:(id) sender
+{
+}
+
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -125,11 +129,20 @@
 	NSString *s = [prog subtitle];
 	NSString *d = [prog description];
 	NSString *start = [prog date];
+	int sec = [prog seconds];
+	int h, m;
+
+	h = (sec / (60*60));
+	sec -= (h * 60 * 60);
+	m = (sec / 60);
+
+	NSString *l = [NSString stringWithFormat:@"%.2d:%.2d",h,m];
 
 	title.text = t;
 	subtitle.text = s;
 	description.text = d;
 	date.text = start;
+	length.text = l;
 
 	[super viewDidLoad];
 }

@@ -338,7 +338,7 @@
 					<object class="IBUIButton" id="902876773">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{256, 20}, {44, 25}}</string>
+						<string key="NSFrame">{{283, 0}, {37, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -349,14 +349,16 @@
 							<double key="NSSize">12</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Help!</string>
 						<reference key="IBUIHighlightedTitleColor" ref="888849923"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAwIDAAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="715278237"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">Help.tiff</string>
+						</object>
 					</object>
 					<object class="IBUITextField" id="226966942">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -580,7 +582,6 @@
 							<reference ref="142590560"/>
 							<reference ref="373016142"/>
 							<reference ref="485720955"/>
-							<reference ref="902876773"/>
 							<reference ref="226966942"/>
 							<reference ref="655868043"/>
 							<reference ref="528179557"/>
@@ -594,6 +595,7 @@
 							<reference ref="345808257"/>
 							<reference ref="202628736"/>
 							<reference ref="833438439"/>
+							<reference ref="902876773"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

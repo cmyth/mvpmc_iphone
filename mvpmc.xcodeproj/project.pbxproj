@@ -21,7 +21,6 @@
 		BF58471110D9BC4600EE0B3E /* MythView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58470F10D9BC4600EE0B3E /* MythView.xib */; };
 		BF58471510D9BC8F00EE0B3E /* mvpmc_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471410D9BC8F00EE0B3E /* mvpmc_button.png */; };
 		BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */; };
-		BF58472010D9C13A00EE0B3E /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471F10D9C13A00EE0B3E /* tab.png */; };
 		BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF58474910D9DDE900EE0B3E /* Settings.bundle */; };
 		BF58477210D9E3C100EE0B3E /* URLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58477010D9E3C100EE0B3E /* URLViewController.m */; };
 		BF58477310D9E3C100EE0B3E /* URLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58477110D9E3C100EE0B3E /* URLView.xib */; };
@@ -43,6 +42,11 @@
 		BF8FF29110F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */; };
 		BF8FF2B710F170A900094FD8 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF2B510F170A900094FD8 /* HelpViewController.m */; };
 		BF8FF2B810F170A900094FD8 /* HelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF2B610F170A900094FD8 /* HelpView.xib */; };
+		BF8FF50410F76DE600094FD8 /* Help.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF50310F76DE600094FD8 /* Help.tiff */; };
+		BF8FF50610F76DF200094FD8 /* SnapBack.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF50510F76DF200094FD8 /* SnapBack.tiff */; };
+		BF8FF52A10F815FA00094FD8 /* Play.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF52910F815FA00094FD8 /* Play.tiff */; };
+		BF8FF53810F8193A00094FD8 /* Record.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF53710F8193A00094FD8 /* Record.tiff */; };
+		BF8FF53A10F8195A00094FD8 /* Stop.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF53910F8195A00094FD8 /* Stop.tiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +87,6 @@
 		BF58470F10D9BC4600EE0B3E /* MythView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MythView.xib; sourceTree = "<group>"; };
 		BF58471410D9BC8F00EE0B3E /* mvpmc_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mvpmc_button.png; sourceTree = "<group>"; };
 		BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mvpmc_logo.png; sourceTree = "<group>"; };
-		BF58471F10D9C13A00EE0B3E /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
 		BF58474910D9DDE900EE0B3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BF58476F10D9E3C100EE0B3E /* URLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLViewController.h; sourceTree = "<group>"; };
 		BF58477010D9E3C100EE0B3E /* URLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLViewController.m; sourceTree = "<group>"; };
@@ -109,6 +112,11 @@
 		BF8FF2B410F170A900094FD8 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		BF8FF2B510F170A900094FD8 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		BF8FF2B610F170A900094FD8 /* HelpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpView.xib; sourceTree = "<group>"; };
+		BF8FF50310F76DE600094FD8 /* Help.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Help.tiff; path = icons/Help.tiff; sourceTree = "<group>"; };
+		BF8FF50510F76DF200094FD8 /* SnapBack.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = SnapBack.tiff; path = icons/SnapBack.tiff; sourceTree = "<group>"; };
+		BF8FF52910F815FA00094FD8 /* Play.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Play.tiff; path = icons/Play.tiff; sourceTree = "<group>"; };
+		BF8FF53710F8193A00094FD8 /* Record.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Record.tiff; path = icons/Record.tiff; sourceTree = "<group>"; };
+		BF8FF53910F8195A00094FD8 /* Stop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Stop.tiff; path = icons/Stop.tiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +180,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF53910F8195A00094FD8 /* Stop.tiff */,
+				BF8FF53710F8193A00094FD8 /* Record.tiff */,
+				BF8FF52910F815FA00094FD8 /* Play.tiff */,
+				BF8FF50510F76DF200094FD8 /* SnapBack.tiff */,
+				BF8FF50310F76DE600094FD8 /* Help.tiff */,
 				BF8FF2B610F170A900094FD8 /* HelpView.xib */,
 				BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */,
 				BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */,
@@ -187,7 +200,6 @@
 				BF58499110DD2A0A00EE0B3E /* 70-tv.png */,
 				BF58498D10DD299E00EE0B3E /* 19-gear.png */,
 				BF58474910D9DDE900EE0B3E /* Settings.bundle */,
-				BF58471F10D9C13A00EE0B3E /* tab.png */,
 				BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */,
 				BF58471410D9BC8F00EE0B3E /* mvpmc_button.png */,
 				28C3AD890F43EF2300507BA6 /* mvpmc.xcdatamodel */,
@@ -301,7 +313,6 @@
 				BF58471110D9BC4600EE0B3E /* MythView.xib in Resources */,
 				BF58471510D9BC8F00EE0B3E /* mvpmc_button.png in Resources */,
 				BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */,
-				BF58472010D9C13A00EE0B3E /* tab.png in Resources */,
 				BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */,
 				BF58477310D9E3C100EE0B3E /* URLView.xib in Resources */,
 				BF58498E10DD299E00EE0B3E /* 19-gear.png in Resources */,
@@ -317,6 +328,11 @@
 				BF8FF28F10F15C6600094FD8 /* VLC_media_player_icon.png in Resources */,
 				BF8FF29110F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png in Resources */,
 				BF8FF2B810F170A900094FD8 /* HelpView.xib in Resources */,
+				BF8FF50410F76DE600094FD8 /* Help.tiff in Resources */,
+				BF8FF50610F76DF200094FD8 /* SnapBack.tiff in Resources */,
+				BF8FF52A10F815FA00094FD8 /* Play.tiff in Resources */,
+				BF8FF53810F8193A00094FD8 /* Record.tiff in Resources */,
+				BF8FF53A10F8195A00094FD8 /* Stop.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
