@@ -32,12 +32,13 @@
 
 -(void)connect
 {
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString *host = [userDefaults stringForKey:@"myth_host"];
 	NSString *port = [userDefaults stringForKey:@"myth_port"];
 
 	if (port == nil) {
-		port = @"0";
+		port = [[NSString alloc] initWithFormat:@"0"];
 	}
 
 	if (host != nil) {
@@ -45,6 +46,9 @@
 	}
 
 	[host release];
+	[port release];
+
+	[pool release];
 }
 
 -(void)populateTable
@@ -69,6 +73,8 @@
 		[self popup:@"Error" message:@"No recordings found!"];
 		return;
 	}
+
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
 	NSMutableSet *set = [[NSMutableSet alloc] init];
 
@@ -99,6 +105,8 @@
 		[counts addObject:num];
 		[num release];
 	}
+
+	[pool release];
 }
 
 -(void)eraseTable
