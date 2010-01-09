@@ -524,6 +524,8 @@
 			BF8FF5E710F90CC000094FD8 /* PBXTextBookmark */ = BF8FF5E710F90CC000094FD8 /* PBXTextBookmark */;
 			BF8FF5E910F915B300094FD8 /* PBXTextBookmark */ = BF8FF5E910F915B300094FD8 /* PBXTextBookmark */;
 			BF8FF5EB10F91E1D00094FD8 /* PBXTextBookmark */ = BF8FF5EB10F91E1D00094FD8 /* PBXTextBookmark */;
+			BF8FF5EF10F935C700094FD8 /* PBXTextBookmark */ = BF8FF5EF10F935C700094FD8 /* PBXTextBookmark */;
+			BF8FF5F010F935C700094FD8 /* PlistBookmark */ = BF8FF5F010F935C700094FD8 /* PlistBookmark */;
 			BF9D84AD10E6DEE9009ADE21 = BF9D84AD10E6DEE9009ADE21 /* PBXTextBookmark */;
 			BFF0ED0310E40C3600A2CC94 = BFF0ED0310E40C3600A2CC94 /* PBXTextBookmark */;
 		};
@@ -2826,9 +2828,9 @@
 	};
 	BF8FF59110F8EC8400094FD8 /* LicenseViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 832}}";
-			sepNavSelRange = "{1650, 0}";
-			sepNavVisRange = "{145, 179}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 1014}}";
+			sepNavSelRange = "{2297, 0}";
+			sepNavVisRange = "{145, 646}";
 		};
 	};
 	BF8FF59610F8ECB100094FD8 /* PlistBookmark */ = {
@@ -3143,6 +3145,28 @@
 		rType = 0;
 		vrLen = 439;
 		vrLoc = 0;
+	};
+	BF8FF5EF10F935C700094FD8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF8FF5DD10F90B2800094FD8 /* help.html */;
+		name = "help.html: 36";
+		rLen = 0;
+		rLoc = 623;
+		rType = 0;
+		vrLen = 439;
+		vrLoc = 0;
+	};
+	BF8FF5F010F935C700094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 	BF9D849910E6DE1D009ADE21 /* api.m */ = {
 		isa = PBXFileReference;

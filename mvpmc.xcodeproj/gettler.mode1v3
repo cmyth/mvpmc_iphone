@@ -310,7 +310,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>help.html</string>
+								<string>entitlements.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -318,11 +318,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>help.html</string>
+										<string>entitlements.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF8FF5EB10F91E1D00094FD8</string>
+										<string>BF8FF5F010F935C700094FD8</string>
 										<key>history</key>
 										<array>
 											<string>BF58474410D9C8A900EE0B3E</string>
@@ -355,11 +355,11 @@
 											<string>BF8FF59710F8ECB100094FD8</string>
 											<string>BF8FF59F10F8EE5800094FD8</string>
 											<string>BF8FF5BA10F9057600094FD8</string>
-											<string>BF8FF5BB10F9057600094FD8</string>
 											<string>BF8FF5CE10F9095300094FD8</string>
 											<string>BF8FF5DB10F90B0C00094FD8</string>
 											<string>BF8FF5E510F90CC000094FD8</string>
-											<string>BF8FF5E610F90CC000094FD8</string>
+											<string>BF8FF5EF10F935C700094FD8</string>
+											<string>BF8FF5BB10F9057600094FD8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
