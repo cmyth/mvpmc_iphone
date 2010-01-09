@@ -20,14 +20,14 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HelpViewController : UIViewController {
+@interface LicenseViewController : UIViewController {
 	IBOutlet UIButton *back;
-	IBOutlet UIWebView *help;
+	IBOutlet UIWebView *html;
 }
 
 -(IBAction) hide:(id) sender;
 
 @property (retain,nonatomic) UIButton *back;
-@property (retain,nonatomic) UIWebView *help;
+@property (retain,nonatomic) UIWebView *html;
 
 @end

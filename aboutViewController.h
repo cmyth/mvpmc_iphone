@@ -22,13 +22,16 @@
 
 @interface aboutViewController : UIViewController {
 	IBOutlet UIButton *link;
+	IBOutlet UIButton *license;
 	IBOutlet UILabel *version;
 	IBOutlet UILabel *ip;
 }
 
 -(IBAction)jump:(id)sender;
+-(IBAction)showLicense:(id)sender;
 
 @property (retain,nonatomic) UIButton *link;
+@property (retain,nonatomic) UIButton *license;
 @property (retain,nonatomic) UILabel *version;
 @property (retain,nonatomic) UILabel *ip;
 

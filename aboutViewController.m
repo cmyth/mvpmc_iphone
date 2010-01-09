@@ -18,6 +18,7 @@
  */
 
 #import "aboutViewController.h"
+#import "LicenseViewController.h"
 
 
 @implementation aboutViewController
@@ -29,6 +30,13 @@
 {
 	[[UIApplication sharedApplication]
 		openURL:[NSURL URLWithString:@"http://www.mvpmc.org"]];
+}
+
+-(IBAction)showLicense:(id)sender
+{
+	LicenseViewController *licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseView" bundle:nil];
+	[self presentModalViewController:licenseViewController animated:YES];
+	[licenseViewController release];
 }
 
 /*

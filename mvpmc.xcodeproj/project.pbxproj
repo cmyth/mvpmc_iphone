@@ -47,6 +47,10 @@
 		BF8FF52A10F815FA00094FD8 /* Play.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF52910F815FA00094FD8 /* Play.tiff */; };
 		BF8FF53810F8193A00094FD8 /* Record.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF53710F8193A00094FD8 /* Record.tiff */; };
 		BF8FF53A10F8195A00094FD8 /* Stop.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF53910F8195A00094FD8 /* Stop.tiff */; };
+		BF8FF59310F8EC8400094FD8 /* LicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF59110F8EC8400094FD8 /* LicenseViewController.m */; };
+		BF8FF59410F8EC8400094FD8 /* LicenseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF59210F8EC8400094FD8 /* LicenseView.xib */; };
+		BF8FF5B210F9041B00094FD8 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF5B110F9041B00094FD8 /* license.html */; };
+		BF8FF5DE10F90B2800094FD8 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF5DD10F90B2800094FD8 /* help.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,11 @@
 		BF8FF52910F815FA00094FD8 /* Play.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Play.tiff; path = icons/Play.tiff; sourceTree = "<group>"; };
 		BF8FF53710F8193A00094FD8 /* Record.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Record.tiff; path = icons/Record.tiff; sourceTree = "<group>"; };
 		BF8FF53910F8195A00094FD8 /* Stop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Stop.tiff; path = icons/Stop.tiff; sourceTree = "<group>"; };
+		BF8FF59010F8EC8400094FD8 /* LicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseViewController.h; sourceTree = "<group>"; };
+		BF8FF59110F8EC8400094FD8 /* LicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicenseViewController.m; sourceTree = "<group>"; };
+		BF8FF59210F8EC8400094FD8 /* LicenseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseView.xib; sourceTree = "<group>"; };
+		BF8FF5B110F9041B00094FD8 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
+		BF8FF5DD10F90B2800094FD8 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +189,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF5DD10F90B2800094FD8 /* help.html */,
+				BF8FF5B110F9041B00094FD8 /* license.html */,
 				BF8FF53910F8195A00094FD8 /* Stop.tiff */,
 				BF8FF53710F8193A00094FD8 /* Record.tiff */,
 				BF8FF52910F815FA00094FD8 /* Play.tiff */,
@@ -206,6 +217,7 @@
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* mvpmc-Info.plist */,
 				BF8FF17B10F1291200094FD8 /* ProgramView.xib */,
+				BF8FF59210F8EC8400094FD8 /* LicenseView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -233,6 +245,8 @@
 		BF584B4C10DDBBF400EE0B3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF59010F8EC8400094FD8 /* LicenseViewController.h */,
+				BF8FF59110F8EC8400094FD8 /* LicenseViewController.m */,
 				BF8FF2B410F170A900094FD8 /* HelpViewController.h */,
 				BF8FF2B510F170A900094FD8 /* HelpViewController.m */,
 				BF8FF17910F1291200094FD8 /* ProgramViewController.h */,
@@ -333,6 +347,9 @@
 				BF8FF52A10F815FA00094FD8 /* Play.tiff in Resources */,
 				BF8FF53810F8193A00094FD8 /* Record.tiff in Resources */,
 				BF8FF53A10F8195A00094FD8 /* Stop.tiff in Resources */,
+				BF8FF59410F8EC8400094FD8 /* LicenseView.xib in Resources */,
+				BF8FF5B210F9041B00094FD8 /* license.html in Resources */,
+				BF8FF5DE10F90B2800094FD8 /* help.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +369,7 @@
 				BF584B2310DDB8DD00EE0B3E /* aboutViewController.m in Sources */,
 				BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */,
 				BF8FF2B710F170A900094FD8 /* HelpViewController.m in Sources */,
+				BF8FF59310F8EC8400094FD8 /* LicenseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

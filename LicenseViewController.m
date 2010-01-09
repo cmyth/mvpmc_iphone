@@ -17,12 +17,12 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#import "HelpViewController.h"
+#import "LicenseViewController.h"
 
 
-@implementation HelpViewController
+@implementation LicenseViewController
 
-@synthesize help;
+@synthesize html;
 
 -(IBAction) hide:(id) sender
 {
@@ -41,7 +41,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	[help loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"help" ofType:@"html"]isDirectory:NO]]];
+	[html loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"license" ofType:@"html"]isDirectory:NO]]];
 	[super viewDidLoad];
 }
 
