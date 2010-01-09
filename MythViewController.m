@@ -220,7 +220,9 @@
 	[lock unlock];
 
 	if (reload == YES) {
+		NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 		[self.tableView reloadData];
+		[pool release];
 	}
 }
 
