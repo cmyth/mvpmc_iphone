@@ -266,16 +266,18 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>22</integer>
 									<integer>6</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 575}}</string>
+							<string>{{0, 103}, {186, 575}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +324,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF8FF5F010F935C700094FD8</string>
+										<string>BF8FF64810FA401200094FD8</string>
 										<key>history</key>
 										<array>
 											<string>BF58474410D9C8A900EE0B3E</string>
@@ -343,7 +345,6 @@
 											<string>BF8FF2A210F1645B00094FD8</string>
 											<string>BF8FF2BB10F170C000094FD8</string>
 											<string>BF8FF2FA10F1931800094FD8</string>
-											<string>BF8FF30710F199EA00094FD8</string>
 											<string>BF8FF3F010F41F5500094FD8</string>
 											<string>BF8FF48110F571ED00094FD8</string>
 											<string>BF8FF50B10F7709000094FD8</string>
@@ -351,7 +352,6 @@
 											<string>BF8FF54110F8355800094FD8</string>
 											<string>BF8FF54210F8355800094FD8</string>
 											<string>BF8FF58310F8D86700094FD8</string>
-											<string>BF8FF58410F8D86700094FD8</string>
 											<string>BF8FF59710F8ECB100094FD8</string>
 											<string>BF8FF59F10F8EE5800094FD8</string>
 											<string>BF8FF5BA10F9057600094FD8</string>
@@ -359,7 +359,9 @@
 											<string>BF8FF5DB10F90B0C00094FD8</string>
 											<string>BF8FF5E510F90CC000094FD8</string>
 											<string>BF8FF5EF10F935C700094FD8</string>
-											<string>BF8FF5BB10F9057600094FD8</string>
+											<string>BF8FF5FF10F93A7000094FD8</string>
+											<string>BF8FF61C10FA342300094FD8</string>
+											<string>BF8FF5F610F937EC00094FD8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -557,13 +559,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>BF8FF64910FA401200094FD8</string>
 		<string>BF8FF46010F558F900094FD8</string>
 		<string>BF8FF21710F1422200094FD8</string>
 		<string>BF8FF21110F1417E00094FD8</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>BF58472610D9C2F400EE0B3E</string>
 		<string>/Users/gettler/iphone/mvpmc/mvpmc.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>408 229 785 634 0 0 1440 878 </string>
@@ -947,7 +950,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

@@ -181,7 +181,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = BF5846F610D9BAD000EE0B3E /* mvpmc */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* mvpmc */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* mvpmc */,
@@ -526,6 +526,15 @@
 			BF8FF5EB10F91E1D00094FD8 /* PBXTextBookmark */ = BF8FF5EB10F91E1D00094FD8 /* PBXTextBookmark */;
 			BF8FF5EF10F935C700094FD8 /* PBXTextBookmark */ = BF8FF5EF10F935C700094FD8 /* PBXTextBookmark */;
 			BF8FF5F010F935C700094FD8 /* PlistBookmark */ = BF8FF5F010F935C700094FD8 /* PlistBookmark */;
+			BF8FF5F610F937EC00094FD8 /* PlistBookmark */ = BF8FF5F610F937EC00094FD8 /* PlistBookmark */;
+			BF8FF5F710F937EC00094FD8 /* PlistBookmark */ = BF8FF5F710F937EC00094FD8 /* PlistBookmark */;
+			BF8FF5FD10F93A6D00094FD8 /* PBXTextBookmark */ = BF8FF5FD10F93A6D00094FD8 /* PBXTextBookmark */;
+			BF8FF5FF10F93A7000094FD8 /* PlistBookmark */ = BF8FF5FF10F93A7000094FD8 /* PlistBookmark */;
+			BF8FF60010F93A7000094FD8 /* PlistBookmark */ = BF8FF60010F93A7000094FD8 /* PlistBookmark */;
+			BF8FF60110F93A7000094FD8 /* PlistBookmark */ = BF8FF60110F93A7000094FD8 /* PlistBookmark */;
+			BF8FF61C10FA342300094FD8 /* PlistBookmark */ = BF8FF61C10FA342300094FD8 /* PlistBookmark */;
+			BF8FF61D10FA342300094FD8 /* PlistBookmark */ = BF8FF61D10FA342300094FD8 /* PlistBookmark */;
+			BF8FF64810FA401200094FD8 /* PlistBookmark */ = BF8FF64810FA401200094FD8 /* PlistBookmark */;
 			BF9D84AD10E6DEE9009ADE21 = BF9D84AD10E6DEE9009ADE21 /* PBXTextBookmark */;
 			BFF0ED0310E40C3600A2CC94 = BFF0ED0310E40C3600A2CC94 /* PBXTextBookmark */;
 		};
@@ -797,6 +806,13 @@
 		rType = 0;
 		vrLen = 402;
 		vrLoc = 3903;
+	};
+	BF8FF0EC10EECC9200094FD8 /* Myth_tv_logo.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = Myth_tv_logo.png;
+		path = /Users/gettler/iphone/mvpmc/images/Myth_tv_logo.png;
+		sourceTree = "<absolute>";
 	};
 	BF8FF0F510EED78300094FD8 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -1285,6 +1301,20 @@
 		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
 		rLen = 0;
 		rLoc = 9223372036854775807;
+	};
+	BF8FF28E10F15C6600094FD8 /* VLC_media_player_icon.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = VLC_media_player_icon.png;
+		path = /Users/gettler/iphone/mvpmc/images/VLC_media_player_icon.png;
+		sourceTree = "<absolute>";
+	};
+	BF8FF29010F15C7100094FD8 /* 500px-WWW_logo_by_Robert_Cailliau.svg.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "500px-WWW_logo_by_Robert_Cailliau.svg.png";
+		path = "/Users/gettler/iphone/mvpmc/images/500px-WWW_logo_by_Robert_Cailliau.svg.png";
+		sourceTree = "<absolute>";
 	};
 	BF8FF29710F15F6400094FD8 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -2830,7 +2860,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {914, 1014}}";
 			sepNavSelRange = "{2297, 0}";
-			sepNavVisRange = "{145, 646}";
+			sepNavVisRange = "{145, 681}";
 		};
 	};
 	BF8FF59610F8ECB100094FD8 /* PlistBookmark */ = {
@@ -3157,6 +3187,109 @@
 		vrLoc = 0;
 	};
 	BF8FF5F010F935C700094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF5F610F937EC00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF5F710F937EC00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF5FD10F93A6D00094FD8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF8FF59110F8EC8400094FD8 /* LicenseViewController.m */;
+		name = "LicenseViewController.m: 75";
+		rLen = 0;
+		rLoc = 2297;
+		rType = 0;
+		vrLen = 646;
+		vrLoc = 145;
+	};
+	BF8FF5FF10F93A7000094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF60010F93A7000094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF58475A10D9DE8000EE0B3E /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF60110F93A7000094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF58475A10D9DE8000EE0B3E /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			PreferenceSpecifiers,
+			6,
+		);
+		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF61C10FA342300094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF58475A10D9DE8000EE0B3E /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/gettler/iphone/mvpmc/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF61D10FA342300094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF64810FA401200094FD8 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
 		fallbackIsa = PBXBookmark;

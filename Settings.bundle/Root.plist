@@ -100,27 +100,9 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>WWW Path</string>
+			<string>URL Base</string>
 			<key>Key</key>
-			<string>www_path</string>
-			<key>DefaultValue</key>
-			<string></string>
-			<key>IsSecure</key>
-			<false/>
-			<key>KeyboardType</key>
-			<string>NumbersAndPunctuation</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>WWW IP Address</string>
-			<key>Key</key>
-			<string>www_host</string>
+			<string>www_base</string>
 			<key>DefaultValue</key>
 			<string></string>
 			<key>IsSecure</key>

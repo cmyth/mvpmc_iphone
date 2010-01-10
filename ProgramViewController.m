@@ -74,11 +74,9 @@
 -(IBAction) playTranscoded:(id) sender
 {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	NSString *www_host = [userDefaults stringForKey:@"www_host"];
-	NSString *www_path = [userDefaults stringForKey:@"www_path"];
+	NSString *www_base = [userDefaults stringForKey:@"www_base"];
 
-	if (([www_host isEqualToString: @""]) ||
-	    ([www_path isEqualToString: @""])) {
+	if ([www_base isEqualToString: @""]) {
 		[self popup:@"Error!" message:@"WWW options not set!"];
 		return;
 	}
@@ -89,7 +87,7 @@
 	NSURL *URL;
 	NSString *url;
 
-	url = [NSString stringWithFormat:@"http://%@/%@/%@.mp4",www_host,www_path,fn];
+	url = [NSString stringWithFormat:@"%@/%@.mp4",www_base,fn];
 	URL = [NSURL URLWithString: url];
 
 	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];

@@ -5,12 +5,26 @@
 
 <body>
 
-<h2>Help</h2>
+<h1>mvpmc Help</h1>
+
+<h2>Theory of Operation</h2>
 
 <p>
+The iphone is capable of playing low bandwith MPEG-4 and H.264
+videos.  This will probably require you to transcode your MythTV
+recordings.  If your original recordings are playable on the iphone
+then you can ignore the VLC and web server settings.
 </p>
 
-<h3>MythTV Setup</h3>
+<p>
+mvpmc will allow you to initiate the transcoding of your MythTV
+recordings via VLC.  It will then allow you to play them via a web
+server.  Unfourtunately, the transcoding must complete before the
+recording will be watchable.  Depending on your resources, this could
+take a very long time.
+</p>
+
+<h2>MythTV Setup</h2>
 
 <p>
 You need to provide the IP address or hostname of your master MythTV
@@ -18,18 +32,45 @@ backend.  You may also specify the port, if you are using a
 non-standard port number.
 </p>
 
-<h3>VLC Setup</h3>
+<h2>VLC Setup</h2>
 
 <p>
-In order to initiate transcoding, you will need to privide the IP
-address or hostname where VLC is running.
+In order to initiate transcoding, you will need to provide the IP
+address or hostname where VLC is running.  You also need to provide
+the pathname where the MythTV recordings are as well as the pathname
+where the transcoded files should be stored.
 </p>
 
-<h3>Web Server Setup</h3>
+<p>
+You will need to make sure that VLC is running with the telnet
+interface.  This can be done by starting it with the <i>vlc -I
+telnet</i> command.
+</p>
+
+<h2>Web Server Setup</h2>
 
 <p>
 In order to watch transcoded recordings, you will need to provide the
-base URL for the web server that will serve the files.
+base URL for the web server that will serve the files.  The URL should
+be include the protocol, port number (if required), and path, such as
+<i>http://192.168.1.1/mnt/mythtv/</i>.
+</p>
+
+<p>
+The VLC transcoding will be done by appending <i>.mp4</i> to the name
+of the recording and storing it in the VLC output path.  If you wish
+to do this outside of mvpmc so that your recordings are always
+playable on the iphone, then make sure they have the same filename as
+mvpmc will expect.
+</p>
+
+<h2>Extra Information</h2>
+
+<p>
+The MythTV backend, VLC server, and web server can be on three
+seperate systems.  If this is the case, you need to make sure that the
+VLC server has access to the original recordings, and that the web
+server has access to the transcoded recordings.
 </p>
 
 </body> </html>

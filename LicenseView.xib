@@ -91,7 +91,7 @@
 					<object class="IBUIImageView" id="167651951">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{181, 1}, {154, 43}}</string>
+						<string key="NSFrame">{{200, 0}, {120, 42}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -198,8 +198,8 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="176365254"/>
-							<reference ref="167651951"/>
 							<reference ref="932619104"/>
+							<reference ref="167651951"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

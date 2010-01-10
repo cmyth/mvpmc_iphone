@@ -52,16 +52,14 @@
 	[userDefaults setObject:vlc_host.text forKey:@"vlc_host"];
 	[userDefaults setObject:vlc_path.text forKey:@"vlc_path"];
 
-	[userDefaults setObject:www_host.text forKey:@"www_host"];
-	[userDefaults setObject:www_path.text forKey:@"www_path"];
+	[userDefaults setObject:www_base.text forKey:@"www_base"];
 
 	[host resignFirstResponder];
 	[port resignFirstResponder];
 	[path resignFirstResponder];
 	[vlc_host resignFirstResponder];
 	[vlc_path resignFirstResponder];
-	[www_host resignFirstResponder];
-	[www_path resignFirstResponder];
+	[www_base resignFirstResponder];
 }
 
 -(IBAction) display_help:(id) sender
@@ -105,12 +103,11 @@
 	vlc_host.text = [userDefaults stringForKey:@"vlc_host"];
 	vlc_path.text = [userDefaults stringForKey:@"vlc_path"];
 
-	www_host.text = [userDefaults stringForKey:@"www_host"];
-	www_path.text = [userDefaults stringForKey:@"www_path"];
+	www_base.text = [userDefaults stringForKey:@"www_base"];
 
-	www_host.delegate = self;
-	www_path.delegate = self;
+	www_base.delegate = self;
 	vlc_path.delegate = self;
+	path.delegate = self;
 
 	[super viewDidLoad];
 }
@@ -145,27 +142,25 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-	NSLog(@"edit begin...");
 	[self animateTextField: textField up: YES];
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
-	NSLog(@"edit end...");
 	[self animateTextField: textField up: NO];
 }
 
 -(void)animateTextField:(UITextField*)textField up:(BOOL)up
 {
 	int distance;
-	float duration = 0.3f;
+	float duration = 0.25f;
 
-	if (textField == www_host) {
-		distance = 110;
-	} else if (textField == www_path) {
-		distance = 150;
+	if (textField == www_base) {
+		distance = 135;
 	} else if (textField == vlc_path) {
-		distance = 40;
+		distance = 60;
+	} else if (textField == path) {
+		distance = 20;
 	} else {
 		return;
 	}
