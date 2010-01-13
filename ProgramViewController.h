@@ -28,7 +28,10 @@
 	IBOutlet UILabel *date;
 	IBOutlet UILabel *length;
 	IBOutlet UIButton *back;
+	IBOutlet UIProgressView *progress;
 	cmythProgram *prog;
+	cmythFile *file;
+	NSTimer *timer;
 }
 
 @property (retain,nonatomic) UILabel *title;
@@ -37,6 +40,7 @@
 @property (retain,nonatomic) UILabel *date;
 @property (retain,nonatomic) UILabel *length;
 @property (retain,nonatomic) UIButton *back;
+@property (retain,nonatomic) UIProgressView *progress;
 @property (nonatomic, retain) cmythProgram *prog;
 
 -(IBAction) hide:(id) sender;
@@ -44,6 +48,7 @@
 -(IBAction) playTranscoded:(id) sender;
 -(IBAction) transcode:(id) sender;
 -(IBAction) stopTranscode:(id) sender;
+-(void)handleTimer:(NSTimer*)timer;
 
 -(void)popup:(NSString*)title message:(NSString*)message;
 -(void)play_movie:(int)port;

@@ -81,6 +81,11 @@
 		return;
 	}
 
+	if (file) {
+		[self popup:@"Error!" message:@"VLC transcode in progress!"];
+		return;
+	}
+
 	NSString *fn = [prog pathname];
 
 	MPMoviePlayerController *player;
@@ -108,20 +113,82 @@
 		return;
 	}
 
-	cmythFile *f = [[cmythFile alloc]
-			       transcodeWith:prog
-			       mythPath:myth_path
-			       vlcHost:vlc_host vlcPath:vlc_path];
+	if (file) {
+		cmythTranscodeState state = [file transcodeState];
+		if (state == CMYTH_TRANSCODE_IN_PROGRESS) {
+			[self popup:@"Error!"
+			      message:@"VLC transcode is already running!"];
+			return;
+		}
+	}
 
-	if (f) {
-		[self popup:@"Started!" message:@"VLC transcode is underway!"];
-	} else {
+	progress.progress = 0.0;
+
+	file = [[cmythFile alloc]
+		       transcodeWith:prog
+		       mythPath:myth_path
+		       vlcHost:vlc_host vlcPath:vlc_path];
+
+	if (file == nil) {
+		NSLog(@"file returned nil");
 		[self popup:@"Error!" message:@"VLC transcode failed!"];
+		return;
+	}
+
+	// Check status
+	while (([file transcodeState] == CMYTH_TRANSCODE_UNKNOWN) ||
+	       ([file transcodeState] == CMYTH_TRANSCODE_STARTING)) {
+		usleep(10);
+	}
+
+	NSLog(@"transcodeState %d",[file transcodeState]);
+
+	switch ([file transcodeState]) {
+	case CMYTH_TRANSCODE_IN_PROGRESS:
+		break;
+	case CMYTH_TRANSCODE_ERROR:
+	default:
+		NSLog(@"transcode is in a bad state");
+		[self popup:@"Error!" message:@"VLC transcode failed!"];
+		return;
+	}
+
+	// Schedule timer to update progress
+	timer = [NSTimer scheduledTimerWithTimeInterval: 3.0
+			 target: self
+			 selector: @selector(handleTimer:)
+			 userInfo: nil
+			 repeats: YES];
+
+}
+
+-(void)handleTimer:(NSTimer*)timer
+{
+	if (file) {
+		float p = [file transcodeProgress];
+
+		progress.progress = p;
 	}
 }
 
 -(IBAction) stopTranscode:(id) sender
 {
+	if (file == nil) {
+		[self popup:@"Error!" message:@"VLC transcode not in progress!"];
+		return;
+	}
+
+	NSLog(@"Stop transcode");
+
+	[file transcodeStop];
+
+	progress.progress = 0.0;
+
+	NSLog(@"stopped");
+
+	[timer invalidate];
+	[file release];
+	file = nil;
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -178,7 +245,10 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+	if (timer) {
+		[timer invalidate];
+	}
+	[super dealloc];
 }
 
 
