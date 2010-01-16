@@ -25,6 +25,13 @@
 
 @synthesize prog;
 @synthesize title;
+@synthesize subtitle;
+@synthesize description;
+@synthesize date;
+@synthesize length;
+@synthesize back;
+@synthesize progress;
+@synthesize progressLabel;
 
 -(void)popup:(NSString*)title
      message:(NSString*)message

@@ -23,6 +23,7 @@
 @implementation LicenseViewController
 
 @synthesize html;
+@synthesize back;
 
 -(IBAction) hide:(id) sender
 {

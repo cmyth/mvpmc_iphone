@@ -26,6 +26,14 @@
 
 @synthesize host;
 @synthesize port;
+@synthesize path;
+@synthesize vlc_host;
+@synthesize vlc_path;
+@synthesize vlc_port;
+@synthesize www_base;
+@synthesize vlc;
+@synthesize test;
+@synthesize help;
 
 -(void)popup:(NSString*)title
      message:(NSString*)message

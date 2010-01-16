@@ -140,7 +140,6 @@
 		    atRow:(int) row
 {
 	int i, n, count, limit;
-	NSString *subtitle = nil;
 	cmythProgram *rc = nil;
 
 	n = [list count];
@@ -271,7 +270,7 @@
 			if (ip) {
 				[ip release];
 			}
-			char *h = [host UTF8String];
+			const char *h = [host UTF8String];
 			ip = [[NSString alloc] initWithUTF8String:h];
 		}
 		[NSThread detachNewThreadSelector:@selector(loadData)

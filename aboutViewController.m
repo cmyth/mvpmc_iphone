@@ -25,6 +25,8 @@
 
 @synthesize link;
 @synthesize version;
+@synthesize license;
+@synthesize ip;
 
 -(IBAction) jump:(id) sender
 {

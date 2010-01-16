@@ -23,6 +23,7 @@
 @implementation HelpViewController
 
 @synthesize help;
+@synthesize back;
 
 -(IBAction) hide:(id) sender
 {

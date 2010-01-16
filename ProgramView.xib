@@ -219,6 +219,7 @@
 								<reference key="IBUINavigationBar" ref="580393009"/>
 								<string key="IBUITitle"/>
 								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="845578108">
+									<int key="IBUIStyle">1</int>
 									<object class="IBUIButton" key="IBUICustomView" id="254193880">
 										<nil key="NSNextResponder"/>
 										<int key="NSvFlags">292</int>
