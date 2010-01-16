@@ -118,8 +118,8 @@
 		if (state == CMYTH_TRANSCODE_IN_PROGRESS) {
 			[self popup:@"Error!"
 			      message:@"VLC transcode is already running!"];
-			return;
 		}
+		return;
 	}
 
 	progress.progress = 0.0;
@@ -135,26 +135,8 @@
 		return;
 	}
 
-	// Check status
-	while (([file transcodeState] == CMYTH_TRANSCODE_UNKNOWN) ||
-	       ([file transcodeState] == CMYTH_TRANSCODE_STARTING)) {
-		usleep(10);
-	}
-
-	NSLog(@"transcodeState %d",[file transcodeState]);
-
-	switch ([file transcodeState]) {
-	case CMYTH_TRANSCODE_IN_PROGRESS:
-		break;
-	case CMYTH_TRANSCODE_ERROR:
-	default:
-		NSLog(@"transcode is in a bad state");
-		[self popup:@"Error!" message:@"VLC transcode failed!"];
-		return;
-	}
-
 	// Schedule timer to update progress
-	timer = [NSTimer scheduledTimerWithTimeInterval: 3.0
+	timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
 			 target: self
 			 selector: @selector(handleTimer:)
 			 userInfo: nil
@@ -165,6 +147,28 @@
 -(void)handleTimer:(NSTimer*)timer
 {
 	if (file) {
+		NSString *message = nil;
+
+		switch ([file transcodeState]) {
+		case CMYTH_TRANSCODE_CONNECT_FAILED:
+			message = @"VLC server not found!";
+			break;
+		case CMYTH_TRANSCODE_ERROR:
+			message = @"VLC transcode failed!";
+			break;
+		case CMYTH_TRANSCODE_STOPPED:
+			[timer invalidate];
+			[file release];
+			file = nil;
+			return;
+		}
+
+		if (message) {
+			[timer invalidate];
+			[self popup:@"Error!" message:message];
+			return;
+		}
+
 		float p = [file transcodeProgress];
 
 		progress.progress = p;
@@ -183,12 +187,6 @@
 	[file transcodeStop];
 
 	progress.progress = 0.0;
-
-	NSLog(@"stopped");
-
-	[timer invalidate];
-	[file release];
-	file = nil;
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -245,9 +243,6 @@
 
 
 - (void)dealloc {
-	if (timer) {
-		[timer invalidate];
-	}
 	[super dealloc];
 }
 

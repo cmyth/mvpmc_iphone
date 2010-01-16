@@ -24,14 +24,26 @@
 
 @synthesize url;
 @synthesize play;
+@synthesize url_1;
+@synthesize play_1;
+@synthesize url_2;
+@synthesize play_2;
+@synthesize url_3;
+@synthesize play_3;
 
 -(IBAction) hideKeyboard:(id) sender
 {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
-	[userDefaults setObject:url.text forKey:@"movie_url"];
+	[userDefaults setObject:url.text forKey:@"url_0"];
+	[userDefaults setObject:url_1.text forKey:@"url_1"];
+	[userDefaults setObject:url_2.text forKey:@"url_2"];
+	[userDefaults setObject:url_3.text forKey:@"url_3"];
 
 	[url resignFirstResponder];
+	[url_1 resignFirstResponder];
+	[url_2 resignFirstResponder];
+	[url_3 resignFirstResponder];
 }
 
 -(IBAction)play_movie:(id)sender
@@ -40,9 +52,24 @@
 	NSURL *URL;
 	UIAlertView *alert;
 	NSString *message = nil;
+	NSString *u;
 
-	if (url.text.length > 0) {
-		URL = [NSURL URLWithString: url.text];
+	[self hideKeyboard:nil];
+
+	if (sender == play) {
+		u = url.text;
+	} else if (sender == play_1) {
+		u = url_1.text;
+	} else if (sender == play_2) {
+		u = url_2.text;
+	} else if (sender == play_3) {
+		u = url_3.text;
+	} else {
+		return;
+	}
+
+	if (u.length > 0) {
+		URL = [NSURL URLWithString: u];
 
 		if (URL) {
 			if ([URL scheme]) {
@@ -85,9 +112,18 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	NSString *URL = [userDefaults stringForKey:@"movie_url"];
+	NSString *URL = [userDefaults stringForKey:@"url_0"];
+	NSString *URL_1 = [userDefaults stringForKey:@"url_1"];
+	NSString *URL_2 = [userDefaults stringForKey:@"url_2"];
+	NSString *URL_3 = [userDefaults stringForKey:@"url_3"];
 
 	url.text = URL;
+	url_1.text = URL_1;
+	url_2.text = URL_2;
+	url_3.text = URL_3;
+
+	url_2.delegate = self;
+	url_3.delegate = self;
 
 	[super viewDidLoad];
 }
@@ -112,6 +148,37 @@
 	// e.g. self.myOutlet = nil;
 }
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+	[self animateTextField: textField up: YES];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+	[self animateTextField: textField up: NO];
+}
+
+-(void)animateTextField:(UITextField*)textField up:(BOOL)up
+{
+	int distance;
+	float duration = 0.25f;
+
+	if (textField == url_2) {
+		distance = 70;
+	} else if (textField == url_3) {
+		distance = 145;
+	} else {
+		return;
+	}
+
+	int movement = (up ? -distance : distance);
+
+	[UIView beginAnimations: @"anim" context: nil];
+	[UIView setAnimationBeginsFromCurrentState: YES];
+	[UIView setAnimationDuration: duration];
+	self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+	[UIView commitAnimations];
+}
 
 - (void)dealloc {
 	[url release];

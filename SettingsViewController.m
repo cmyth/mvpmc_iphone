@@ -65,6 +65,7 @@
 -(IBAction) display_help:(id) sender
 {
 	HelpViewController *helpViewController = [[HelpViewController alloc] initWithNibName:@"HelpView" bundle:nil];
+	helpViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:helpViewController animated:YES];
 	[helpViewController release];
 }

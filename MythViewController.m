@@ -261,13 +261,19 @@
 	[lock lock];
 	if (active == nil) {
 		[self busy:YES];
-		if (![host isEqualToString: ip]) {
-			[myth release];
-			myth = nil;
-			[self eraseTable];
-			[self.tableView reloadData];
+		if (host) {
+			if (ip && ![host isEqualToString: ip]) {
+				[myth release];
+				myth = nil;
+				[self eraseTable];
+				[self.tableView reloadData];
+			}
+			if (ip) {
+				[ip release];
+			}
+			char *h = [host UTF8String];
+			ip = [[NSString alloc] initWithUTF8String:h];
 		}
-		ip = host;
 		[NSThread detachNewThreadSelector:@selector(loadData)
 			  toTarget:self withObject:nil];
 	}
@@ -374,6 +380,8 @@
 	ProgramViewController *programViewController = [[ProgramViewController alloc] initWithNibName:@"ProgramView" bundle:nil];
 	cmythProgram *p = [self atSection:indexPath.section atRow:indexPath.row];
 	programViewController.prog = p;
+//	programViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	programViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:programViewController animated:YES];
 	[programViewController release];
 }

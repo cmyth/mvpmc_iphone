@@ -35,6 +35,7 @@
 -(IBAction)showLicense:(id)sender
 {
 	LicenseViewController *licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseView" bundle:nil];
+	licenseViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:licenseViewController animated:YES];
 	[licenseViewController release];
 }
