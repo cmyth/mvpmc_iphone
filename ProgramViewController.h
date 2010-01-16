@@ -28,6 +28,7 @@
 	IBOutlet UILabel *date;
 	IBOutlet UILabel *length;
 	IBOutlet UIButton *back;
+	IBOutlet UILabel *progressLabel;
 	IBOutlet UIProgressView *progress;
 	cmythProgram *prog;
 	cmythFile *file;
@@ -40,6 +41,7 @@
 @property (retain,nonatomic) UILabel *date;
 @property (retain,nonatomic) UILabel *length;
 @property (retain,nonatomic) UIButton *back;
+@property (retain,nonatomic) UILabel *progressLabel;
 @property (retain,nonatomic) UIProgressView *progress;
 @property (nonatomic, retain) cmythProgram *prog;
 

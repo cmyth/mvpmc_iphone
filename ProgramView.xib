@@ -372,7 +372,7 @@
 					<object class="IBUIProgressView" id="1066811906">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{187, 399}, {113, 9}}</string>
+						<string key="NSFrame">{{20, 422}, {280, 9}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -397,7 +397,7 @@
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC42IDAuNiAwLjYgMC42AA</bytes>
+					<bytes key="NSRGB">MC44IDAuOCAwLjgAA</bytes>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 			</object>
@@ -514,6 +514,14 @@
 					</object>
 					<int key="connectionID">41</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">progressLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="653850463"/>
+					</object>
+					<int key="connectionID">42</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -546,8 +554,8 @@
 							<reference ref="166679926"/>
 							<reference ref="261054529"/>
 							<reference ref="638542841"/>
-							<reference ref="1066811906"/>
 							<reference ref="653850463"/>
+							<reference ref="1066811906"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -761,7 +769,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">41</int>
+			<int key="maxID">42</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -797,6 +805,7 @@
 							<string>description</string>
 							<string>length</string>
 							<string>progress</string>
+							<string>progressLabel</string>
 							<string>subtitle</string>
 							<string>title</string>
 						</object>
@@ -807,6 +816,7 @@
 							<string>UITextView</string>
 							<string>UILabel</string>
 							<string>UIProgressView</string>
+							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 						</object>

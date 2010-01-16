@@ -123,6 +123,8 @@
 	}
 
 	progress.progress = 0.0;
+	progress.hidden = NO;
+	progressLabel.hidden = NO;
 
 	file = [[cmythFile alloc]
 		       transcodeWith:prog
@@ -166,12 +168,16 @@
 		if (message) {
 			[timer invalidate];
 			[self popup:@"Error!" message:message];
+			progress.hidden = YES;
+			progressLabel.hidden = YES;
 			return;
 		}
 
 		float p = [file transcodeProgress];
 
 		progress.progress = p;
+		progress.hidden = NO;
+		progressLabel.hidden = NO;
 	}
 }
 
@@ -187,6 +193,8 @@
 	[file transcodeStop];
 
 	progress.progress = 0.0;
+	progress.hidden = YES;
+	progressLabel.hidden = YES;
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -217,6 +225,9 @@
 	description.text = d;
 	date.text = start;
 	length.text = l;
+
+	progress.hidden = YES;
+	progressLabel.hidden = YES;
 
 	[super viewDidLoad];
 }
