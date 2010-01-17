@@ -48,6 +48,8 @@
 		BF8FF59410F8EC8400094FD8 /* LicenseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF59210F8EC8400094FD8 /* LicenseView.xib */; };
 		BF8FF5B210F9041B00094FD8 /* license.html in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF5B110F9041B00094FD8 /* license.html */; };
 		BF8FF5DE10F90B2800094FD8 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF5DD10F90B2800094FD8 /* help.html */; };
+		BF8FF92E11028C4600094FD8 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF92D11028C4600094FD8 /* iTunesArtwork */; };
+		BF8FF96E1103BF0800094FD8 /* transcode_buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		BF8FF59210F8EC8400094FD8 /* LicenseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseView.xib; sourceTree = "<group>"; };
 		BF8FF5B110F9041B00094FD8 /* license.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license.html; sourceTree = "<group>"; };
 		BF8FF5DD10F90B2800094FD8 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
+		BF8FF92D11028C4600094FD8 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transcode_buttons.png; path = screenshots/transcode_buttons.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */,
+				BF8FF92D11028C4600094FD8 /* iTunesArtwork */,
 				BF8FF5DD10F90B2800094FD8 /* help.html */,
 				BF8FF5B110F9041B00094FD8 /* license.html */,
 				BF8FF53910F8195A00094FD8 /* Stop.tiff */,
@@ -338,6 +344,8 @@
 				BF8FF59410F8EC8400094FD8 /* LicenseView.xib in Resources */,
 				BF8FF5B210F9041B00094FD8 /* license.html in Resources */,
 				BF8FF5DE10F90B2800094FD8 /* help.html in Resources */,
+				BF8FF92E11028C4600094FD8 /* iTunesArtwork in Resources */,
+				BF8FF96E1103BF0800094FD8 /* transcode_buttons.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -139,7 +139,6 @@
 		       vlcHost:vlc_host vlcPath:vlc_path];
 
 	if (file == nil) {
-		NSLog(@"file returned nil");
 		[self popup:@"Error!" message:@"VLC transcode failed!"];
 		return;
 	}
@@ -194,8 +193,6 @@
 		[self popup:@"Error!" message:@"VLC transcode not in progress!"];
 		return;
 	}
-
-	NSLog(@"Stop transcode");
 
 	[file transcodeStop];
 

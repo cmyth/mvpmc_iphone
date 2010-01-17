@@ -38,13 +38,18 @@ non-standard port number.
 In order to initiate transcoding, you will need to provide the IP
 address or hostname where VLC is running.  You also need to provide
 the pathname where the MythTV recordings are as well as the pathname
-where the transcoded files should be stored.
+where the transcoded files should be stored.  These are the
+<i>Source</i> and <i>Destination</i> entries, respectively.
+
 </p>
 
 <p>
 You will need to make sure that VLC is running with the telnet
 interface.  This can be done by starting it with the <i>vlc -I
-telnet</i> command.
+telnet</i> command.  You also need to ensure that your VLC setup is
+capable of encoding AAC audio.  If it is not, you may need to upgrade
+your VLC installation (from <i>Medibuntu</i>, for example) or recompile from
+source.
 </p>
 
 <h2>Web Server Setup</h2>
@@ -53,18 +58,27 @@ telnet</i> command.
 In order to watch transcoded recordings, you will need to provide the
 base URL for the web server that will serve the files.  The URL should
 be include the protocol, port number (if required), and path, such as
-<i>http://192.168.1.1/mnt/mythtv/</i>.
+<i>http://192.168.1.1/mnt/mythtv/</i>.  The transcoded filename will
+be appendeded to the base URL.
 </p>
 
 <p>
 The VLC transcoding will be done by appending <i>.mp4</i> to the name
 of the recording and storing it in the VLC output path.  If you wish
 to do this outside of mvpmc so that your recordings are always
-playable on the iphone, then make sure they have the same filename as
-mvpmc will expect.
+playable on the iphone, then you will need to name the transcoded
+files appropriately (ie, <i>foo.nuv</i> would become
+<i>foo.nuv.mp4</i>).
 </p>
 
-<h2>Extra Information</h2>
+<h2>Transcoding</h2>
+
+<p>
+You can play, start a transcode, and stop a transcode, with the three
+buttons displayed below on the MythTV program view.
+</p>
+
+<img src="transcode_buttons.png"></img>
 
 <p>
 The MythTV backend, VLC server, and web server can be on three

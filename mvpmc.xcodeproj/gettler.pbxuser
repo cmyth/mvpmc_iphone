@@ -179,7 +179,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = AdHoc;
 		activeExecutable = BF5846F610D9BAD000EE0B3E /* mvpmc */;
 		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* mvpmc */;
@@ -732,6 +732,27 @@
 			BF8FF91211021FDC00094FD8 /* PBXTextBookmark */ = BF8FF91211021FDC00094FD8 /* PBXTextBookmark */;
 			BF8FF91311021FDC00094FD8 /* PlistBookmark */ = BF8FF91311021FDC00094FD8 /* PlistBookmark */;
 			BF8FF91411021FDC00094FD8 /* PlistBookmark */ = BF8FF91411021FDC00094FD8 /* PlistBookmark */;
+			BF8FF9191102209200094FD8 /* PlistBookmark */ = BF8FF9191102209200094FD8 /* PlistBookmark */;
+			BF8FF92A1102352000094FD8 /* PBXTextBookmark */ = BF8FF92A1102352000094FD8 /* PBXTextBookmark */;
+			BF8FF92B1102352000094FD8 /* XCBuildMessageTextBookmark */ = BF8FF92B1102352000094FD8 /* XCBuildMessageTextBookmark */;
+			BF8FF92C1102352000094FD8 /* PBXTextBookmark */ = BF8FF92C1102352000094FD8 /* PBXTextBookmark */;
+			BF8FF9321102907400094FD8 /* PlistBookmark */ = BF8FF9321102907400094FD8 /* PlistBookmark */;
+			BF8FF9331102907400094FD8 /* PBXTextBookmark */ = BF8FF9331102907400094FD8 /* PBXTextBookmark */;
+			BF8FF9341102907400094FD8 /* PBXBookmark */ = BF8FF9341102907400094FD8 /* PBXBookmark */;
+			BF8FF9351102907400094FD8 /* PlistBookmark */ = BF8FF9351102907400094FD8 /* PlistBookmark */;
+			BF8FF9361102907400094FD8 /* PlistBookmark */ = BF8FF9361102907400094FD8 /* PlistBookmark */;
+			BF8FF93A110291D100094FD8 /* PlistBookmark */ = BF8FF93A110291D100094FD8 /* PlistBookmark */;
+			BF8FF94F1102BB7000094FD8 /* PlistBookmark */ = BF8FF94F1102BB7000094FD8 /* PlistBookmark */;
+			BF8FF9551103534200094FD8 /* PlistBookmark */ = BF8FF9551103534200094FD8 /* PlistBookmark */;
+			BF8FF9711103BF2C00094FD8 /* PlistBookmark */ = BF8FF9711103BF2C00094FD8 /* PlistBookmark */;
+			BF8FF9721103BF2C00094FD8 /* PBXBookmark */ = BF8FF9721103BF2C00094FD8 /* PBXBookmark */;
+			BF8FF9731103BF2C00094FD8 /* PBXBookmark */ = BF8FF9731103BF2C00094FD8 /* PBXBookmark */;
+			BF8FF9791103C21500094FD8 /* PBXBookmark */ = BF8FF9791103C21500094FD8 /* PBXBookmark */;
+			BF8FF97A1103C21500094FD8 /* PBXBookmark */ = BF8FF97A1103C21500094FD8 /* PBXBookmark */;
+			BF8FF97B1103C21500094FD8 /* PBXBookmark */ = BF8FF97B1103C21500094FD8 /* PBXBookmark */;
+			BF8FF97F1103C33600094FD8 /* PBXBookmark */ = BF8FF97F1103C33600094FD8 /* PBXBookmark */;
+			BF8FF9851103C42C00094FD8 /* PBXBookmark */ = BF8FF9851103C42C00094FD8 /* PBXBookmark */;
+			BF8FF9861103C42C00094FD8 /* PlistBookmark */ = BF8FF9861103C42C00094FD8 /* PlistBookmark */;
 			BF9D84AD10E6DEE9009ADE21 = BF9D84AD10E6DEE9009ADE21 /* PBXTextBookmark */;
 			BFF0ED0310E40C3600A2CC94 = BFF0ED0310E40C3600A2CC94 /* PBXTextBookmark */;
 		};
@@ -1062,14 +1083,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {914, 780}}";
 			sepNavSelRange = "{1933, 0}";
-			sepNavVisRange = "{1467, 471}";
+			sepNavVisRange = "{1467, 466}";
 		};
 	};
 	BF8FF17A10F1291200094FD8 /* ProgramViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {914, 3497}}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 3367}}";
 			sepNavSelRange = "{1231, 0}";
-			sepNavVisRange = "{1092, 266}";
+			sepNavVisRange = "{1065, 293}";
 		};
 	};
 	BF8FF18510F1297C00094FD8 /* PlistBookmark */ = {
@@ -5470,6 +5491,184 @@
 		rLoc = 9223372036854775807;
 	};
 	BF8FF91411021FDC00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9191102209200094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF92A1102352000094FD8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF8FF17A10F1291200094FD8 /* ProgramViewController.m */;
+		name = "ProgramViewController.m: 42";
+		rLen = 0;
+		rLoc = 1231;
+		rType = 0;
+		vrLen = 293;
+		vrLoc = 1065;
+	};
+	BF8FF92B1102352000094FD8 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Property 'title' 'copy' attribute does not match super class 'UIViewController' property";
+		fRef = BF8FF17910F1291200094FD8 /* ProgramViewController.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 57;
+		rType = 1;
+	};
+	BF8FF92C1102352000094FD8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF8FF17910F1291200094FD8 /* ProgramViewController.h */;
+		name = "ProgramViewController.h: 58";
+		rLen = 0;
+		rLoc = 1933;
+		rType = 0;
+		vrLen = 471;
+		vrLoc = 1467;
+	};
+	BF8FF92D11028C4600094FD8 /* iTunesArtwork */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{107, 231}, {750, 558}}";
+		};
+	};
+	BF8FF9321102907400094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9331102907400094FD8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF8FF17910F1291200094FD8 /* ProgramViewController.h */;
+		name = "ProgramViewController.h: 58";
+		rLen = 0;
+		rLoc = 1933;
+		rType = 0;
+		vrLen = 773;
+		vrLoc = 1165;
+	};
+	BF8FF9341102907400094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF92D11028C4600094FD8 /* iTunesArtwork */;
+	};
+	BF8FF9351102907400094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9361102907400094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF93A110291D100094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF94F1102BB7000094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9551103534200094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9711103BF2C00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9721103BF2C00094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */;
+	};
+	BF8FF9731103BF2C00094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */;
+	};
+	BF8FF9791103C21500094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF92D11028C4600094FD8 /* iTunesArtwork */;
+	};
+	BF8FF97A1103C21500094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */;
+	};
+	BF8FF97B1103C21500094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */;
+	};
+	BF8FF97F1103C33600094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */;
+	};
+	BF8FF9851103C42C00094FD8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */;
+	};
+	BF8FF9861103C42C00094FD8 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
 		fallbackIsa = PBXBookmark;

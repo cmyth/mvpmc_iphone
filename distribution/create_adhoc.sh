@@ -16,4 +16,4 @@ mkdir ${PAYLOAD}
 mv ${APP} ${PAYLOAD}
 
 cd ${DIST}
-zip mvpmc-adhoc.ipa ${PAYLOAD}
+zip -r mvpmc-adhoc.ipa ${PAYLOAD}
