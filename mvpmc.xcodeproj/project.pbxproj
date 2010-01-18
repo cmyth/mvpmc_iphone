@@ -451,6 +451,43 @@
 			};
 			name = AdHoc;
 		};
+		BF8FF9B11103D98E00094FD8 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jonathan Gettler";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../cmyth/cmyth,
+					../cmyth/include,
+				);
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "1F426FED-7463-4A58-97BD-3BBE48647906";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Distribution;
+		};
+		BF8FF9B21103D98E00094FD8 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Volumes/Skiiing2/CD/ViewBased/Unknown Path/System/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mvpmc_Prefix.pch;
+				INFOPLIST_FILE = "mvpmc-Info.plist";
+				PRODUCT_NAME = mvpmc;
+			};
+			name = Distribution;
+		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,6 +538,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				BF8FF9B21103D98E00094FD8 /* Distribution */,
 				BF584E5C10DF2C3500EE0B3E /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -511,6 +549,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				BF8FF9B11103D98E00094FD8 /* Distribution */,
 				BF584E5B10DF2C3500EE0B3E /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;

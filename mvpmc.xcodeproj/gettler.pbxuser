@@ -179,7 +179,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = AdHoc;
+		activeBuildConfigurationName = Distribution;
 		activeExecutable = BF5846F610D9BAD000EE0B3E /* mvpmc */;
 		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* mvpmc */;
@@ -753,11 +753,29 @@
 			BF8FF97F1103C33600094FD8 /* PBXBookmark */ = BF8FF97F1103C33600094FD8 /* PBXBookmark */;
 			BF8FF9851103C42C00094FD8 /* PBXBookmark */ = BF8FF9851103C42C00094FD8 /* PBXBookmark */;
 			BF8FF9861103C42C00094FD8 /* PlistBookmark */ = BF8FF9861103C42C00094FD8 /* PlistBookmark */;
+			BF8FF9A21103CAFF00094FD8 /* PlistBookmark */ = BF8FF9A21103CAFF00094FD8 /* PlistBookmark */;
+			BF8FF9A31103CAFF00094FD8 /* PlistBookmark */ = BF8FF9A31103CAFF00094FD8 /* PlistBookmark */;
+			BF8FF9AB1103D73400094FD8 /* PlistBookmark */ = BF8FF9AB1103D73400094FD8 /* PlistBookmark */;
+			BF8FF9AC1103D73400094FD8 /* PlistBookmark */ = BF8FF9AC1103D73400094FD8 /* PlistBookmark */;
+			BF8FF9AD1103D73400094FD8 /* PlistBookmark */ = BF8FF9AD1103D73400094FD8 /* PlistBookmark */;
+			BF8FF9B31103D99600094FD8 /* PlistBookmark */ = BF8FF9B31103D99600094FD8 /* PlistBookmark */;
+			BF8FF9B41103D99600094FD8 /* PlistBookmark */ = BF8FF9B41103D99600094FD8 /* PlistBookmark */;
+			BF8FF9B51103D99600094FD8 /* PlistBookmark */ = BF8FF9B51103D99600094FD8 /* PlistBookmark */;
+			BF8FF9B61103D9A400094FD8 /* PlistBookmark */ = BF8FF9B61103D9A400094FD8 /* PlistBookmark */;
+			BF8FF9B71103D9EE00094FD8 /* PlistBookmark */ = BF8FF9B71103D9EE00094FD8 /* PlistBookmark */;
+			BF8FF9B81103DA3200094FD8 /* PlistBookmark */ = BF8FF9B81103DA3200094FD8 /* PlistBookmark */;
+			BF8FF9C31103DABD00094FD8 /* PlistBookmark */ = BF8FF9C31103DABD00094FD8 /* PlistBookmark */;
+			BF8FF9C41103DABD00094FD8 /* PlistBookmark */ = BF8FF9C41103DABD00094FD8 /* PlistBookmark */;
 			BF9D84AD10E6DEE9009ADE21 = BF9D84AD10E6DEE9009ADE21 /* PBXTextBookmark */;
 			BFF0ED0310E40C3600A2CC94 = BFF0ED0310E40C3600A2CC94 /* PBXTextBookmark */;
 		};
 		sourceControlManager = BF58470210D9BAEF00EE0B3E /* Source Control */;
 		userBuildSettings = {
+		};
+	};
+	8D1107310486CEB800E47090 /* mvpmc-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{130, 210}, {750, 558}}";
 		};
 	};
 	BF5846F610D9BAD000EE0B3E /* mvpmc */ = {
@@ -5669,6 +5687,159 @@
 		fRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */;
 	};
 	BF8FF9861103C42C00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9A21103CAFF00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9A31103CAFF00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9AB1103D73400094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9AC1103D73400094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9AD1103D73400094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9B31103D99600094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9B41103D99600094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9B51103D99600094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9B61103D9A400094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9B71103D9EE00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9B81103DA3200094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9C31103DABD00094FD8 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF8FF9C41103DABD00094FD8 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
 		fallbackIsa = PBXBookmark;
