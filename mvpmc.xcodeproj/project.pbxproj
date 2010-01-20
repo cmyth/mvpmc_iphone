@@ -35,6 +35,8 @@
 		BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584B2510DDB95100EE0B3E /* 108-badge.png */; };
 		BF584BAF10DE633900EE0B3E /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584BAE10DE633900EE0B3E /* splash2.png */; };
 		BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */; };
+		BF5CB1D811049FCC00D06007 /* ent.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5CB1D711049FCC00D06007 /* ent.plist */; };
+		BF5CB1FA1106A2E400D06007 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = BF5CB1F91106A2E400D06007 /* COPYING */; };
 		BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF17A10F1291200094FD8 /* ProgramViewController.m */; };
 		BF8FF17D10F1291200094FD8 /* ProgramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF17B10F1291200094FD8 /* ProgramView.xib */; };
 		BF8FF2B710F170A900094FD8 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF2B510F170A900094FD8 /* HelpViewController.m */; };
@@ -50,6 +52,7 @@
 		BF8FF5DE10F90B2800094FD8 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF5DD10F90B2800094FD8 /* help.html */; };
 		BF8FF92E11028C4600094FD8 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF92D11028C4600094FD8 /* iTunesArtwork */; };
 		BF8FF96E1103BF0800094FD8 /* transcode_buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */; };
+		BF8FFA4A110494E900094FD8 /* entitle.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8FFA49110494E900094FD8 /* entitle.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,8 @@
 		BF584B2510DDB95100EE0B3E /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "108-badge.png"; path = "icons/108-badge.png"; sourceTree = "<group>"; };
 		BF584BAE10DE633900EE0B3E /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash2.png; path = images/splash2.png; sourceTree = "<group>"; };
 		BF584E8B10DF2DE500EE0B3E /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
+		BF5CB1D711049FCC00D06007 /* ent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ent.plist; sourceTree = "<group>"; };
+		BF5CB1F91106A2E400D06007 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		BF8FF17910F1291200094FD8 /* ProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramViewController.h; sourceTree = "<group>"; };
 		BF8FF17A10F1291200094FD8 /* ProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramViewController.m; sourceTree = "<group>"; };
 		BF8FF17B10F1291200094FD8 /* ProgramView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramView.xib; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 		BF8FF5DD10F90B2800094FD8 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		BF8FF92D11028C4600094FD8 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transcode_buttons.png; path = screenshots/transcode_buttons.png; sourceTree = "<group>"; };
+		BF8FFA49110494E900094FD8 /* entitle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitle.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BF5CB1D711049FCC00D06007 /* ent.plist */,
+				BF8FFA49110494E900094FD8 /* entitle.plist */,
 				BF584E8B10DF2DE500EE0B3E /* entitlements.plist */,
 				BF58484F10DC4F0300EE0B3E /* cmyth.xcodeproj */,
 				BF584B4C10DDBBF400EE0B3E /* Views */,
@@ -187,6 +195,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF5CB1F91106A2E400D06007 /* COPYING */,
 				BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */,
 				BF8FF92D11028C4600094FD8 /* iTunesArtwork */,
 				BF8FF5DD10F90B2800094FD8 /* help.html */,
@@ -346,6 +355,9 @@
 				BF8FF5DE10F90B2800094FD8 /* help.html in Resources */,
 				BF8FF92E11028C4600094FD8 /* iTunesArtwork in Resources */,
 				BF8FF96E1103BF0800094FD8 /* transcode_buttons.png in Resources */,
+				BF8FFA4A110494E900094FD8 /* entitle.plist in Resources */,
+				BF5CB1D811049FCC00D06007 /* ent.plist in Resources */,
+				BF5CB1FA1106A2E400D06007 /* COPYING in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,6 +461,8 @@
 				GCC_PREFIX_HEADER = mvpmc_Prefix.pch;
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
+				PROVISIONING_PROFILE = "1A26C78B-AE63-4C26-8367-1CFCBB6140A2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "92037E4C-14F7-49E6-A218-54CFEE7E1A44";
 			};
 			name = AdHoc;
 		};
@@ -455,7 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jonathan Gettler";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -476,6 +491,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jonathan Gettler";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,6 +503,8 @@
 				GCC_PREFIX_HEADER = mvpmc_Prefix.pch;
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
+				PROVISIONING_PROFILE = "1F426FED-7463-4A58-97BD-3BBE48647906";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
 			};
 			name = Distribution;
 		};
