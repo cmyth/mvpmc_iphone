@@ -298,6 +298,8 @@
 			BF5CB2131106A4E600D06007 /* PlistBookmark */ = BF5CB2131106A4E600D06007 /* PlistBookmark */;
 			BF5CB21F1106A66E00D06007 /* PlistBookmark */ = BF5CB21F1106A66E00D06007 /* PlistBookmark */;
 			BF5CB2201106A66E00D06007 /* PlistBookmark */ = BF5CB2201106A66E00D06007 /* PlistBookmark */;
+			BF5CB22511091E4900D06007 /* PlistBookmark */ = BF5CB22511091E4900D06007 /* PlistBookmark */;
+			BF5CB23011092BDB00D06007 /* PlistBookmark */ = BF5CB23011092BDB00D06007 /* PlistBookmark */;
 			BF8FEF2B10ED5F4B00094FD8 = BF8FEF2B10ED5F4B00094FD8 /* PBXTextBookmark */;
 			BF8FEF2C10ED5F4B00094FD8 = BF8FEF2C10ED5F4B00094FD8 /* PBXTextBookmark */;
 			BF8FF0AE10EEC43700094FD8 = BF8FF0AE10EEC43700094FD8 /* PBXTextBookmark */;
@@ -596,6 +598,14 @@
 		rLen = 0;
 		rLoc = 9223372036854775807;
 	};
+	BF5CB1D711049FCC00D06007 /* ent.plist */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text.plist.xml;
+		name = ent.plist;
+		path = /Users/gettler/iphone/mvpmc/ent.plist;
+		sourceTree = "<absolute>";
+	};
 	BF5CB1D91104A00000D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = BF8FFA49110494E900094FD8 /* entitle.plist */;
@@ -825,6 +835,28 @@
 		rLoc = 9223372036854775807;
 	};
 	BF5CB2201106A66E00D06007 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF5CB22511091E4900D06007 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BF5CB23011092BDB00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
 		fallbackIsa = PBXBookmark;
@@ -1129,6 +1161,12 @@
 		vrLoc = 1779;
 	};
 	BF8FFA49110494E900094FD8 /* entitle.plist */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text.plist.xml;
+		name = entitle.plist;
+		path = /Users/gettler/iphone/mvpmc/entitle.plist;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavWindowFrame = "{{153, 189}, {750, 558}}";
 		};

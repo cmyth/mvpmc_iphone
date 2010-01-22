@@ -58,6 +58,7 @@
 			       objectForInfoDictionaryKey:@"CFBundleVersion"];
 	NSString *text = [NSString stringWithFormat:@"iPhone Version %@",ver];
 	NSString *ipaddr;
+#if 0
 	NSHost *host = [NSHost currentHost];
 
 	if (host) {
@@ -67,8 +68,12 @@
 		ipaddr = @"IP Address: Unknown";
 	}
 
-	version.text = text;
 	ip.text = ipaddr;
+#else
+	ip.text = @"";
+#endif
+
+	version.text = text;
 
 	[super viewDidLoad];
 }
