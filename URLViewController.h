@@ -33,7 +33,13 @@
 
 -(IBAction)hideKeyboard:(id)sender;
 -(IBAction)play_movie:(id)sender;
+-(void)play_URL:(NSURL*)URL;
 -(void)animateTextField:(UITextField*)textField up:(BOOL)up;
+
+-(void)movieLoad:(NSNotification*)note;
+-(void)movieDone:(NSNotification*)note;
+
+-(void)popup:(NSString*)title message:(NSString*)message;
 
 @property (retain,nonatomic) UITextField *url;
 @property (retain,nonatomic) UIButton *play;

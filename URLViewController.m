@@ -46,6 +46,72 @@
 	[url_3 resignFirstResponder];
 }
 
+-(void)popup:(NSString*)title
+     message:(NSString*)message
+{
+	UIAlertView *alert;
+	alert = [[UIAlertView alloc]
+			initWithTitle:title
+			message:message
+			delegate: nil
+			cancelButtonTitle:@"Ok"
+			otherButtonTitles: nil];
+	[alert show];
+	[alert release];
+}
+
+-(void)movieLoad:(NSNotification*)note
+{
+	MPMoviePlayerController *player = [note object];
+
+	NSLog(@"preload done");
+
+	NSError *error = [[note userInfo] objectForKey:@"error"];
+
+	if (error == nil) {
+		NSLog(@"no preload error");
+	} else {
+		int e = [error code];
+		NSLog(@"preload error %d", e);
+		[self popup:@"Error!" message:@"Playback failed!"];
+	}
+
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+					      name:MPMoviePlayerContentPreloadDidFinishNotification
+					      object:player];
+}
+
+-(void)movieDone:(NSNotification*)note
+{
+	MPMoviePlayerController *player = [note object];
+
+	NSLog(@"movie done");
+
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+					      name:MPMoviePlayerPlaybackDidFinishNotification
+					      object:player];
+
+	[player release];
+}
+
+-(void)play_URL:(NSURL*)URL
+{
+	MPMoviePlayerController *player;
+
+	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+					      selector:@selector(movieDone:)
+					      name:MPMoviePlayerPlaybackDidFinishNotification
+					      object:player];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+					      selector:@selector(movieLoad:)
+					      name:MPMoviePlayerContentPreloadDidFinishNotification
+					      object:player];
+
+	[player play];
+}
+
 -(IBAction)play_movie:(id)sender
 {
 	MPMoviePlayerController *player;
@@ -73,10 +139,7 @@
 
 		if (URL) {
 			if ([URL scheme]) {
-				player = [[MPMoviePlayerController alloc]
-						 initWithContentURL: URL];
-
-				[player play];
+				[self play_URL:URL];
 			} else {
 				message = @"URL scheme is invalid";
 			}

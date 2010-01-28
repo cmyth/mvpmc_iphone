@@ -261,8 +261,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 285513795;
-			PBXWorkspaceStateSaveDate = 285513795;
+			PBXPerProjectTemplateStateSaveDate = 286156848;
+			PBXWorkspaceStateSaveDate = 286156848;
 		};
 		perUserProjectItems = {
 			BF58474410D9C8A900EE0B3E = BF58474410D9C8A900EE0B3E /* PBXTextBookmark */;
@@ -270,36 +270,36 @@
 			BF584B4910DDBBD700EE0B3E = BF584B4910DDBBD700EE0B3E /* PBXTextBookmark */;
 			BF584B5810DDBD2F00EE0B3E = BF584B5810DDBD2F00EE0B3E /* PBXTextBookmark */;
 			BF584EBB10DF328100EE0B3E = BF584EBB10DF328100EE0B3E /* XDModelBookmark */;
-			BF5CB1A711049C8000D06007 /* PlistBookmark */ = BF5CB1A711049C8000D06007 /* PlistBookmark */;
-			BF5CB1AE11049CA700D06007 /* PlistBookmark */ = BF5CB1AE11049CA700D06007 /* PlistBookmark */;
-			BF5CB1B711049D1B00D06007 /* PlistBookmark */ = BF5CB1B711049D1B00D06007 /* PlistBookmark */;
-			BF5CB1B811049DE900D06007 /* PlistBookmark */ = BF5CB1B811049DE900D06007 /* PlistBookmark */;
-			BF5CB1BD11049E0100D06007 /* PlistBookmark */ = BF5CB1BD11049E0100D06007 /* PlistBookmark */;
-			BF5CB1C611049E1500D06007 /* PlistBookmark */ = BF5CB1C611049E1500D06007 /* PlistBookmark */;
-			BF5CB1C711049EE500D06007 /* PlistBookmark */ = BF5CB1C711049EE500D06007 /* PlistBookmark */;
-			BF5CB1D411049F2500D06007 /* PlistBookmark */ = BF5CB1D411049F2500D06007 /* PlistBookmark */;
-			BF5CB1D91104A00000D06007 /* PlistBookmark */ = BF5CB1D91104A00000D06007 /* PlistBookmark */;
-			BF5CB1DA1104A00000D06007 /* PlistBookmark */ = BF5CB1DA1104A00000D06007 /* PlistBookmark */;
-			BF5CB1DB1104A00000D06007 /* PlistBookmark */ = BF5CB1DB1104A00000D06007 /* PlistBookmark */;
-			BF5CB1E41104A07B00D06007 /* PlistBookmark */ = BF5CB1E41104A07B00D06007 /* PlistBookmark */;
-			BF5CB1E71104A16E00D06007 /* PlistBookmark */ = BF5CB1E71104A16E00D06007 /* PlistBookmark */;
-			BF5CB1E81104A16E00D06007 /* PlistBookmark */ = BF5CB1E81104A16E00D06007 /* PlistBookmark */;
-			BF5CB1E91104A16E00D06007 /* PlistBookmark */ = BF5CB1E91104A16E00D06007 /* PlistBookmark */;
-			BF5CB1EA1104A16E00D06007 /* PlistBookmark */ = BF5CB1EA1104A16E00D06007 /* PlistBookmark */;
-			BF5CB1EB1104A16E00D06007 /* PlistBookmark */ = BF5CB1EB1104A16E00D06007 /* PlistBookmark */;
-			BF5CB1F61104A29500D06007 /* PlistBookmark */ = BF5CB1F61104A29500D06007 /* PlistBookmark */;
-			BF5CB1F71104A29500D06007 /* PlistBookmark */ = BF5CB1F71104A29500D06007 /* PlistBookmark */;
-			BF5CB1F81104A29500D06007 /* PlistBookmark */ = BF5CB1F81104A29500D06007 /* PlistBookmark */;
-			BF5CB1FB1106A38900D06007 /* PlistBookmark */ = BF5CB1FB1106A38900D06007 /* PlistBookmark */;
-			BF5CB1FC1106A38900D06007 /* PBXTextBookmark */ = BF5CB1FC1106A38900D06007 /* PBXTextBookmark */;
-			BF5CB1FD1106A38900D06007 /* PlistBookmark */ = BF5CB1FD1106A38900D06007 /* PlistBookmark */;
-			BF5CB2061106A43D00D06007 /* PlistBookmark */ = BF5CB2061106A43D00D06007 /* PlistBookmark */;
-			BF5CB2091106A44A00D06007 /* PlistBookmark */ = BF5CB2091106A44A00D06007 /* PlistBookmark */;
-			BF5CB2131106A4E600D06007 /* PlistBookmark */ = BF5CB2131106A4E600D06007 /* PlistBookmark */;
-			BF5CB21F1106A66E00D06007 /* PlistBookmark */ = BF5CB21F1106A66E00D06007 /* PlistBookmark */;
-			BF5CB2201106A66E00D06007 /* PlistBookmark */ = BF5CB2201106A66E00D06007 /* PlistBookmark */;
-			BF5CB22511091E4900D06007 /* PlistBookmark */ = BF5CB22511091E4900D06007 /* PlistBookmark */;
-			BF5CB23011092BDB00D06007 /* PlistBookmark */ = BF5CB23011092BDB00D06007 /* PlistBookmark */;
+			BF5CB1A711049C8000D06007 = BF5CB1A711049C8000D06007 /* PlistBookmark */;
+			BF5CB1AE11049CA700D06007 = BF5CB1AE11049CA700D06007 /* PlistBookmark */;
+			BF5CB1B711049D1B00D06007 = BF5CB1B711049D1B00D06007 /* PlistBookmark */;
+			BF5CB1B811049DE900D06007 = BF5CB1B811049DE900D06007 /* PlistBookmark */;
+			BF5CB1BD11049E0100D06007 = BF5CB1BD11049E0100D06007 /* PlistBookmark */;
+			BF5CB1C611049E1500D06007 = BF5CB1C611049E1500D06007 /* PlistBookmark */;
+			BF5CB1C711049EE500D06007 = BF5CB1C711049EE500D06007 /* PlistBookmark */;
+			BF5CB1D411049F2500D06007 = BF5CB1D411049F2500D06007 /* PlistBookmark */;
+			BF5CB1D91104A00000D06007 = BF5CB1D91104A00000D06007 /* PlistBookmark */;
+			BF5CB1DA1104A00000D06007 = BF5CB1DA1104A00000D06007 /* PlistBookmark */;
+			BF5CB1DB1104A00000D06007 = BF5CB1DB1104A00000D06007 /* PlistBookmark */;
+			BF5CB1E41104A07B00D06007 = BF5CB1E41104A07B00D06007 /* PlistBookmark */;
+			BF5CB1E71104A16E00D06007 = BF5CB1E71104A16E00D06007 /* PlistBookmark */;
+			BF5CB1E81104A16E00D06007 = BF5CB1E81104A16E00D06007 /* PlistBookmark */;
+			BF5CB1E91104A16E00D06007 = BF5CB1E91104A16E00D06007 /* PlistBookmark */;
+			BF5CB1EA1104A16E00D06007 = BF5CB1EA1104A16E00D06007 /* PlistBookmark */;
+			BF5CB1EB1104A16E00D06007 = BF5CB1EB1104A16E00D06007 /* PlistBookmark */;
+			BF5CB1F61104A29500D06007 = BF5CB1F61104A29500D06007 /* PlistBookmark */;
+			BF5CB1F71104A29500D06007 = BF5CB1F71104A29500D06007 /* PlistBookmark */;
+			BF5CB1F81104A29500D06007 = BF5CB1F81104A29500D06007 /* PlistBookmark */;
+			BF5CB1FB1106A38900D06007 = BF5CB1FB1106A38900D06007 /* PlistBookmark */;
+			BF5CB1FC1106A38900D06007 = BF5CB1FC1106A38900D06007 /* PBXTextBookmark */;
+			BF5CB1FD1106A38900D06007 = BF5CB1FD1106A38900D06007 /* PlistBookmark */;
+			BF5CB2061106A43D00D06007 = BF5CB2061106A43D00D06007 /* PlistBookmark */;
+			BF5CB2091106A44A00D06007 = BF5CB2091106A44A00D06007 /* PlistBookmark */;
+			BF5CB2131106A4E600D06007 = BF5CB2131106A4E600D06007 /* PlistBookmark */;
+			BF5CB21F1106A66E00D06007 = BF5CB21F1106A66E00D06007 /* PlistBookmark */;
+			BF5CB2201106A66E00D06007 = BF5CB2201106A66E00D06007 /* PlistBookmark */;
+			BF5CB22511091E4900D06007 = BF5CB22511091E4900D06007 /* PlistBookmark */;
+			BF5CB23011092BDB00D06007 = BF5CB23011092BDB00D06007 /* PlistBookmark */;
 			BF8FEF2B10ED5F4B00094FD8 = BF8FEF2B10ED5F4B00094FD8 /* PBXTextBookmark */;
 			BF8FEF2C10ED5F4B00094FD8 = BF8FEF2C10ED5F4B00094FD8 /* PBXTextBookmark */;
 			BF8FF0AE10EEC43700094FD8 = BF8FF0AE10EEC43700094FD8 /* PBXTextBookmark */;
@@ -331,6 +331,10 @@
 			BF8FFA771104983700094FD8 = BF8FFA771104983700094FD8 /* PlistBookmark */;
 			BF8FFA781104983700094FD8 = BF8FFA781104983700094FD8 /* PlistBookmark */;
 			BF9D84AD10E6DEE9009ADE21 = BF9D84AD10E6DEE9009ADE21 /* PBXTextBookmark */;
+			BFA4091D110E684E006CD2AF /* PlistBookmark */ = BFA4091D110E684E006CD2AF /* PlistBookmark */;
+			BFA4099B111125C8006CD2AF /* PlistBookmark */ = BFA4099B111125C8006CD2AF /* PlistBookmark */;
+			BFA4099C111125C8006CD2AF /* PBXTextBookmark */ = BFA4099C111125C8006CD2AF /* PBXTextBookmark */;
+			BFA4099D111125C8006CD2AF /* PlistBookmark */ = BFA4099D111125C8006CD2AF /* PlistBookmark */;
 			BFF0ED0310E40C3600A2CC94 = BFF0ED0310E40C3600A2CC94 /* PBXTextBookmark */;
 		};
 		sourceControlManager = BF58470210D9BAEF00EE0B3E /* Source Control */;
@@ -512,7 +516,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1AE11049CA700D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -524,7 +528,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1B711049D1B00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -536,7 +540,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1B811049DE900D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -548,7 +552,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1BD11049E0100D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -560,7 +564,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1C611049E1500D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -572,7 +576,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1C711049EE500D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -584,7 +588,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1D411049F2500D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -596,7 +600,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1D711049FCC00D06007 /* ent.plist */ = {
 		isa = PBXFileReference;
@@ -616,7 +620,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1DA1104A00000D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -627,7 +631,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1DB1104A00000D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -639,7 +643,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1E41104A07B00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -651,7 +655,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1E71104A16E00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -662,7 +666,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1E81104A16E00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -674,7 +678,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitle.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1E91104A16E00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -686,7 +690,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1EA1104A16E00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -698,7 +702,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1EB1104A16E00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -710,7 +714,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1F61104A29500D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -722,7 +726,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1F71104A29500D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -734,7 +738,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1F81104A29500D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -746,7 +750,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1F91106A2E400D06007 /* COPYING */ = {
 		uiCtxt = {
@@ -765,7 +769,7 @@
 		);
 		name = /Users/gettler/iphone/mvpmc/ent.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB1FC1106A38900D06007 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -787,7 +791,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB2061106A43D00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -799,7 +803,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB2091106A44A00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -810,7 +814,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB2131106A4E600D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -821,7 +825,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB21F1106A66E00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -832,7 +836,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB2201106A66E00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -843,7 +847,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB22511091E4900D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -854,7 +858,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF5CB23011092BDB00D06007 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -865,7 +869,7 @@
 		);
 		name = "/Users/gettler/iphone/mvpmc/mvpmc-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	BF8FEEDB10ED5B1800094FD8 /* socket.c */ = {
 		isa = PBXFileReference;
@@ -937,9 +941,9 @@
 	};
 	BF8FF17A10F1291200094FD8 /* ProgramViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {914, 3367}}";
-			sepNavSelRange = "{1231, 0}";
-			sepNavVisRange = "{1065, 293}";
+			sepNavIntBoundsRect = "{{0, 0}, {565, 4706}}";
+			sepNavSelRange = "{8692, 0}";
+			sepNavVisRange = "{2481, 576}";
 		};
 	};
 	BF8FF2B410F170A900094FD8 /* HelpViewController.h */ = {
@@ -1167,9 +1171,6 @@
 		name = entitle.plist;
 		path = /Users/gettler/iphone/mvpmc/entitle.plist;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavWindowFrame = "{{153, 189}, {750, 558}}";
-		};
 	};
 	BF8FFA5F1104959700094FD8 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -1234,6 +1235,50 @@
 		rType = 0;
 		vrLen = 480;
 		vrLoc = 0;
+	};
+	BFA4091D110E684E006CD2AF /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/mvpmc/apple/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BFA4099B111125C8006CD2AF /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* mvpmc-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gettler/mvpmc/apple/mvpmc/mvpmc-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BFA4099C111125C8006CD2AF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF8FF17A10F1291200094FD8 /* ProgramViewController.m */;
+		name = "ProgramViewController.m: 351";
+		rLen = 0;
+		rLoc = 8692;
+		rType = 0;
+		vrLen = 576;
+		vrLoc = 2481;
+	};
+	BFA4099D111125C8006CD2AF /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/mvpmc/apple/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 	BFF0ED0310E40C3600A2CC94 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

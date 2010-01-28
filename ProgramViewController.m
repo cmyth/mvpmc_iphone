@@ -47,6 +47,40 @@
 	[alert release];
 }
 
+-(void)movieLoad:(NSNotification*)note
+{
+	MPMoviePlayerController *player = [note object];
+
+	NSLog(@"preload done");
+
+	NSError *error = [[note userInfo] objectForKey:@"error"];
+
+	if (error == nil) {
+		NSLog(@"no preload error");
+	} else {
+		int e = [error code];
+		NSLog(@"preload error %d", e);
+		[self popup:@"Error!" message:@"Playback failed!"];
+	}
+
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+					      name:MPMoviePlayerContentPreloadDidFinishNotification
+					      object:player];
+}
+
+-(void)movieDone:(NSNotification*)note
+{
+	MPMoviePlayerController *player = [note object];
+
+	NSLog(@"movie done");
+
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+					      name:MPMoviePlayerPlaybackDidFinishNotification
+					      object:player];
+
+	[player release];
+}
+
 -(void)play_movie:(int)port
 {
 	MPMoviePlayerController *player;
@@ -57,6 +91,15 @@
 	URL = [NSURL URLWithString: url];
 
 	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+					      selector:@selector(movieDone:)
+					      name:MPMoviePlayerPlaybackDidFinishNotification
+					      object:player];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+					      selector:@selector(movieLoad:)
+					      name:MPMoviePlayerContentPreloadDidFinishNotification
+					      object:player];
 
 	[player play];
 }
@@ -88,8 +131,12 @@
 		return;
 	}
 
-	if (file) {
+	if (file && ([file transcodeState] == CMYTH_TRANSCODE_IN_PROGRESS)) {
 		[self popup:@"Error!" message:@"VLC transcode in progress!"];
+		return;
+	}
+	if (file && ([file transcodeState] == CMYTH_TRANSCODE_STOPPING)) {
+		[self popup:@"Error!" message:@"VLC transcode cleaning up!"];
 		return;
 	}
 
@@ -103,6 +150,15 @@
 	URL = [NSURL URLWithString: url];
 
 	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+					      selector:@selector(movieDone:)
+					      name:MPMoviePlayerPlaybackDidFinishNotification
+					      object:player];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+					      selector:@selector(movieLoad:)
+					      name:MPMoviePlayerContentPreloadDidFinishNotification
+					      object:player];
 
 	[player play];
 }
@@ -182,15 +238,24 @@
 		float p = [file transcodeProgress];
 
 		progress.progress = p;
-		progress.hidden = NO;
-		progressLabel.hidden = NO;
+
+		if ([file transcodeState] == CMYTH_TRANSCODE_IN_PROGRESS) {
+			progress.hidden = NO;
+			progressLabel.hidden = NO;
+		}
 	}
 }
 
 -(IBAction) stopTranscode:(id) sender
 {
+	NSLog(@"stop transcode");
+
 	if (file == nil) {
 		[self popup:@"Error!" message:@"VLC transcode not in progress!"];
+		return;
+	}
+	if (file && ([file transcodeState] == CMYTH_TRANSCODE_STOPPING)) {
+		[self popup:@"Error!" message:@"VLC transcode is already stopping!"];
 		return;
 	}
 
@@ -218,6 +283,8 @@
 	int sec = [prog seconds];
 	int h, m;
 
+	NSLog(@"viewDidLoad");
+
 	h = (sec / (60*60));
 	sec -= (h * 60 * 60);
 	m = (sec / 60);
@@ -234,6 +301,24 @@
 	progressLabel.hidden = YES;
 
 	[super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	NSLog(@"viewWillAppear");
+	[super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	NSLog(@"viewDidAppear");
+	[super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+	[super viewDidDisappear:animated];
 }
 
 /*

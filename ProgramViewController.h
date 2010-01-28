@@ -55,4 +55,7 @@
 -(void)popup:(NSString*)title message:(NSString*)message;
 -(void)play_movie:(int)port;
 
+-(void)movieLoad:(NSNotification*)note;
+-(void)movieDone:(NSNotification*)note;
+
 @end
