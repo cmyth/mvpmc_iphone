@@ -22,6 +22,7 @@
 #import "ProgramViewController.h"
 #import "api.h"
 
+#include "mvpmc.h"
 
 @implementation MythViewController
 
@@ -120,22 +121,6 @@
 	[pool release];
 }
 
--(void)eraseTable
-{
-	if (sections) {
-		[sections release];
-		sections = nil;
-	}
-	if (counts) {
-		[counts release];
-		sections = nil;
-	}
-	if (list) {
-		[list release];
-		list = nil;
-	}
-}
-
 -(cmythProgram*) atSection:(int) section
 		    atRow:(int) row
 {
@@ -179,61 +164,25 @@
 	}
 }
 
--(void)loadData
+-(void)waitForData
 {
-	BOOL reload = NO;
-
 	[lock lock];
-	if (myth == nil) {
-		[self connect];
 
-		if (myth == nil) {
-			[self popup:@"Error" message:@"Server not responding!"];
-			[self eraseTable];
-		} else {
-			[self populateTable];
-		}
+	NSLog(@"waiting for data");
 
-		reload = YES;
-	} else {
-		cmyth_event_t e;
-		if ([myth getEvent:&e] == 0) {
-			switch (e) {
-			case CMYTH_EVENT_UNKNOWN:
-			case CMYTH_EVENT_SCHEDULE_CHANGE:
-			case CMYTH_EVENT_QUIT_LIVETV:
-			case CMYTH_EVENT_DONE_RECORDING:
-			case CMYTH_EVENT_LIVETV_CHAIN_UPDATE:
-			case CMYTH_EVENT_SIGNAL:
-			case CMYTH_EVENT_ASK_RECORDING:
-				break;
-			case CMYTH_EVENT_CLOSE:
-			case CMYTH_EVENT_RECORDING_LIST_CHANGE:
-				[myth release];
-				[self connect];
-				if (myth == nil) {
-					[self eraseTable];
-
-					[self popup:@"Error"
-					      message:@"Server not responding!"];
-				} else {
-					[self populateTable];
-				}
-				reload = YES;
-				break;
-			default:
-				break;
-			}
-		}
+	while ([mythtv isConnected] == NO) {
+		usleep(1000);
 	}
+
 	[self busy:NO];
-	[lock unlock];
 
-	if (reload == YES) {
-		NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-		[self.tableView reloadData];
-		[pool release];
-	}
+	NSLog(@"data loaded");
+
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	[self.tableView reloadData];
+	[pool release];
+
+	[lock unlock];
 }
 
 /*
@@ -255,27 +204,31 @@
 - (void)viewWillAppear:(BOOL)animated {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString *host = [userDefaults stringForKey:@"myth_host"];
+	NSString *port = [userDefaults stringForKey:@"myth_port"];
+
+	if (port == nil) {
+		port = [[NSString alloc] initWithFormat:@"0"];
+	}
 
 	[super viewWillAppear:animated];
+
 	[lock lock];
-	if (active == nil) {
-		[self busy:YES];
-		if (host) {
-			if (ip && ![host isEqualToString: ip]) {
-				[myth release];
-				myth = nil;
-				[self eraseTable];
-				[self.tableView reloadData];
-			}
-			if (ip) {
-				[ip release];
-			}
-			const char *h = [host UTF8String];
-			ip = [[NSString alloc] initWithUTF8String:h];
+
+	[self busy:YES];
+	if (host) {
+		if ((ip == nil) || (ip && ![host isEqualToString: ip])) {
+			[mythtv host:host port:port.intValue];
 		}
-		[NSThread detachNewThreadSelector:@selector(loadData)
-			  toTarget:self withObject:nil];
+		if (ip) {
+			[ip release];
+		}
+		const char *h = [host UTF8String];
+		ip = [[NSString alloc] initWithUTF8String:h];
 	}
+
+	[NSThread detachNewThreadSelector:@selector(waitForData)
+		  toTarget:self withObject:nil];
+
 	[lock unlock];
 }
 
@@ -315,7 +268,13 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return [sections count];
+	int n;
+
+	[lock lock];
+	n = [mythtv numberOfSections];
+	[lock unlock];
+
+	return n;
 }
 
 
@@ -324,10 +283,7 @@
 	int n = 0;
 
 	[lock lock];
-	if ([counts count] > section) {
-		NSNumber *num = [counts objectAtIndex:section];
-		n = [num intValue];
-	}
+	n = [mythtv numberOfRowsInSection:section];
 	[lock unlock];
 
 	return n;
@@ -337,11 +293,7 @@
 	NSString *ret;
 
 	[lock lock];
-	if ([sections count] == 0) {
-		ret = nil;
-	} else {
-		ret =  [sections objectAtIndex:section];
-	}
+	ret = [mythtv titleForSection:section];
 	[lock unlock];
 
 	return ret;
@@ -359,10 +311,14 @@
     
 	// Set up the cell...
 
-	cmythProgram *p = [self atSection:indexPath.section atRow:indexPath.row];
-	NSString *subtitle = [p subtitle];
+	[lock lock];
+	cmyth_proginfo_t p = [mythtv progAtIndexPath:indexPath];
+	char *subtitle = cmyth_proginfo_subtitle(p);
+	NSString *s = [[NSString alloc] initWithUTF8String:subtitle];
+	[[cell textLabel] setText:s];
+	[lock unlock];
 
-	[[cell textLabel] setText:subtitle];
+	ref_release(subtitle);
 
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
@@ -376,10 +332,10 @@
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
 
+	cmyth_proginfo_t p = [mythtv progAtIndexPath:indexPath];
 	ProgramViewController *programViewController = [[ProgramViewController alloc] initWithNibName:@"ProgramView" bundle:nil];
-	cmythProgram *p = [self atSection:indexPath.section atRow:indexPath.row];
-	programViewController.prog = p;
-//	programViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+
+	[programViewController setProgInfo:p];
 	programViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:programViewController animated:YES];
 	[programViewController release];

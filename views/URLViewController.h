@@ -29,6 +29,7 @@
 	IBOutlet UIButton *play_2;
 	IBOutlet UITextField *url_3;
 	IBOutlet UIButton *play_3;
+	IBOutlet UIImageView *background;
 }
 
 -(IBAction)hideKeyboard:(id)sender;
@@ -46,5 +47,7 @@
 
 @property (retain,nonatomic) UITextField *url_3;
 @property (retain,nonatomic) UIButton *play_3;
+
+@property (retain,nonatomic) UIImageView *background;
 
 @end

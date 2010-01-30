@@ -32,6 +32,7 @@
 	IBOutlet UIButton *test;
 	IBOutlet UIButton *help;
 	UIActivityIndicatorView *active;
+	IBOutlet UIImageView *background;
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
@@ -49,5 +50,6 @@
 @property (retain,nonatomic) UISwitch *vlc;
 @property (retain,nonatomic) UIButton *test;
 @property (retain,nonatomic) UIButton *help;
+@property (retain,nonatomic) UIImageView *background;
 
 @end

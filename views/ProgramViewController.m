@@ -20,6 +20,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "ProgramViewController.h"
 
+#import "mvpmc.h"
 
 @implementation ProgramViewController
 
@@ -31,34 +32,17 @@
 @synthesize length;
 @synthesize back;
 @synthesize progress;
-@synthesize progressLabel;
-
--(void)popup:(NSString*)title
-     message:(NSString*)message
-{
-	UIAlertView *alert;
-	alert = [[UIAlertView alloc]
-			initWithTitle:title
-			message:message
-			delegate: nil
-			cancelButtonTitle:@"Ok"
-			otherButtonTitles: nil];
-	[alert show];
-	[alert release];
-}
+@synthesize background;
 
 -(void)play_movie:(int)port
 {
-	MPMoviePlayerController *player;
 	NSURL *URL;
 	NSString *url;
 
 	url = [NSString stringWithFormat:@"http://127.0.0.1:%d/mythtv.m4v",port];
 	URL = [NSURL URLWithString: url];
 
-	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];
-
-	[player play];
+	[mvpmc playURL:URL];
 }
 
 -(IBAction) hide:(id) sender
@@ -74,7 +58,7 @@
 		int port = [f portNumber];
 		[self play_movie:port];
 	} else {
-		[self popup:@"Error!" message:@"Failed to open file!"];
+		[mvpmc popup:@"Error!" message:@"Failed to open file!"];
 	}
 }
 
@@ -84,27 +68,28 @@
 	NSString *www_base = [userDefaults stringForKey:@"www_base"];
 
 	if ([www_base isEqualToString: @""]) {
-		[self popup:@"Error!" message:@"WWW options not set!"];
+		[mvpmc popup:@"Error!" message:@"WWW options not set!"];
 		return;
 	}
 
 	if (file) {
-		[self popup:@"Error!" message:@"VLC transcode in progress!"];
+		[mvpmc popup:@"Error!" message:@"VLC transcode in progress!"];
 		return;
 	}
 
-	NSString *fn = [prog pathname];
+	char *str;
+	NSString *fn;
+	str = cmyth_proginfo_pathname(proginfo);
+	fn = [[NSString alloc] initWithUTF8String:str];
+	ref_release(str);
 
-	MPMoviePlayerController *player;
 	NSURL *URL;
 	NSString *url;
 
 	url = [NSString stringWithFormat:@"%@/%@.mp4",www_base,fn];
 	URL = [NSURL URLWithString: url];
 
-	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];
-
-	[player play];
+	[mvpmc playURL:URL];
 }
 
 -(IBAction) transcode:(id) sender
@@ -116,22 +101,21 @@
 
 	if (([vlc_host isEqualToString: @""]) ||
 	    ([vlc_path isEqualToString: @""])) {
-		[self popup:@"Error!" message:@"VLC options not set!"];
+		[mvpmc popup:@"Error!" message:@"VLC options not set!"];
 		return;
 	}
 
 	if (file) {
 		cmythTranscodeState state = [file transcodeState];
 		if (state == CMYTH_TRANSCODE_IN_PROGRESS) {
-			[self popup:@"Error!"
-			      message:@"VLC transcode is already running!"];
+			[mvpmc popup:@"Error!"
+			       message:@"VLC transcode is already running!"];
 		}
 		return;
 	}
 
 	progress.progress = 0.0;
 	progress.hidden = NO;
-	progressLabel.hidden = NO;
 
 	file = [[cmythFile alloc]
 		       transcodeWith:prog
@@ -139,7 +123,7 @@
 		       vlcHost:vlc_host vlcPath:vlc_path];
 
 	if (file == nil) {
-		[self popup:@"Error!" message:@"VLC transcode failed!"];
+		[mvpmc popup:@"Error!" message:@"VLC transcode failed!"];
 		return;
 	}
 
@@ -173,9 +157,8 @@
 
 		if (message) {
 			[timer invalidate];
-			[self popup:@"Error!" message:message];
+			[mvpmc popup:@"Error!" message:message];
 			progress.hidden = YES;
-			progressLabel.hidden = YES;
 			return;
 		}
 
@@ -183,14 +166,13 @@
 
 		progress.progress = p;
 		progress.hidden = NO;
-		progressLabel.hidden = NO;
 	}
 }
 
 -(IBAction) stopTranscode:(id) sender
 {
 	if (file == nil) {
-		[self popup:@"Error!" message:@"VLC transcode not in progress!"];
+		[mvpmc popup:@"Error!" message:@"VLC transcode not in progress!"];
 		return;
 	}
 
@@ -198,7 +180,11 @@
 
 	progress.progress = 0.0;
 	progress.hidden = YES;
-	progressLabel.hidden = YES;
+}
+
+-(void)setProgInfo:(cmyth_proginfo_t*)p
+{
+	proginfo = p;
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -209,14 +195,54 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	background.image = [mvpmc getBackgroundImage];
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	NSString *t = [prog title];
-	NSString *s = [prog subtitle];
-	NSString *d = [prog description];
-	NSString *start = [prog date];
-	int sec = [prog seconds];
+	NSString *t, *s, *d, *start;
+	time_t sec;
 	int h, m;
+	char *str;
+
+	str = cmyth_proginfo_title(proginfo);
+	t = [[NSString alloc] initWithUTF8String:str];
+	ref_release(str);
+
+	str = cmyth_proginfo_subtitle(proginfo);
+	s = [[NSString alloc] initWithUTF8String:str];
+	ref_release(str);
+
+	str = cmyth_proginfo_description(proginfo);
+	d = [[NSString alloc] initWithUTF8String:str];
+	ref_release(str);
+
+	str = cmyth_proginfo_description(proginfo);
+	d = [[NSString alloc] initWithUTF8String:str];
+	ref_release(str);
+
+	cmyth_timestamp_t ts;
+	time_t tm;
+
+	ts = cmyth_proginfo_rec_start(proginfo);
+	tm = cmyth_timestamp_to_unixtime(ts);
+
+	NSDate *dt = [NSDate dateWithTimeIntervalSince1970:tm];
+
+	ref_release(ts);
+
+	start = [dt description];
+
+	cmyth_timestamp_t te;
+
+	ts = cmyth_proginfo_rec_start(proginfo);
+	te = cmyth_proginfo_rec_end(proginfo);
+
+	sec = cmyth_timestamp_to_unixtime(te) - cmyth_timestamp_to_unixtime(ts);
+
+	ref_release(ts);
+	ref_release(te);
 
 	h = (sec / (60*60));
 	sec -= (h * 60 * 60);
@@ -231,7 +257,6 @@
 	length.text = l;
 
 	progress.hidden = YES;
-	progressLabel.hidden = YES;
 
 	[super viewDidLoad];
 }

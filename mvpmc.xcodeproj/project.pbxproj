@@ -51,6 +51,17 @@
 		BF8FF5DE10F90B2800094FD8 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF5DD10F90B2800094FD8 /* help.html */; };
 		BF8FF92E11028C4600094FD8 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF92D11028C4600094FD8 /* iTunesArtwork */; };
 		BF8FF96E1103BF0800094FD8 /* transcode_buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */; };
+		BFA4097E110FEF9F006CD2AF /* program_background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA4097D110FEF9F006CD2AF /* program_background.png */; };
+		BFA409B111114181006CD2AF /* settings_background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA409B011114181006CD2AF /* settings_background.png */; };
+		BFA409C611126FCA006CD2AF /* mvpmc.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA409C511126FCA006CD2AF /* mvpmc.m */; };
+		BFA40A8C11147AA8006CD2AF /* granite_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40A8B11147AA8006CD2AF /* granite_background.jpg */; };
+		BFA40B3111149D16006CD2AF /* bricks_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3011149D16006CD2AF /* bricks_background.jpg */; };
+		BFA40B3711149D6C006CD2AF /* ice_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3511149D6C006CD2AF /* ice_background.jpg */; };
+		BFA40B3811149D6C006CD2AF /* plasma_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3611149D6C006CD2AF /* plasma_background.jpg */; };
+		BFA40B3C11149D77006CD2AF /* crack_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3911149D77006CD2AF /* crack_background.jpg */; };
+		BFA40B3D11149D77006CD2AF /* slate_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3A11149D77006CD2AF /* slate_background.jpg */; };
+		BFA40B3E11149D77006CD2AF /* stone_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3B11149D77006CD2AF /* stone_background.jpg */; };
+		BFCA4FC6110C900A00143FB0 /* mythtv.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCA4FC5110C900A00143FB0 /* mythtv.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +91,7 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = interface/MainWindow.xib; sourceTree = "<group>"; };
 		28C3AD890F43EF2300507BA6 /* mvpmc.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = mvpmc.xcdatamodel; sourceTree = "<group>"; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* mvpmc_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mvpmc_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* mvpmc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mvpmc-Info.plist"; sourceTree = "<group>"; };
 		BF58470610D9BB9200EE0B3E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = views/SettingsViewController.h; sourceTree = "<group>"; };
@@ -126,6 +137,18 @@
 		BF8FF5DD10F90B2800094FD8 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = help.html; path = html/help.html; sourceTree = "<group>"; };
 		BF8FF92D11028C4600094FD8 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = images/iTunesArtwork; sourceTree = "<group>"; };
 		BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transcode_buttons.png; path = screenshots/transcode_buttons.png; sourceTree = "<group>"; };
+		BFA4097D110FEF9F006CD2AF /* program_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = program_background.png; sourceTree = "<group>"; };
+		BFA409B011114181006CD2AF /* settings_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_background.png; sourceTree = "<group>"; };
+		BFA409C511126FCA006CD2AF /* mvpmc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mvpmc.m; path = src/mvpmc.m; sourceTree = "<group>"; };
+		BFA40A8B11147AA8006CD2AF /* granite_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = granite_background.jpg; path = images/granite_background.jpg; sourceTree = "<group>"; };
+		BFA40B3011149D16006CD2AF /* bricks_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bricks_background.jpg; path = images/bricks_background.jpg; sourceTree = "<group>"; };
+		BFA40B3511149D6C006CD2AF /* ice_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ice_background.jpg; path = images/ice_background.jpg; sourceTree = "<group>"; };
+		BFA40B3611149D6C006CD2AF /* plasma_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = plasma_background.jpg; path = images/plasma_background.jpg; sourceTree = "<group>"; };
+		BFA40B3911149D77006CD2AF /* crack_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crack_background.jpg; path = images/crack_background.jpg; sourceTree = "<group>"; };
+		BFA40B3A11149D77006CD2AF /* slate_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slate_background.jpg; path = images/slate_background.jpg; sourceTree = "<group>"; };
+		BFA40B3B11149D77006CD2AF /* stone_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stone_background.jpg; path = images/stone_background.jpg; sourceTree = "<group>"; };
+		BFCA4FC4110C8FF500143FB0 /* mvpmc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mvpmc.h; path = include/mvpmc.h; sourceTree = "<group>"; };
+		BFCA4FC5110C900A00143FB0 /* mythtv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mythtv.m; path = src/mythtv.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +206,9 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BFA409C511126FCA006CD2AF /* mvpmc.m */,
+				BFCA4FC5110C900A00143FB0 /* mythtv.m */,
+				BFCA4FC4110C8FF500143FB0 /* mvpmc.h */,
 				32CA4F630368D1EE00C91783 /* mvpmc_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -251,6 +277,15 @@
 		BFCA4F82110BA35B00143FB0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BFA40B3911149D77006CD2AF /* crack_background.jpg */,
+				BFA40B3A11149D77006CD2AF /* slate_background.jpg */,
+				BFA40B3B11149D77006CD2AF /* stone_background.jpg */,
+				BFA40B3511149D6C006CD2AF /* ice_background.jpg */,
+				BFA40B3611149D6C006CD2AF /* plasma_background.jpg */,
+				BFA40B3011149D16006CD2AF /* bricks_background.jpg */,
+				BFA40A8B11147AA8006CD2AF /* granite_background.jpg */,
+				BFA409B011114181006CD2AF /* settings_background.png */,
+				BFA4097D110FEF9F006CD2AF /* program_background.png */,
 				BF584BAE10DE633900EE0B3E /* splash2.png */,
 				BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */,
 				BF8FF92D11028C4600094FD8 /* iTunesArtwork */,
@@ -366,6 +401,15 @@
 				BF8FF92E11028C4600094FD8 /* iTunesArtwork in Resources */,
 				BF8FF96E1103BF0800094FD8 /* transcode_buttons.png in Resources */,
 				BF5CB1FA1106A2E400D06007 /* COPYING in Resources */,
+				BFA4097E110FEF9F006CD2AF /* program_background.png in Resources */,
+				BFA409B111114181006CD2AF /* settings_background.png in Resources */,
+				BFA40A8C11147AA8006CD2AF /* granite_background.jpg in Resources */,
+				BFA40B3111149D16006CD2AF /* bricks_background.jpg in Resources */,
+				BFA40B3711149D6C006CD2AF /* ice_background.jpg in Resources */,
+				BFA40B3811149D6C006CD2AF /* plasma_background.jpg in Resources */,
+				BFA40B3C11149D77006CD2AF /* crack_background.jpg in Resources */,
+				BFA40B3D11149D77006CD2AF /* slate_background.jpg in Resources */,
+				BFA40B3E11149D77006CD2AF /* stone_background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +430,8 @@
 				BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */,
 				BF8FF2B710F170A900094FD8 /* HelpViewController.m in Sources */,
 				BF8FF59310F8EC8400094FD8 /* LicenseViewController.m in Sources */,
+				BFCA4FC6110C900A00143FB0 /* mythtv.m in Sources */,
+				BFA409C611126FCA006CD2AF /* mvpmc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

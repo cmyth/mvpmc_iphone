@@ -19,6 +19,8 @@
 
 #import "URLViewController.h"
 
+#import "mvpmc.h"
+
 
 @implementation URLViewController
 
@@ -30,6 +32,7 @@
 @synthesize play_2;
 @synthesize url_3;
 @synthesize play_3;
+@synthesize background;
 
 -(IBAction) hideKeyboard:(id) sender
 {
@@ -108,6 +111,10 @@
     return self;
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated {
+	background.image = [mvpmc getBackgroundImage];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {

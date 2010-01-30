@@ -34,7 +34,6 @@
 -(void)connect;
 -(void)populateTable;
 -(void)eraseTable;
--(void)loadData;
 -(void)popup:(NSString*)title message:(NSString*)message;
 -(void)busy:(BOOL)on;
 

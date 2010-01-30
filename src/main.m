@@ -19,10 +19,19 @@
 
 #import <UIKit/UIKit.h>
 
+#include "mvpmc.h"
+
+MythTV *mythtv;
+MVPMC *mvpmc;
+
 int main(int argc, char *argv[]) {
     
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    mvpmc = [[MVPMC alloc] init];
+    mythtv = [[MythTV alloc] init];
     int retVal = UIApplicationMain(argc, argv, nil, nil);
+    [mythtv release];
+    [mvpmc release];
     [pool release];
     return retVal;
 }

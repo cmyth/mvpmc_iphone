@@ -21,6 +21,7 @@
 #import "HelpViewController.h"
 #import "api.h"
 
+#import "mvpmc.h"
 
 @implementation SettingsViewController
 
@@ -34,6 +35,7 @@
 @synthesize vlc;
 @synthesize test;
 @synthesize help;
+@synthesize background;
 
 -(void)popup:(NSString*)title
      message:(NSString*)message
@@ -100,6 +102,10 @@
     return self;
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated {
+	background.image = [mvpmc getBackgroundImage];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
