@@ -26,7 +26,8 @@
 #include "api.h"
 
 @interface MVPMC : NSObject {
-	UIImage *image;
+	UIImage *image[7];
+	int imageNumber;
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
@@ -34,6 +35,7 @@
 -(void)movieDone:(NSNotification*)note;
 -(void)movieLoad:(NSNotification*)note;
 -(UIImage*)getBackgroundImage;
+-(void)setBackgroundImage:(int)index;
 
 @end
 

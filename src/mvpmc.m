@@ -89,20 +89,31 @@
 
 -(UIImage*)getBackgroundImage
 {
-	return image;
+	return image[imageNumber];
+}
+
+-(void)setBackgroundImage:(int)index
+{
+	if ((index < 0) || (index >= 7)) {
+		return;
+	}
+
+	imageNumber = index;
 }
 
 -(MVPMC*)init
 {
 	self = [super init];
 
-//	image = [UIImage imageNamed:@"bricks_background.jpg"];
-//	image = [UIImage imageNamed:@"crack_background.jpg"];
-//	image = [UIImage imageNamed:@"granite_background.jpg"];
-//	image = [UIImage imageNamed:@"ice_background.jpg"];
-//	image = [UIImage imageNamed:@"plasma_background.jpg"];
-//	image = [UIImage imageNamed:@"slate_background.jpg"];
-	image = [UIImage imageNamed:@"stone_background.jpg"];
+	imageNumber = 0;
+
+	image[0] = [UIImage imageNamed:@"bricks_background.jpg"];
+	image[1] = [UIImage imageNamed:@"crack_background.jpg"];
+	image[2] = [UIImage imageNamed:@"granite_background.jpg"];
+	image[3] = [UIImage imageNamed:@"ice_background.jpg"];
+	image[4] = [UIImage imageNamed:@"plasma_background.jpg"];
+	image[5] = [UIImage imageNamed:@"slate_background.jpg"];
+	image[6] = [UIImage imageNamed:@"stone_background.jpg"];
 
 	return self;
 }

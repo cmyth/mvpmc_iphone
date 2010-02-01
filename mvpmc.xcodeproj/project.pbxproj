@@ -61,6 +61,9 @@
 		BFA40B3C11149D77006CD2AF /* crack_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3911149D77006CD2AF /* crack_background.jpg */; };
 		BFA40B3D11149D77006CD2AF /* slate_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3A11149D77006CD2AF /* slate_background.jpg */; };
 		BFA40B3E11149D77006CD2AF /* stone_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3B11149D77006CD2AF /* stone_background.jpg */; };
+		BFA40B951114E4D4006CD2AF /* url_background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B941114E4D4006CD2AF /* url_background.png */; };
+		BFA40D631115CF3F006CD2AF /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA40D611115CF3F006CD2AF /* ScrollViewController.m */; };
+		BFA40D641115CF3F006CD2AF /* ScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA40D621115CF3F006CD2AF /* ScrollView.xib */; };
 		BFCA4FC6110C900A00143FB0 /* mythtv.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCA4FC5110C900A00143FB0 /* mythtv.m */; };
 /* End PBXBuildFile section */
 
@@ -137,8 +140,8 @@
 		BF8FF5DD10F90B2800094FD8 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = help.html; path = html/help.html; sourceTree = "<group>"; };
 		BF8FF92D11028C4600094FD8 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = images/iTunesArtwork; sourceTree = "<group>"; };
 		BF8FF96D1103BF0800094FD8 /* transcode_buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transcode_buttons.png; path = screenshots/transcode_buttons.png; sourceTree = "<group>"; };
-		BFA4097D110FEF9F006CD2AF /* program_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = program_background.png; sourceTree = "<group>"; };
-		BFA409B011114181006CD2AF /* settings_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_background.png; sourceTree = "<group>"; };
+		BFA4097D110FEF9F006CD2AF /* program_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = program_background.png; path = images/program_background.png; sourceTree = "<group>"; };
+		BFA409B011114181006CD2AF /* settings_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_background.png; path = images/settings_background.png; sourceTree = "<group>"; };
 		BFA409C511126FCA006CD2AF /* mvpmc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mvpmc.m; path = src/mvpmc.m; sourceTree = "<group>"; };
 		BFA40A8B11147AA8006CD2AF /* granite_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = granite_background.jpg; path = images/granite_background.jpg; sourceTree = "<group>"; };
 		BFA40B3011149D16006CD2AF /* bricks_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bricks_background.jpg; path = images/bricks_background.jpg; sourceTree = "<group>"; };
@@ -147,6 +150,10 @@
 		BFA40B3911149D77006CD2AF /* crack_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crack_background.jpg; path = images/crack_background.jpg; sourceTree = "<group>"; };
 		BFA40B3A11149D77006CD2AF /* slate_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slate_background.jpg; path = images/slate_background.jpg; sourceTree = "<group>"; };
 		BFA40B3B11149D77006CD2AF /* stone_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stone_background.jpg; path = images/stone_background.jpg; sourceTree = "<group>"; };
+		BFA40B941114E4D4006CD2AF /* url_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = url_background.png; path = images/url_background.png; sourceTree = "<group>"; };
+		BFA40D601115CF3F006CD2AF /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollViewController.h; path = views/ScrollViewController.h; sourceTree = "<group>"; };
+		BFA40D611115CF3F006CD2AF /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollViewController.m; path = views/ScrollViewController.m; sourceTree = "<group>"; };
+		BFA40D621115CF3F006CD2AF /* ScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScrollView.xib; path = interface/ScrollView.xib; sourceTree = "<group>"; };
 		BFCA4FC4110C8FF500143FB0 /* mvpmc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mvpmc.h; path = include/mvpmc.h; sourceTree = "<group>"; };
 		BFCA4FC5110C900A00143FB0 /* mythtv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mythtv.m; path = src/mythtv.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +236,7 @@
 				28C3AD890F43EF2300507BA6 /* mvpmc.xcdatamodel */,
 				8D1107310486CEB800E47090 /* mvpmc-Info.plist */,
 				BF58474910D9DDE900EE0B3E /* Settings.bundle */,
+				BFA40D621115CF3F006CD2AF /* ScrollView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -256,6 +264,8 @@
 		BF584B4C10DDBBF400EE0B3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BFA40D601115CF3F006CD2AF /* ScrollViewController.h */,
+				BFA40D611115CF3F006CD2AF /* ScrollViewController.m */,
 				BF8FF59010F8EC8400094FD8 /* LicenseViewController.h */,
 				BF8FF59110F8EC8400094FD8 /* LicenseViewController.m */,
 				BF8FF2B410F170A900094FD8 /* HelpViewController.h */,
@@ -277,6 +287,7 @@
 		BFCA4F82110BA35B00143FB0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BFA40B941114E4D4006CD2AF /* url_background.png */,
 				BFA40B3911149D77006CD2AF /* crack_background.jpg */,
 				BFA40B3A11149D77006CD2AF /* slate_background.jpg */,
 				BFA40B3B11149D77006CD2AF /* stone_background.jpg */,
@@ -410,6 +421,8 @@
 				BFA40B3C11149D77006CD2AF /* crack_background.jpg in Resources */,
 				BFA40B3D11149D77006CD2AF /* slate_background.jpg in Resources */,
 				BFA40B3E11149D77006CD2AF /* stone_background.jpg in Resources */,
+				BFA40B951114E4D4006CD2AF /* url_background.png in Resources */,
+				BFA40D641115CF3F006CD2AF /* ScrollView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +445,7 @@
 				BF8FF59310F8EC8400094FD8 /* LicenseViewController.m in Sources */,
 				BFCA4FC6110C900A00143FB0 /* mythtv.m in Sources */,
 				BFA409C611126FCA006CD2AF /* mvpmc.m in Sources */,
+				BFA40D631115CF3F006CD2AF /* ScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

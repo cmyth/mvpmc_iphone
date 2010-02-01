@@ -272,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
+									<integer>21</integer>
 									<integer>9</integer>
 									<integer>0</integer>
 								</array>
@@ -313,7 +313,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>URLViewController.m</string>
+								<string>ScrollViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +321,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>URLViewController.m</string>
+										<string>ScrollViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BFA40B761114A9C0006CD2AF</string>
+										<string>BFA40E8D111632A5006CD2AF</string>
 										<key>history</key>
 										<array>
 											<string>BF58474410D9C8A900EE0B3E</string>
@@ -339,7 +339,6 @@
 											<string>BF8FF0AE10EEC43700094FD8</string>
 											<string>BF8FF13610EFB73D00094FD8</string>
 											<string>BF8FF2BB10F170C000094FD8</string>
-											<string>BF8FF48110F571ED00094FD8</string>
 											<string>BF8FF54010F8355800094FD8</string>
 											<string>BF8FF54110F8355800094FD8</string>
 											<string>BF8FF54210F8355800094FD8</string>
@@ -348,7 +347,6 @@
 											<string>BF8FF5DB10F90B0C00094FD8</string>
 											<string>BF8FF5E510F90CC000094FD8</string>
 											<string>BF8FF67110FA813E00094FD8</string>
-											<string>BF8FF7B8110137E900094FD8</string>
 											<string>BF8FF91211021FDC00094FD8</string>
 											<string>BF8FF9791103C21500094FD8</string>
 											<string>BF8FF9851103C42C00094FD8</string>
@@ -357,14 +355,10 @@
 											<string>BFCA4F93110BA45C00143FB0</string>
 											<string>BFCA4F94110BA45C00143FB0</string>
 											<string>BFCA4F96110BA45C00143FB0</string>
-											<string>BFCA4F97110BA45C00143FB0</string>
 											<string>BFCA4FAB110BA89700143FB0</string>
-											<string>BFCA4FAC110BA89700143FB0</string>
 											<string>BFCA4FEF110C922C00143FB0</string>
 											<string>BFA408B4110D3D21006CD2AF</string>
 											<string>BFA408FA110D4440006CD2AF</string>
-											<string>BFA409C211126FBF006CD2AF</string>
-											<string>BFA409CD11126FE7006CD2AF</string>
 											<string>BFA409EE11127313006CD2AF</string>
 											<string>BFA40A021112743B006CD2AF</string>
 											<string>BFA40A2E11127F7D006CD2AF</string>
@@ -372,8 +366,15 @@
 											<string>BFA40ADB11148890006CD2AF</string>
 											<string>BFA40B3211149D58006CD2AF</string>
 											<string>BFA40B4F1114A50B006CD2AF</string>
-											<string>BFA40B711114A9B2006CD2AF</string>
-											<string>BFA40B721114A9B2006CD2AF</string>
+											<string>BFA40B891114E10E006CD2AF</string>
+											<string>BFA40C241115259E006CD2AF</string>
+											<string>BFA40C251115259E006CD2AF</string>
+											<string>BFA40C261115259E006CD2AF</string>
+											<string>BFA40C271115259E006CD2AF</string>
+											<string>BFA40DCE1115E683006CD2AF</string>
+											<string>BFA40E1F1116129A006CD2AF</string>
+											<string>BFA40E811116305A006CD2AF</string>
+											<string>BFA40E821116305A006CD2AF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -571,6 +572,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>BFA40E8E111632A5006CD2AF</string>
 		<string>BFA407A3110CFA85006CD2AF</string>
 		<string>BFA407A4110CFA85006CD2AF</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -600,7 +602,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>URLViewController.m</string>
+								<string>SettingsViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

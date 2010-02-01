@@ -18,9 +18,10 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "ScrollViewController.h"
 
 
-@interface SettingsViewController : UIViewController <UITextFieldDelegate> {
+@interface SettingsViewController : UIViewController <UITextFieldDelegate,UIScrollViewDelegate> {
 	IBOutlet UITextField *host;
 	IBOutlet UITextField *port;
 	IBOutlet UITextField *path;
@@ -33,12 +34,16 @@
 	IBOutlet UIButton *help;
 	UIActivityIndicatorView *active;
 	IBOutlet UIImageView *background;
+	IBOutlet UISegmentedControl *segment;
+	ScrollViewController *parent;
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
 -(IBAction)hideKeyboard:(id)sender;
+-(IBAction)changeImage:(id)sender;
 -(IBAction)display_help:(id)sender;
 -(void)animateTextField:(UITextField*)textField up:(BOOL)up;
+-(void)addParent:(id)sender;
 
 @property (retain,nonatomic) UITextField *host;
 @property (retain,nonatomic) UITextField *port;
@@ -51,5 +56,6 @@
 @property (retain,nonatomic) UIButton *test;
 @property (retain,nonatomic) UIButton *help;
 @property (retain,nonatomic) UIImageView *background;
+@property (retain,nonatomic) UISegmentedControl *segment;
 
 @end

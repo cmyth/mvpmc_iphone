@@ -36,6 +36,7 @@
 @synthesize test;
 @synthesize help;
 @synthesize background;
+@synthesize segment;
 
 -(void)popup:(NSString*)title
      message:(NSString*)message
@@ -70,6 +71,17 @@
 	[vlc_host resignFirstResponder];
 	[vlc_path resignFirstResponder];
 	[www_base resignFirstResponder];
+}
+
+-(IBAction)changeImage:(id)sender
+{
+	int index = [segment selectedSegmentIndex];
+
+	NSLog(@"change background image to %d", index);
+
+	[mvpmc setBackgroundImage:index];
+
+	[parent changeImage];
 }
 
 -(IBAction) display_help:(id) sender
@@ -125,6 +137,8 @@
 	path.delegate = self;
 
 	[super viewDidLoad];
+
+	NSLog(@"settings view loaded");
 }
 
 /*
@@ -195,5 +209,18 @@
 	[super dealloc];
 }
 
+-(void)addParent:(id)sender
+{
+	NSLog(@"add parent");
+
+	parent = sender;
+}
+
+-(SettingsViewController*)init
+{
+	self = [super init];
+
+	return self;
+}
 
 @end
