@@ -24,7 +24,6 @@
 
 @implementation ProgramViewController
 
-@synthesize prog;
 @synthesize title;
 @synthesize subtitle;
 @synthesize description;
@@ -52,10 +51,10 @@
 
 -(IBAction) playOriginal:(id) sender
 {
-	cmythFile *f = [[cmythFile alloc] openWith:prog];
+	Httpd *h = [[Httpd alloc] openWith:proginfo];
 
-	if (f) {
-		int port = [f portNumber];
+	if (h) {
+		int port = [h portNumber];
 		[self play_movie:port];
 	} else {
 		[mvpmc popup:@"Error!" message:@"Failed to open file!"];
@@ -99,6 +98,8 @@
 	NSString *vlc_path = [userDefaults stringForKey:@"vlc_path"];
 	NSString *myth_path = [userDefaults stringForKey:@"myth_path"];
 
+	NSLog(@"start transcode");
+
 	if (([vlc_host isEqualToString: @""]) ||
 	    ([vlc_path isEqualToString: @""])) {
 		[mvpmc popup:@"Error!" message:@"VLC options not set!"];
@@ -106,26 +107,25 @@
 	}
 
 	if (file) {
-		cmythTranscodeState state = [file transcodeState];
-		if (state == CMYTH_TRANSCODE_IN_PROGRESS) {
+		vlcTranscodeState state = [file transcodeState];
+		if (state == VLC_TRANSCODE_IN_PROGRESS) {
 			[mvpmc popup:@"Error!"
 			       message:@"VLC transcode is already running!"];
 		}
 		return;
 	}
 
-	progress.progress = 0.0;
-	progress.hidden = NO;
-
-	file = [[cmythFile alloc]
-		       transcodeWith:prog
-		       mythPath:myth_path
-		       vlcHost:vlc_host vlcPath:vlc_path];
+	file = [[VLC alloc] transcodeWith:proginfo
+			    mythPath:myth_path
+			    vlcHost:vlc_host vlcPath:vlc_path];
 
 	if (file == nil) {
 		[mvpmc popup:@"Error!" message:@"VLC transcode failed!"];
 		return;
 	}
+
+	progress.progress = 0.0;
+	progress.hidden = NO;
 
 	// Schedule timer to update progress
 	timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
@@ -142,13 +142,13 @@
 		NSString *message = nil;
 
 		switch ([file transcodeState]) {
-		case CMYTH_TRANSCODE_CONNECT_FAILED:
+		case VLC_TRANSCODE_CONNECT_FAILED:
 			message = @"VLC server not found!";
 			break;
-		case CMYTH_TRANSCODE_ERROR:
+		case VLC_TRANSCODE_ERROR:
 			message = @"VLC transcode failed!";
 			break;
-		case CMYTH_TRANSCODE_STOPPED:
+		case VLC_TRANSCODE_STOPPED:
 			[timer invalidate];
 			[file release];
 			file = nil;
@@ -160,6 +160,7 @@
 			[mvpmc popup:@"Error!" message:message];
 			progress.hidden = YES;
 			return;
+
 		}
 
 		float p = [file transcodeProgress];
@@ -171,6 +172,8 @@
 
 -(IBAction) stopTranscode:(id) sender
 {
+	NSLog(@"stop transcode");
+
 	if (file == nil) {
 		[mvpmc popup:@"Error!" message:@"VLC transcode not in progress!"];
 		return;

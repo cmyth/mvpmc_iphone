@@ -43,7 +43,7 @@
 					<object class="IBUIImageView" id="412317911">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{320, 480}</string>
+						<string key="NSFrame">{{0, 25}, {320, 480}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -98,6 +98,16 @@
 							</object>
 						</object>
 					</object>
+					<object class="IBUIScrollView" id="432665415">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">274</int>
+						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIAlwaysBounceVertical">YES</bool>
+						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
+						<bool key="IBUIBouncesZoom">NO</bool>
+					</object>
 					<object class="IBUIImageView" id="854857916">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
@@ -111,16 +121,6 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">mvpmc_logo.png</string>
 						</object>
-					</object>
-					<object class="IBUIScrollView" id="432665415">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<bool key="IBUIAlwaysBounceVertical">YES</bool>
-						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
-						<bool key="IBUIBouncesZoom">NO</bool>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -196,8 +196,8 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="412317911"/>
 							<reference ref="997700363"/>
-							<reference ref="854857916"/>
 							<reference ref="432665415"/>
+							<reference ref="854857916"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -272,6 +272,7 @@
 					<string>-2.CustomClassName</string>
 					<string>1.IBEditorWindowLastContentRect</string>
 					<string>1.IBPluginDependency</string>
+					<string>11.IBEditorWindowLastContentRect</string>
 					<string>11.IBPluginDependency</string>
 					<string>13.IBPluginDependency</string>
 					<string>14.IBPluginDependency</string>
@@ -285,6 +286,7 @@
 					<string>UIResponder</string>
 					<string>{{717, 145}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>{{329, 803}, {120, 42}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

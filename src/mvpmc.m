@@ -107,13 +107,9 @@
 
 	imageNumber = 0;
 
-	image[0] = [UIImage imageNamed:@"bricks_background.jpg"];
-	image[1] = [UIImage imageNamed:@"crack_background.jpg"];
-	image[2] = [UIImage imageNamed:@"granite_background.jpg"];
-	image[3] = [UIImage imageNamed:@"ice_background.jpg"];
-	image[4] = [UIImage imageNamed:@"plasma_background.jpg"];
-	image[5] = [UIImage imageNamed:@"slate_background.jpg"];
-	image[6] = [UIImage imageNamed:@"stone_background.jpg"];
+	image[0] = [UIImage imageNamed:@"slate_background.jpg"];
+	image[1] = [UIImage imageNamed:@"stone_background.jpg"];
+	image[2] = [UIImage imageNamed:@"bricks_background.jpg"];
 
 	return self;
 }

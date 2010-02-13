@@ -38,7 +38,29 @@
 			<object class="IBUITableView" id="873029372">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
-				<string key="NSFrameSize">{320, 416}</string>
+				<object class="NSMutableArray" key="NSSubviews">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="IBUISearchBar" id="317858637">
+						<reference key="NSNextResponder" ref="873029372"/>
+						<int key="NSvFlags">290</int>
+						<string key="NSFrameSize">{320, 88}</string>
+						<reference key="NSSuperview" ref="873029372"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<int key="IBUIContentMode">3</int>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<int key="IBBarStyle">1</int>
+						<bool key="IBShowsCancelButton">YES</bool>
+						<object class="IBUITextInputTraits" key="IBTextInputTraits"/>
+						<object class="NSArray" key="IBScopeButtonTitles">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>Title</string>
+							<string>Subtitle</string>
+							<string>Description</string>
+						</object>
+						<bool key="IBShowsScopeBar">YES</bool>
+					</object>
+				</object>
+				<string key="NSFrameSize">{320, 411}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -48,9 +70,7 @@
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
-					<bool key="IBUIPrompted">NO</bool>
-				</object>
+				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<bool key="IBUIBouncesZoom">NO</bool>
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
@@ -58,6 +78,7 @@
 				<float key="IBUIRowHeight">44</float>
 				<float key="IBUISectionHeaderHeight">22</float>
 				<float key="IBUISectionFooterHeight">22</float>
+				<reference key="IBUITableHeaderView" ref="317858637"/>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -87,6 +108,14 @@
 					</object>
 					<int key="connectionID">7</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">search</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="317858637"/>
+					</object>
+					<int key="connectionID">13</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -111,7 +140,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
 						<reference key="object" ref="873029372"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="317858637"/>
+						</object>
 						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">12</int>
+						<reference key="object" ref="317858637"/>
+						<reference key="parent" ref="873029372"/>
 					</object>
 				</object>
 			</object>
@@ -121,6 +159,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
+					<string>12.IBPluginDependency</string>
 					<string>4.IBEditorWindowLastContentRect</string>
 					<string>4.IBPluginDependency</string>
 				</object>
@@ -128,6 +167,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>MythViewController</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{796, 263}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
@@ -148,7 +188,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">11</int>
+			<int key="maxID">13</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -156,9 +196,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">MythViewController</string>
 					<string key="superclassName">UITableViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">hideKeyboard:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">search</string>
+						<string key="NS.object.0">UISearchBar</string>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">MythViewController.h</string>
+						<string key="minorKey">views/MythViewController.h</string>
 					</object>
 				</object>
 			</object>
@@ -373,7 +421,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">mvpmc.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../mvpmc.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">3.1</string>
 	</data>

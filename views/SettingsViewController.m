@@ -19,7 +19,6 @@
 
 #import "SettingsViewController.h"
 #import "HelpViewController.h"
-#import "api.h"
 
 #import "mvpmc.h"
 
@@ -119,6 +118,25 @@
 	background.image = [mvpmc getBackgroundImage];
 }
 
+-(void)buttonPressed:(id)sender
+{
+	int index;
+
+	if (sender == bgButton[0]) {
+		index = 0;
+	} else if (sender == bgButton[1]) {
+		index = 1;
+	} else if (sender == bgButton[2]) {
+		index = 2;
+	} else {
+		return;
+	}
+
+	[mvpmc setBackgroundImage:index];
+
+	[parent changeImage];
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -137,6 +155,56 @@
 	path.delegate = self;
 
 	[super viewDidLoad];
+
+	UIImage *image = [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"settings_background" ofType:@"png"]];
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:image]; 
+	[self.view addSubview:imageView];   
+	[self.view sendSubviewToBack:imageView];
+
+	UIImage *bg = [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"background_chooser" ofType:@"png"]];
+	UIImageView *bgView = [[UIImageView alloc] initWithImage:bg]; 
+	[self.view addSubview:bgView];   
+	[self.view sendSubviewToBack:bgView];
+
+	int offset = 340;
+
+	CGRect bgRect = CGRectMake(0, offset, 320, 180);
+	[bgView setFrame:bgRect];	
+
+	imageView.contentMode = UIViewContentModeScaleAspectFit;
+	bgView.contentMode = UIViewContentModeScaleAspectFit;
+
+	CGRect buttonRect;
+	UIButton *btn;
+
+	buttonRect = CGRectMake(50, offset+60, 60, 60);
+	btn = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+	bgButton[0] = btn;
+	[btn setFrame:buttonRect];	
+	[btn addTarget:self action:@selector(buttonPressed:)
+	     forControlEvents:UIControlEventTouchUpInside];
+	[[self view] addSubview:btn];
+	[btn release];
+
+	buttonRect = CGRectMake(130, offset+60, 60, 60);
+	btn = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+	bgButton[1] = btn;
+	[btn setFrame:buttonRect];	
+	[btn addTarget:self action:@selector(buttonPressed:)
+	     forControlEvents:UIControlEventTouchUpInside];
+	[[self view] addSubview:btn];
+	[btn release];
+
+	buttonRect = CGRectMake(210, offset+60, 60, 60);
+	btn = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+	bgButton[2] = btn;
+	[btn setFrame:buttonRect];	
+	[btn addTarget:self action:@selector(buttonPressed:)
+	     forControlEvents:UIControlEventTouchUpInside];
+	[[self view] addSubview:btn];
+	[btn release];
+
+	segment.hidden = YES;
 
 	NSLog(@"settings view loaded");
 }

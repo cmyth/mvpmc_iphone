@@ -54,16 +54,15 @@
 		BFA4097E110FEF9F006CD2AF /* program_background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA4097D110FEF9F006CD2AF /* program_background.png */; };
 		BFA409B111114181006CD2AF /* settings_background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA409B011114181006CD2AF /* settings_background.png */; };
 		BFA409C611126FCA006CD2AF /* mvpmc.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA409C511126FCA006CD2AF /* mvpmc.m */; };
-		BFA40A8C11147AA8006CD2AF /* granite_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40A8B11147AA8006CD2AF /* granite_background.jpg */; };
 		BFA40B3111149D16006CD2AF /* bricks_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3011149D16006CD2AF /* bricks_background.jpg */; };
-		BFA40B3711149D6C006CD2AF /* ice_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3511149D6C006CD2AF /* ice_background.jpg */; };
-		BFA40B3811149D6C006CD2AF /* plasma_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3611149D6C006CD2AF /* plasma_background.jpg */; };
-		BFA40B3C11149D77006CD2AF /* crack_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3911149D77006CD2AF /* crack_background.jpg */; };
 		BFA40B3D11149D77006CD2AF /* slate_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3A11149D77006CD2AF /* slate_background.jpg */; };
 		BFA40B3E11149D77006CD2AF /* stone_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B3B11149D77006CD2AF /* stone_background.jpg */; };
 		BFA40B951114E4D4006CD2AF /* url_background.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA40B941114E4D4006CD2AF /* url_background.png */; };
 		BFA40D631115CF3F006CD2AF /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA40D611115CF3F006CD2AF /* ScrollViewController.m */; };
 		BFA40D641115CF3F006CD2AF /* ScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA40D621115CF3F006CD2AF /* ScrollView.xib */; };
+		BFC172F2111E166D005E5952 /* background_chooser.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC172F1111E166D005E5952 /* background_chooser.png */; };
+		BFC173531122E905005E5952 /* http.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC173521122E905005E5952 /* http.m */; };
+		BFC173DF1123AA31005E5952 /* vlc.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC173DE1123AA31005E5952 /* vlc.m */; };
 		BFCA4FC6110C900A00143FB0 /* mythtv.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCA4FC5110C900A00143FB0 /* mythtv.m */; };
 /* End PBXBuildFile section */
 
@@ -143,17 +142,16 @@
 		BFA4097D110FEF9F006CD2AF /* program_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = program_background.png; path = images/program_background.png; sourceTree = "<group>"; };
 		BFA409B011114181006CD2AF /* settings_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_background.png; path = images/settings_background.png; sourceTree = "<group>"; };
 		BFA409C511126FCA006CD2AF /* mvpmc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mvpmc.m; path = src/mvpmc.m; sourceTree = "<group>"; };
-		BFA40A8B11147AA8006CD2AF /* granite_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = granite_background.jpg; path = images/granite_background.jpg; sourceTree = "<group>"; };
 		BFA40B3011149D16006CD2AF /* bricks_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bricks_background.jpg; path = images/bricks_background.jpg; sourceTree = "<group>"; };
-		BFA40B3511149D6C006CD2AF /* ice_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ice_background.jpg; path = images/ice_background.jpg; sourceTree = "<group>"; };
-		BFA40B3611149D6C006CD2AF /* plasma_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = plasma_background.jpg; path = images/plasma_background.jpg; sourceTree = "<group>"; };
-		BFA40B3911149D77006CD2AF /* crack_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crack_background.jpg; path = images/crack_background.jpg; sourceTree = "<group>"; };
 		BFA40B3A11149D77006CD2AF /* slate_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slate_background.jpg; path = images/slate_background.jpg; sourceTree = "<group>"; };
 		BFA40B3B11149D77006CD2AF /* stone_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stone_background.jpg; path = images/stone_background.jpg; sourceTree = "<group>"; };
 		BFA40B941114E4D4006CD2AF /* url_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = url_background.png; path = images/url_background.png; sourceTree = "<group>"; };
 		BFA40D601115CF3F006CD2AF /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollViewController.h; path = views/ScrollViewController.h; sourceTree = "<group>"; };
 		BFA40D611115CF3F006CD2AF /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollViewController.m; path = views/ScrollViewController.m; sourceTree = "<group>"; };
 		BFA40D621115CF3F006CD2AF /* ScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScrollView.xib; path = interface/ScrollView.xib; sourceTree = "<group>"; };
+		BFC172F1111E166D005E5952 /* background_chooser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_chooser.png; path = images/background_chooser.png; sourceTree = "<group>"; };
+		BFC173521122E905005E5952 /* http.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = http.m; path = src/http.m; sourceTree = "<group>"; };
+		BFC173DE1123AA31005E5952 /* vlc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = vlc.m; path = src/vlc.m; sourceTree = "<group>"; };
 		BFCA4FC4110C8FF500143FB0 /* mvpmc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mvpmc.h; path = include/mvpmc.h; sourceTree = "<group>"; };
 		BFCA4FC5110C900A00143FB0 /* mythtv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mythtv.m; path = src/mythtv.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +211,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BFC173DE1123AA31005E5952 /* vlc.m */,
+				BFC173521122E905005E5952 /* http.m */,
 				BFA409C511126FCA006CD2AF /* mvpmc.m */,
 				BFCA4FC5110C900A00143FB0 /* mythtv.m */,
 				BFCA4FC4110C8FF500143FB0 /* mvpmc.h */,
@@ -287,14 +287,11 @@
 		BFCA4F82110BA35B00143FB0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BFC172F1111E166D005E5952 /* background_chooser.png */,
 				BFA40B941114E4D4006CD2AF /* url_background.png */,
-				BFA40B3911149D77006CD2AF /* crack_background.jpg */,
 				BFA40B3A11149D77006CD2AF /* slate_background.jpg */,
 				BFA40B3B11149D77006CD2AF /* stone_background.jpg */,
-				BFA40B3511149D6C006CD2AF /* ice_background.jpg */,
-				BFA40B3611149D6C006CD2AF /* plasma_background.jpg */,
 				BFA40B3011149D16006CD2AF /* bricks_background.jpg */,
-				BFA40A8B11147AA8006CD2AF /* granite_background.jpg */,
 				BFA409B011114181006CD2AF /* settings_background.png */,
 				BFA4097D110FEF9F006CD2AF /* program_background.png */,
 				BF584BAE10DE633900EE0B3E /* splash2.png */,
@@ -414,15 +411,12 @@
 				BF5CB1FA1106A2E400D06007 /* COPYING in Resources */,
 				BFA4097E110FEF9F006CD2AF /* program_background.png in Resources */,
 				BFA409B111114181006CD2AF /* settings_background.png in Resources */,
-				BFA40A8C11147AA8006CD2AF /* granite_background.jpg in Resources */,
 				BFA40B3111149D16006CD2AF /* bricks_background.jpg in Resources */,
-				BFA40B3711149D6C006CD2AF /* ice_background.jpg in Resources */,
-				BFA40B3811149D6C006CD2AF /* plasma_background.jpg in Resources */,
-				BFA40B3C11149D77006CD2AF /* crack_background.jpg in Resources */,
 				BFA40B3D11149D77006CD2AF /* slate_background.jpg in Resources */,
 				BFA40B3E11149D77006CD2AF /* stone_background.jpg in Resources */,
 				BFA40B951114E4D4006CD2AF /* url_background.png in Resources */,
 				BFA40D641115CF3F006CD2AF /* ScrollView.xib in Resources */,
+				BFC172F2111E166D005E5952 /* background_chooser.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +440,8 @@
 				BFCA4FC6110C900A00143FB0 /* mythtv.m in Sources */,
 				BFA409C611126FCA006CD2AF /* mvpmc.m in Sources */,
 				BFA40D631115CF3F006CD2AF /* ScrollViewController.m in Sources */,
+				BFC173531122E905005E5952 /* http.m in Sources */,
+				BFC173DF1123AA31005E5952 /* vlc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,26 +19,22 @@
 
 #import <UIKit/UIKit.h>
 
-#import <api.h>
-
-@interface MythViewController : UITableViewController {
-	cmyth *myth;
-	cmythProgramList *list;
+@interface MythViewController : UITableViewController <UISearchBarDelegate> {
+	IBOutlet UISearchBar *search;
 	NSMutableArray *sections;
 	NSMutableArray *counts;
 	UIActivityIndicatorView *active;
 	NSLock *lock;
 	NSString *ip;
+	NSInteger searchScope;
+	NSString *searchText;
 }
 
--(void)connect;
--(void)populateTable;
 -(void)eraseTable;
--(void)popup:(NSString*)title message:(NSString*)message;
 -(void)busy:(BOOL)on;
+-(IBAction)hideKeyboard:(id)sender;
 
--(cmythProgram*)atSection:(int)section atRow:(int)row;
-
+@property (retain,nonatomic) UISearchBar *search;
 @property (retain,nonatomic) NSLock *lock;
 
 @end

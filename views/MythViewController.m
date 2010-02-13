@@ -20,133 +20,15 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "MythViewController.h"
 #import "ProgramViewController.h"
-#import "api.h"
 
-#include "mvpmc.h"
+#import "mvpmc.h"
 
 @implementation MythViewController
 
 @synthesize lock;
 
--(void)popup:(NSString*)title
-     message:(NSString*)message
+-(IBAction) hideKeyboard:(id) sender
 {
-	UIAlertView *alert;
-	alert = [[UIAlertView alloc]
-			initWithTitle:title
-			message:message
-			delegate: nil
-			cancelButtonTitle:@"Ok"
-			otherButtonTitles: nil];
-	[alert show];
-	[alert release];
-}
-
--(void)connect
-{
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	NSString *host = [userDefaults stringForKey:@"myth_host"];
-	NSString *port = [userDefaults stringForKey:@"myth_port"];
-
-	if (port == nil) {
-		port = [[NSString alloc] initWithFormat:@"0"];
-	}
-
-	if (host != nil) {
-		myth = [[cmyth alloc] server:host port:port.intValue];
-	}
-
-	[host release];
-	[port release];
-
-	[pool release];
-}
-
--(void)populateTable
-{
-	int i, j, n;
-
-	if (myth == nil) {
-		[self connect];
-	}
-
-	if (myth == nil) {
-		return;
-	}
-
-	if (list == nil) {
-		list = [myth programList];
-	}
-
-	n = [list count];
-
-	if (n == 0) {
-		[self popup:@"Error" message:@"No recordings found!"];
-		return;
-	}
-
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-
-	NSMutableSet *set = [[NSMutableSet alloc] init];
-
-	for (i=0; i<n; i++) {
-		cmythProgram *program = [list progitem:i];
-		NSString *title = [program title];
-		[set addObject:title];
-	}
-
-	sections = [[NSMutableArray alloc] initWithArray:[set allObjects]];
-	counts = [[NSMutableArray alloc] init];
-
-	n = [list count];
-
-	int limit = [sections count];
-
-	for (i=0; i<limit; i++) {
-		int count = 0;
-		NSString *sec = [sections objectAtIndex:i];
-		for (j=0; j<n; j++) {
-			cmythProgram *program = [list progitem:j];
-			NSString *title = [program title];
-			if ([sec isEqualToString: title]) {
-				count++;
-			}
-		}
-		NSNumber *num = [[NSNumber alloc] initWithInteger:count];
-		[counts addObject:num];
-		[num release];
-	}
-
-	[pool release];
-}
-
--(cmythProgram*) atSection:(int) section
-		    atRow:(int) row
-{
-	int i, n, count, limit;
-	cmythProgram *rc = nil;
-
-	n = [list count];
-	limit = [sections count];
-	if (limit == 0) {
-		return nil;
-	}
-	count = 0;
-	NSString *sec = [sections objectAtIndex:section];
-
-	for (i=0; i<n; i++) {
-		cmythProgram *program = [list progitem:i];
-		NSString *title = [program title];
-		if ([sec isEqualToString: title] == YES) {
-			if (count == row) {
-				rc = program;
-				break;
-			}
-			count++;
-		}
-	}
-	return rc;
 }
 
 -(void)busy:(BOOL)on
@@ -166,20 +48,36 @@
 
 -(void)waitForData
 {
+	time_t start, t;
+	BOOL connected;
+
 	[lock lock];
+
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
 	NSLog(@"waiting for data");
 
-	while ([mythtv isConnected] == NO) {
+	time(&start);
+	t = start;
+	while (((connected=[mythtv isConnected]) == NO) && ((t-start) < 10)) {
 		usleep(1000);
+		time(&t);
 	}
 
 	[self busy:NO];
 
-	NSLog(@"data loaded");
+	if (connected == NO) {
+		NSLog(@"connection failed");
+		[mvpmc popup:@"Error!" message:@"MythTV connection failed!"];
+	} else {
+		NSLog(@"data loaded");
+		if ([mythtv numberOfSections] == 0) {
+			[mvpmc popup:@"Warning!" message:@"No recordings found!"];
+		}
+	}
 
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 	[self.tableView reloadData];
+
 	[pool release];
 
 	[lock unlock];
@@ -198,6 +96,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
+	search.delegate = self;
+
 	[super viewDidLoad];
 }
 
@@ -214,8 +114,8 @@
 
 	[lock lock];
 
-	[self busy:YES];
 	if (host) {
+		[self busy:YES];
 		if ((ip == nil) || (ip && ![host isEqualToString: ip])) {
 			[mythtv host:host port:port.intValue];
 		}
@@ -224,10 +124,12 @@
 		}
 		const char *h = [host UTF8String];
 		ip = [[NSString alloc] initWithUTF8String:h];
-	}
 
-	[NSThread detachNewThreadSelector:@selector(waitForData)
-		  toTarget:self withObject:nil];
+		[NSThread detachNewThreadSelector:@selector(waitForData)
+			  toTarget:self withObject:nil];
+	} else {
+		[mvpmc popup:@"Error!" message:@"MythTV connection failed!"];
+	}
 
 	[lock unlock];
 }
@@ -383,12 +285,63 @@
 
 
 - (void)dealloc {
-	[myth release];
 	[sections release];
 	[counts release];
 	[super dealloc];
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar*)searchBar
+{
+	[search resignFirstResponder];
+
+	[mythtv filterCancel];
+	[self.tableView reloadData];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+	int n = -1;
+
+	[search resignFirstResponder];
+
+	switch (searchScope) {
+	case 0:
+		n = [mythtv filterTitle:searchText];
+		break;
+	case 1:
+		n = [mythtv filterSubtitle:searchText];
+		break;
+	case 2:
+		n = [mythtv filterDescription:searchText];
+		break;
+	}
+
+	if (n < 0) {
+		NSLog(@"search error");
+	} else {
+		NSLog(@"reload table with %d results", n);
+		[self.tableView reloadData];
+	}
+}
+
+-(void)searchBar:(UISearchBar*)searchBar
+       selectedScopeButtonIndexDidChange:(NSInteger)scope
+{
+	searchScope = scope;
+}
+
+-(void)searchBar:(UISearchBar *)searchBar
+   textDidChange:(NSString *)text
+{
+	NSLog(@"search text '%@'", text);
+
+	if (searchText != nil) {
+		[searchText release];
+	}
+
+	searchText = text;
+	[searchText retain];
+}
 
 @end
 

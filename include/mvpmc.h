@@ -23,10 +23,24 @@
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-#include "api.h"
+#include <cmyth/cmyth.h>
+
+@interface Httpd : NSObject {
+	cmyth_conn_t conn;
+	cmyth_file_t file;
+	int sockfd;
+	int portno;
+	long long length;
+}
+
+-(void)server;
+-(Httpd*)openWith:(cmyth_proginfo_t*)prog;
+-(int)portNumber;
+
+@end
 
 @interface MVPMC : NSObject {
-	UIImage *image[7];
+	UIImage *image[3];
 	int imageNumber;
 }
 
@@ -61,9 +75,14 @@ struct mythtv_show {
 	cmyth_conn_t control;
 	cmyth_conn_t event;
 	int n;
+	int nAll;
+	int nFiltered;
 	struct mythtv_show *shows;
-	NSLock *theLock;
+	struct mythtv_show *allShows;
+	struct mythtv_show *filteredShows;
+	NSLock *lock;
 	NSThread *controlThread;
+	enum mythtv_error error;
 }
 
 -(MythTV*)init;
@@ -76,6 +95,51 @@ struct mythtv_show {
 -(NSInteger)numberOfRowsInSection:(NSInteger)section;
 -(NSString*)titleForSection:(NSInteger)section;
 -(cmyth_proginfo_t)progAtIndexPath:(NSIndexPath*)indexPath;
+-(int)filterTitle:(NSString*)text;
+-(int)filterSubtitle:(NSString*)text;
+-(int)filterDescription:(NSString*)text;
+-(void)filterCancel;
+
+@property (nonatomic) enum mythtv_error error;
+@property (retain,nonatomic) NSLock *lock;
+
+@end
+
+typedef enum {
+	VLC_TRANSCODE_INVALID = 0,
+	VLC_TRANSCODE_UNKNOWN,
+	VLC_TRANSCODE_ERROR,
+	VLC_TRANSCODE_STARTING,
+	VLC_TRANSCODE_IN_PROGRESS,
+	VLC_TRANSCODE_COMPLETE,
+	VLC_TRANSCODE_CONNECT_FAILED,
+	VLC_TRANSCODE_STOPPING,
+	VLC_TRANSCODE_STOPPED,
+} vlcTranscodeState;
+
+@interface VLC : NSObject {
+	cmyth_proginfo_t prog;
+	vlcTranscodeState state;
+	NSString *srcPath;
+	NSString *dstPath;
+	NSString *vlc;
+	NSLock *lock;
+	volatile int done;
+	volatile float progress;
+	int portno;
+}
+
+@property (retain,nonatomic) NSLock *lock;
+
+-(void)transcoder;
+-(VLC*)transcodeWith:(cmyth_proginfo_t*)program
+	    mythPath:(NSString*)myth
+	     vlcHost:(NSString*)host
+	     vlcPath:(NSString*)path;
+-(void)transcodeStop;
+-(float)transcodeProgress;
+-(int)portNumber;
+-(vlcTranscodeState)transcodeState;
 
 @end
 

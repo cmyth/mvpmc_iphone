@@ -57,7 +57,7 @@
 	scroll.scrollEnabled = YES;
 	scroll.showsVerticalScrollIndicator = YES;
 	scroll.showsHorizontalScrollIndicator = NO;
-	[scroll setContentSize:CGSizeMake(320, 1000)];
+	[scroll setContentSize:CGSizeMake(320, 640)];
         [scroll setCanCancelContentTouches:NO];
         scroll.clipsToBounds = YES;
         scroll.indicatorStyle = UIScrollViewIndicatorStyleWhite;

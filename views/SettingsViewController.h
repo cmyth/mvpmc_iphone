@@ -36,6 +36,7 @@
 	IBOutlet UIImageView *background;
 	IBOutlet UISegmentedControl *segment;
 	ScrollViewController *parent;
+	UIButton *bgButton[3];
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
@@ -44,6 +45,7 @@
 -(IBAction)display_help:(id)sender;
 -(void)animateTextField:(UITextField*)textField up:(BOOL)up;
 -(void)addParent:(id)sender;
+-(void)buttonPressed;
 
 @property (retain,nonatomic) UITextField *host;
 @property (retain,nonatomic) UITextField *port;

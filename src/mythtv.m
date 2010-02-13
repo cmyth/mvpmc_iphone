@@ -18,17 +18,18 @@
  */
 
 #include "mvpmc.h"
+#include "refmem/refmem.h"
 
 static void
 add_episode(struct mythtv_show *show, cmyth_proginfo_t program)
 {
 	if (show->n == 0) {
-		show->episodes = malloc(sizeof(struct mythtv_episode));
+		show->episodes = ref_alloc(sizeof(struct mythtv_episode));
 		show->episodes[0].prog = program;
 		show->episodes[0].file = NULL;
 	} else {
-		show->episodes = realloc(show->episodes,
-					 sizeof(struct mythtv_episode)*(show->n+1));
+		show->episodes = ref_realloc(show->episodes,
+					     sizeof(struct mythtv_episode)*(show->n+1));
 	}
 
 	show->episodes[show->n].prog = program;
@@ -39,6 +40,9 @@ add_episode(struct mythtv_show *show, cmyth_proginfo_t program)
 
 @implementation MythTV
 
+@synthesize error;
+@synthesize lock;
+
 -(void)addProgram:(cmyth_proginfo_t)program
 {
 	char *title;
@@ -46,19 +50,19 @@ add_episode(struct mythtv_show *show, cmyth_proginfo_t program)
 
 	title = cmyth_proginfo_title(program);
 
-	for (i=0; i<n; i++) {
-		if (strcmp(title, shows[i].title) == 0) {
-			add_episode(shows+i, program);
+	for (i=0; i<nAll; i++) {
+		if (strcmp(title, allShows[i].title) == 0) {
+			add_episode(allShows+i, program);
 			goto done;
 		}
 	}
 
-	shows = realloc(shows, sizeof(shows[0])*(n+1));
-	shows[n].title = ref_hold(title);
-	shows[n].n = 0;
-	shows[n].episodes = NULL;
-	add_episode(shows+n, program);
-	n++;
+	allShows = ref_realloc(allShows, sizeof(allShows[0])*(nAll+1));
+	allShows[nAll].title = ref_hold(title);
+	allShows[nAll].n = 0;
+	allShows[nAll].episodes = NULL;
+	add_episode(allShows+nAll, program);
+	nAll++;
 
 done:
 	ref_release(title);
@@ -70,14 +74,20 @@ done:
 	int len = 16*1024;
 	int i, count;
 
-	[theLock lock];
+	[lock lock];
 
-	const char *h = [hostName cString];
+	NSLog(@"connect to backend");
+
+	error = MYTHTV_ERROR_NONE;
+
+	const char *h = [hostName UTF8String];
 
 	if ((control=cmyth_conn_connect_ctrl(h, hostPort, len, tcp)) == NULL) {
+		error = MYTHTV_ERROR_CONNECT_FAILED;
 		goto err;
 	}
 	if ((event=cmyth_conn_connect_event(h, hostPort, len, tcp)) == NULL) {
+		error = MYTHTV_ERROR_CONNECT_FAILED;
 		goto err;
 	}
 
@@ -86,6 +96,7 @@ done:
 	cmyth_proglist_t list;
 
 	if ((list=cmyth_proglist_get_all_recorded(control)) == NULL) {
+		error = MYTHTV_ERROR_CONNECT_FAILED;
 		goto err;
 	}
 
@@ -102,17 +113,20 @@ done:
 	ref_release(list);
 
 	count = 0;
-	for (i=0; i<n; i++) {
+	for (i=0; i<nAll; i++) {
 		int j;
-		for (j=0; j<shows[i].n; j++) {
+		for (j=0; j<allShows[i].n; j++) {
 			count++;
 		}
 	}
 
+	shows = allShows;
+	n = nAll;
+
 	NSLog(@"found %d shows and %d episodes", n, count);
 
 err:
-	[theLock unlock];
+	[lock unlock];
 
 	NSLog(@"thread finished");
 }
@@ -121,13 +135,15 @@ err:
 {
 	BOOL ret = NO;
 
-	[theLock lock];
+	if ([lock tryLock] == NO) {
+		return NO;
+	}
 
 	if (control != NULL) {
 		ret = YES;
 	}
 
-	[theLock unlock];
+	[lock unlock];
 
 	return ret;
 }
@@ -138,7 +154,7 @@ err:
 	int rc = 0;
 	int i, j;
 
-	[theLock lock];
+	[lock lock];
 
 	NSLog(@"start connection");
 
@@ -159,6 +175,7 @@ err:
 		[hostName release];
 	}
 
+	[host retain];
 	hostName = host;
 	if (port == 0) {
 		hostPort = 6543;
@@ -172,13 +189,13 @@ err:
 			ref_release(shows[i].episodes[j].file);
 		}
 		if (shows[i].episodes) {
-			free(shows[i].episodes);
+			ref_release(shows[i].episodes);
 		}
-		[shows[i].title release];
+		ref_release(shows[i].title);
 	}
 
 	if (shows) {
-		free(shows);
+		ref_release(shows);
 		shows = NULL;
 	}
 	n = 0;
@@ -189,7 +206,7 @@ err:
 	[controlThread start];
 
 done:
-	[theLock unlock];
+	[lock unlock];
 
 	return rc;
 }
@@ -198,9 +215,9 @@ done:
 {
 	int ret;
 
-	[theLock lock];
+	[lock lock];
 	ret = n;
-	[theLock unlock];
+	[lock unlock];
 
 	return ret;
 }
@@ -209,13 +226,13 @@ done:
 {
 	int ret;
 
-	[theLock lock];
+	[lock lock];
 	if (section > n) {
 		ret = 0;
 	} else {
 		ret = shows[section].n;
 	}
-	[theLock unlock];
+	[lock unlock];
 
 	return ret;
 }
@@ -224,7 +241,7 @@ done:
 {
 	NSString *ret;
 
-	[theLock lock];
+	[lock lock];
 
 	if (section > n) {
 		ret = @"";
@@ -232,7 +249,7 @@ done:
 		ret = [[NSString alloc] initWithUTF8String:shows[section].title];
 	}
 
-	[theLock unlock];
+	[lock unlock];
 
 	return ret;
 }
@@ -245,7 +262,7 @@ done:
 	section = indexPath.section;
 	row = indexPath.row;
 
-	[theLock lock];
+	[lock lock];
 	if (section > n) {
 		prog = NULL;
 	} else if (row > shows[section].n) {
@@ -253,16 +270,149 @@ done:
 	} else {
 		prog = shows[section].episodes[row].prog;
 	}
-	[theLock unlock];
+	[lock unlock];
 
 	return prog;
+}
+
+static struct mythtv_episode*
+hold_episode(struct mythtv_episode *episode)
+{
+	ref_hold(episode->prog);
+	ref_hold(episode->file);
+
+	return episode;
+}
+
+static struct mythtv_show*
+hold_show(struct mythtv_show *show)
+{
+	int i;
+
+	ref_hold(show->title);
+	ref_hold(show->episodes);
+
+	for (i=0; i<show->n; i++) {
+		hold_episode(show->episodes+i);
+	}
+
+	return show;
+}
+
+static void
+release_shows(struct mythtv_show *shows, int n)
+{
+	int i, j;
+
+	if ((shows == NULL) || (n == 0)) {
+		return;
+	}
+
+	for (i=0; i<n; i++) {
+		ref_release(shows[i].title);
+		for (j=0; j<shows[i].n; j++) {
+			ref_release(shows[i].episodes[j].prog);
+			ref_release(shows[i].episodes[j].file);
+		}
+		ref_release(shows[i].episodes);
+	}
+
+	ref_release(shows);
+}
+
+-(int)filterTitle:(NSString*)text
+{
+	int i, j;
+	int ret;
+
+	if ([self isConnected] == NO) {
+		return -1;
+	}
+
+	[lock lock];
+
+	release_shows(filteredShows, nFiltered);
+
+	nFiltered = 0;
+	filteredShows = (struct mythtv_show*)ref_alloc(sizeof(struct mythtv_show)*nAll);
+	for (i=0; i<nAll; i++) {
+		if (strstr(allShows[i].title, [text UTF8String]) != 0) {
+			hold_show(allShows+i);
+			memcpy(filteredShows+nFiltered, allShows+i,
+			       sizeof(struct mythtv_show));
+			nFiltered++;
+		}
+	}
+
+	n = nFiltered;
+	shows = filteredShows;
+
+	NSLog(@"searched %@ found %d titles, %p", text, n, shows);
+
+	ret = n;
+
+	[lock unlock];
+
+	return ret;
+}
+
+-(int)filterSubtitle:(NSString*)text
+{
+	if ([self isConnected] == NO) {
+		return -1;
+	}
+
+	[lock lock];
+
+	ref_release(filteredShows);
+	nFiltered = 0;
+	filteredShows = NULL;
+	n = nFiltered;
+
+	[lock unlock];
+
+	return 0;
+}
+
+-(int)filterDescription:(NSString*)text
+{
+	if ([self isConnected] == NO) {
+		return -1;
+	}
+
+	[lock lock];
+
+	ref_release(filteredShows);
+	nFiltered = 0;
+	filteredShows = NULL;
+	n = nFiltered;
+
+	[lock unlock];
+
+	return 0;
+}
+
+-(void)filterCancel
+{
+	[lock lock];
+
+	shows = allShows;
+	n = nAll;
+
+	release_shows(filteredShows, nFiltered);
+
+	filteredShows = NULL;
+	nFiltered = 0;
+
+	[lock unlock];
 }
 
 -(MythTV*)init
 {
 	self = [super init];
 
-	theLock = [[NSLock alloc] init];
+	error = MYTHTV_ERROR_NONE;
+	lock = [[NSLock alloc] init];
 
 	return self;
 }

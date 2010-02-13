@@ -67,20 +67,6 @@
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="261662484">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{320, 485}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<int key="IBUIContentMode">5</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">settings_background.png</string>
-						</object>
-					</object>
 					<object class="IBUITextField" id="142590560">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
@@ -425,7 +411,6 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="528179557"/>
-							<reference ref="261662484"/>
 							<reference ref="463531893"/>
 							<reference ref="373016142"/>
 							<reference ref="345808257"/>
@@ -450,11 +435,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
 						<reference key="object" ref="528179557"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">66</int>
-						<reference key="object" ref="261662484"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -506,7 +486,6 @@
 					<string>25.IBPluginDependency</string>
 					<string>41.IBPluginDependency</string>
 					<string>53.IBPluginDependency</string>
-					<string>66.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 					<string>79.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
@@ -517,7 +496,6 @@
 					<string>SettingsViewController</string>
 					<string>UIResponder</string>
 					<string>{{701, 99}, {320, 480}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -579,10 +557,8 @@
 							<string>host</string>
 							<string>path</string>
 							<string>port</string>
-							<string>scroll</string>
 							<string>segment</string>
 							<string>test</string>
-							<string>uiview</string>
 							<string>vlc</string>
 							<string>vlc_host</string>
 							<string>vlc_path</string>
@@ -596,10 +572,8 @@
 							<string>UITextField</string>
 							<string>UITextField</string>
 							<string>UITextField</string>
-							<string>UIScrollView</string>
 							<string>UISegmentedControl</string>
 							<string>UIButton</string>
-							<string>UIView</string>
 							<string>UISwitch</string>
 							<string>UITextField</string>
 							<string>UITextField</string>
@@ -762,14 +736,6 @@
 					<string key="className">UIResponder</string>
 					<string key="superclassName">NSObject</string>
 					<reference key="sourceIdentifier" ref="370935467"/>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">UIScrollView</string>
-					<string key="superclassName">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">UIKit.framework/Headers/UIScrollView.h</string>
-					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">UISearchBar</string>

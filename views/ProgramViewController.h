@@ -18,7 +18,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "api.h"
+#import "mvpmc.h"
+
+#include <cmyth/cmyth.h>
 
 
 @interface ProgramViewController : UIViewController {
@@ -31,9 +33,8 @@
 	IBOutlet UIProgressView *progress;
 	IBOutlet UIImageView *background;
 	cmyth_proginfo_t *proginfo;
-	cmythProgram *prog;
-	cmythFile *file;
 	NSTimer *timer;
+	VLC *file;
 }
 
 @property (retain,nonatomic) UILabel *title;
@@ -44,7 +45,7 @@
 @property (retain,nonatomic) UIButton *back;
 @property (retain,nonatomic) UIProgressView *progress;
 @property (retain,nonatomic) UIImageView *background;
-@property (nonatomic, retain) cmythProgram *prog;
+@property (retain,nonatomic) VLC *file;
 
 -(IBAction) hide:(id) sender;
 -(IBAction) playOriginal:(id) sender;
