@@ -35,7 +35,6 @@
 @synthesize test;
 @synthesize help;
 @synthesize background;
-@synthesize segment;
 
 -(void)popup:(NSString*)title
      message:(NSString*)message
@@ -72,15 +71,15 @@
 	[www_base resignFirstResponder];
 }
 
--(IBAction)changeImage:(id)sender
+-(void)changeImage:(int)index
 {
-	int index = [segment selectedSegmentIndex];
+	if ((index >= 0) && (index <= 2)) {
+		NSLog(@"change background image to %d", index);
 
-	NSLog(@"change background image to %d", index);
+		[mvpmc setBackgroundImage:index];
 
-	[mvpmc setBackgroundImage:index];
-
-	[parent changeImage];
+		[parent changeImage];
+	}
 }
 
 -(IBAction) display_help:(id) sender
@@ -135,6 +134,12 @@
 	[mvpmc setBackgroundImage:index];
 
 	[parent changeImage];
+
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	char str[32];
+	snprintf(str, sizeof(str), "%d", index);
+	NSString *text = [[NSString alloc] initWithUTF8String:str];
+	[userDefaults setObject:text forKey:@"background"];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -204,7 +209,12 @@
 	[[self view] addSubview:btn];
 	[btn release];
 
-	segment.hidden = YES;
+	NSString *bgimage = [userDefaults stringForKey:@"background"];
+
+	if (bgimage) {
+		int index = [bgimage intValue];
+		[self changeImage:index];
+	}
 
 	NSLog(@"settings view loaded");
 }

@@ -328,6 +328,11 @@
        selectedScopeButtonIndexDidChange:(NSInteger)scope
 {
 	searchScope = scope;
+
+	if (searchText != nil) {
+		NSLog(@"scope changed");
+		[self searchBarSearchButtonClicked:nil];
+	}
 }
 
 -(void)searchBar:(UISearchBar *)searchBar

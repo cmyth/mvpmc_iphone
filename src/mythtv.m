@@ -336,7 +336,7 @@ release_shows(struct mythtv_show *shows, int n)
 	nFiltered = 0;
 	filteredShows = (struct mythtv_show*)ref_alloc(sizeof(struct mythtv_show)*nAll);
 	for (i=0; i<nAll; i++) {
-		if (strstr(allShows[i].title, [text UTF8String]) != 0) {
+		if (strcasestr(allShows[i].title, [text UTF8String]) != 0) {
 			hold_show(allShows+i);
 			memcpy(filteredShows+nFiltered, allShows+i,
 			       sizeof(struct mythtv_show));
@@ -358,16 +358,55 @@ release_shows(struct mythtv_show *shows, int n)
 
 -(int)filterSubtitle:(NSString*)text
 {
+	int i, j;
+	int ret;
+
 	if ([self isConnected] == NO) {
 		return -1;
 	}
 
 	[lock lock];
 
-	ref_release(filteredShows);
+	release_shows(filteredShows, nFiltered);
+
 	nFiltered = 0;
-	filteredShows = NULL;
+	filteredShows = (struct mythtv_show*)ref_alloc(sizeof(struct mythtv_show)*nAll);
+	for (i=0; i<nAll; i++) {
+		struct mythtv_show *show = &(allShows[i]);
+		int found = 0;
+		for (j=0; j<show->n; j++) {
+			char *subtitle;
+			struct mythtv_episode *episode = &(show->episodes[j]);
+			subtitle = cmyth_proginfo_subtitle(episode->prog);
+			if (strcasestr(subtitle, [text UTF8String]) != 0) {
+				hold_episode(episode);
+				if (found == 0) {
+					filteredShows[nFiltered].episodes =
+						ref_alloc(sizeof(struct mythtv_episode)*show->n);
+					memcpy(filteredShows[nFiltered].episodes,
+					       episode, sizeof(*episode));
+					filteredShows[nFiltered].title =
+						ref_hold(show->title);
+					filteredShows[nFiltered].n = 1;
+					nFiltered++;
+					found = 1;
+				} else {
+					int n = filteredShows[nFiltered].n;
+					memcpy(filteredShows[nFiltered].episodes+n,
+					       episode, sizeof(*episode));
+					filteredShows[nFiltered].n++;
+				}
+			}
+			ref_release(subtitle);
+		}
+	}
+
 	n = nFiltered;
+	shows = filteredShows;
+
+	NSLog(@"searched %@ found %d titles, %p", text, n, shows);
+
+	ret = n;
 
 	[lock unlock];
 
@@ -376,16 +415,55 @@ release_shows(struct mythtv_show *shows, int n)
 
 -(int)filterDescription:(NSString*)text
 {
+	int i, j;
+	int ret;
+
 	if ([self isConnected] == NO) {
 		return -1;
 	}
 
 	[lock lock];
 
-	ref_release(filteredShows);
+	release_shows(filteredShows, nFiltered);
+
 	nFiltered = 0;
-	filteredShows = NULL;
+	filteredShows = (struct mythtv_show*)ref_alloc(sizeof(struct mythtv_show)*nAll);
+	for (i=0; i<nAll; i++) {
+		struct mythtv_show *show = &(allShows[i]);
+		int found = 0;
+		for (j=0; j<show->n; j++) {
+			char *description;
+			struct mythtv_episode *episode = &(show->episodes[j]);
+			description = cmyth_proginfo_description(episode->prog);
+			if (strcasestr(description, [text UTF8String]) != 0) {
+				hold_episode(episode);
+				if (found == 0) {
+					filteredShows[nFiltered].episodes =
+						ref_alloc(sizeof(struct mythtv_episode)*show->n);
+					memcpy(filteredShows[nFiltered].episodes,
+					       episode, sizeof(*episode));
+					filteredShows[nFiltered].title =
+						ref_hold(show->title);
+					filteredShows[nFiltered].n = 1;
+					nFiltered++;
+					found = 1;
+				} else {
+					int n = filteredShows[nFiltered].n;
+					memcpy(filteredShows[nFiltered].episodes+n,
+					       episode, sizeof(*episode));
+					filteredShows[nFiltered].n++;
+				}
+			}
+			ref_release(description);
+		}
+	}
+
 	n = nFiltered;
+	shows = filteredShows;
+
+	NSLog(@"searched %@ found %d titles, %p", text, n, shows);
+
+	ret = n;
 
 	[lock unlock];
 

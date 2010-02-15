@@ -34,14 +34,13 @@
 	IBOutlet UIButton *help;
 	UIActivityIndicatorView *active;
 	IBOutlet UIImageView *background;
-	IBOutlet UISegmentedControl *segment;
 	ScrollViewController *parent;
 	UIButton *bgButton[3];
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
 -(IBAction)hideKeyboard:(id)sender;
--(IBAction)changeImage:(id)sender;
+-(void)changeImage:(int)index;
 -(IBAction)display_help:(id)sender;
 -(void)animateTextField:(UITextField*)textField up:(BOOL)up;
 -(void)addParent:(id)sender;
@@ -58,6 +57,5 @@
 @property (retain,nonatomic) UIButton *test;
 @property (retain,nonatomic) UIButton *help;
 @property (retain,nonatomic) UIImageView *background;
-@property (retain,nonatomic) UISegmentedControl *segment;
 
 @end
