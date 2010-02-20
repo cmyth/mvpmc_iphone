@@ -76,7 +76,7 @@ done:
 
 	[lock lock];
 
-	NSLog(@"connect to backend");
+	MVPMCLog(@"connect to backend");
 
 	error = MYTHTV_ERROR_NONE;
 
@@ -91,7 +91,7 @@ done:
 		goto err;
 	}
 
-	NSLog(@"connected to the MythTV backend");
+	MVPMCLog(@"connected to the MythTV backend");
 
 	cmyth_proglist_t list;
 
@@ -123,12 +123,12 @@ done:
 	shows = allShows;
 	n = nAll;
 
-	NSLog(@"found %d shows and %d episodes", n, count);
+	MVPMCLog(@"found %d shows and %d episodes", n, count);
 
 err:
 	[lock unlock];
 
-	NSLog(@"thread finished");
+	MVPMCLog(@"thread finished");
 }
 
 -(BOOL)isConnected
@@ -156,7 +156,7 @@ err:
 
 	[lock lock];
 
-	NSLog(@"start connection");
+	MVPMCLog(@"start connection");
 
 	if (hostName && [host isEqualToString: hostName] && (port == hostPort)) {
 		goto done;
@@ -347,7 +347,7 @@ release_shows(struct mythtv_show *shows, int n)
 	n = nFiltered;
 	shows = filteredShows;
 
-	NSLog(@"searched %@ found %d titles, %p", text, n, shows);
+	MVPMCLog(@"searched %@ found %d titles, %p", text, n, shows);
 
 	ret = n;
 
@@ -404,7 +404,7 @@ release_shows(struct mythtv_show *shows, int n)
 	n = nFiltered;
 	shows = filteredShows;
 
-	NSLog(@"searched %@ found %d titles, %p", text, n, shows);
+	MVPMCLog(@"searched %@ found %d titles, %p", text, n, shows);
 
 	ret = n;
 
@@ -461,7 +461,7 @@ release_shows(struct mythtv_show *shows, int n)
 	n = nFiltered;
 	shows = filteredShows;
 
-	NSLog(@"searched %@ found %d titles, %p", text, n, shows);
+	MVPMCLog(@"searched %@ found %d titles, %p", text, n, shows);
 
 	ret = n;
 

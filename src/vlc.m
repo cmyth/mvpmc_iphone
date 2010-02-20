@@ -225,11 +225,11 @@ static int send_commands(int fd, const char *src, const char *dest,
 	setsockopt(fd, IPPROTO_TCP, TCP_CONNECTIONTIMEOUT, &tv, sizeof(tv));
 #endif
 
-	NSLog(@"VLC connect to %@", vlc);
+	MVPMCLog(@"VLC connect to %@", vlc);
 	ret = connect(fd, (struct sockaddr *)&sa, sizeof(sa));
 
 	if (ret < 0) {
-		NSLog(@"VLC connect failed");
+		MVPMCLog(@"VLC connect failed");
 		close(fd);
 		self->state = VLC_TRANSCODE_CONNECT_FAILED;
 		return;
@@ -238,13 +238,13 @@ static int send_commands(int fd, const char *src, const char *dest,
 	setsockopt(fd, SOL_SOCKET, SO_NOSIGPIPE, (void *)&set, sizeof(int));
 
 	if (send_password(fd) != 0) {
-		NSLog(@"VLC login failed");
+		MVPMCLog(@"VLC login failed");
 		close(fd);
 		self->state = VLC_TRANSCODE_CONNECT_FAILED;
 		return;
 	}
 
-	NSLog(@"VLC password accepted");
+	MVPMCLog(@"VLC password accepted");
 
 	self->state = VLC_TRANSCODE_STARTING;
 
@@ -291,7 +291,7 @@ static int send_commands(int fd, const char *src, const char *dest,
 				break;
 			}
 		} else {
-			NSLog(@"VLC read failed with n %d",n);
+			MVPMCLog(@"VLC read failed with n %d",n);
 		}
 	}
 
@@ -303,7 +303,7 @@ static int send_commands(int fd, const char *src, const char *dest,
 		snprintf(id, sizeof(id), "mvpmc.iphone.%s", fn);
 		snprintf(cmd, sizeof(cmd), "del %s\n", id);
 
-		NSLog(@"VLC %s",cmd);
+		MVPMCLog(@"VLC %s",cmd);
 
 		issue_command(fd, cmd);
 
@@ -321,9 +321,9 @@ static int send_commands(int fd, const char *src, const char *dest,
 	[lock unlock];
 
 	if (state == VLC_TRANSCODE_COMPLETE) {
-		NSLog(@"transcode is complete");
+		MVPMCLog(@"transcode is complete");
 	} else {
-		NSLog(@"transcode is stopped");
+		MVPMCLog(@"transcode is stopped");
 	}
 }
 

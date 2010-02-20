@@ -52,7 +52,7 @@
 
 -(IBAction) hideKeyboard:(id) sender
 {
-	NSLog(@"hide keyboard");
+	MVPMCLog(@"hide keyboard");
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
@@ -76,7 +76,7 @@
 -(void)changeImage:(int)index
 {
 	if ((index >= 0) && (index <= 2)) {
-		NSLog(@"change background image to %d", index);
+		MVPMCLog(@"change background image to %d", index);
 
 		[mvpmc setBackgroundImage:index];
 
@@ -218,7 +218,7 @@
 		[self changeImage:index];
 	}
 
-	NSLog(@"settings view loaded");
+	MVPMCLog(@"settings view loaded");
 }
 
 /*
@@ -291,7 +291,7 @@
 
 -(void)addParent:(id)sender
 {
-	NSLog(@"add parent");
+	MVPMCLog(@"add parent");
 
 	parent = sender;
 }

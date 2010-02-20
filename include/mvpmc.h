@@ -25,6 +25,12 @@
 
 #include <cmyth/cmyth.h>
 
+#if 0
+#define MVPMCLog(x...)	NSLog(x)
+#else
+#define MVPMCLog(x...)
+#endif
+
 @class VLC;
 
 #define MAX_VLC		16

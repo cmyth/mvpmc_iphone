@@ -56,7 +56,7 @@ static Httpd *httpd;
 
 -(IBAction) playOriginal:(id) sender
 {
-	NSLog(@"play original");
+	MVPMCLog(@"play original");
 
 	if (httpd != nil) {
 		[httpd shutdown];
@@ -64,7 +64,7 @@ static Httpd *httpd;
 	}
 	httpd = [[Httpd alloc] openWith:proginfo];
 
-	NSLog(@"original file opened");
+	MVPMCLog(@"original file opened");
 
 	if (httpd) {
 		int port = [httpd portNumber];
@@ -76,7 +76,7 @@ static Httpd *httpd;
 
 -(IBAction) playTranscoded:(id) sender
 {
-	NSLog(@"play transcoded");
+	MVPMCLog(@"play transcoded");
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString *www_base = [userDefaults stringForKey:@"www_base"];
@@ -118,7 +118,7 @@ static Httpd *httpd;
 	NSString *vlc_path = [userDefaults stringForKey:@"vlc_path"];
 	NSString *myth_path = [userDefaults stringForKey:@"myth_path"];
 
-	NSLog(@"start transcode");
+	MVPMCLog(@"start transcode");
 
 	if (([vlc_host isEqualToString: @""]) ||
 	    ([vlc_path isEqualToString: @""])) {
@@ -167,11 +167,11 @@ static Httpd *httpd;
 
 		switch (state) {
 		case VLC_TRANSCODE_CONNECT_FAILED:
-			NSLog(@"VLC connect failed error");
+			MVPMCLog(@"VLC connect failed error");
 			message = @"VLC server not found!";
 			break;
 		case VLC_TRANSCODE_ERROR:
-			NSLog(@"VLC transcode failed error");
+			MVPMCLog(@"VLC transcode failed error");
 			message = @"VLC transcode failed!";
 			break;
 		case VLC_TRANSCODE_STOPPED:
@@ -205,7 +205,7 @@ static Httpd *httpd;
 
 -(IBAction) stopTranscode:(id) sender
 {
-	NSLog(@"stop transcode");
+	MVPMCLog(@"stop transcode");
 
 	if (file == nil) {
 		[mvpmc popup:@"Error!" message:@"VLC transcode not in progress!"];
@@ -311,7 +311,7 @@ static Httpd *httpd;
 	if (file == nil) {
 		progress.hidden = YES;
 	} else {
-		NSLog(@"found VLC transcode object");
+		MVPMCLog(@"found VLC transcode object");
 		progress.hidden = NO;
 		// Schedule timer to update progress
 		timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
@@ -344,7 +344,7 @@ static Httpd *httpd;
 
 
 - (void)dealloc {
-	NSLog(@"dealloc ProgramView");
+	MVPMCLog(@"dealloc ProgramView");
 	[super dealloc];
 }
 

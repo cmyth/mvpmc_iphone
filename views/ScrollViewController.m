@@ -48,7 +48,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	NSLog(@"scroll view loaded");
+	MVPMCLog(@"scroll view loaded");
 
 	scroll.alwaysBounceVertical = YES;
 	scroll.alwaysBounceHorizontal = NO;

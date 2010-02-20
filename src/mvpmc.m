@@ -39,15 +39,14 @@
 {
 	MPMoviePlayerController *player = [note object];
 
-	NSLog(@"preload done");
+	MVPMCLog(@"preload done");
 
 	NSError *error = [[note userInfo] objectForKey:@"error"];
 
 	if (error == nil) {
-		NSLog(@"no preload error");
+		MVPMCLog(@"no preload error");
 	} else {
-		int e = [error code];
-		NSLog(@"preload error %d", e);
+		MVPMCLog(@"preload error %d", [error code]);
 		[self popup:@"Error!" message:@"Playback failed!"];
 	}
 
@@ -60,7 +59,7 @@
 {
 	MPMoviePlayerController *player = [note object];
 
-	NSLog(@"movie done");
+	MVPMCLog(@"movie done");
 
 	[[NSNotificationCenter defaultCenter] removeObserver:self
 					      name:MPMoviePlayerPlaybackDidFinishNotification
@@ -71,7 +70,7 @@
 
 -(void)playURL:(NSURL*)URL
 {
-	NSLog(@"playing movie");
+	MVPMCLog(@"playing movie");
 
 	MPMoviePlayerController *player;
 

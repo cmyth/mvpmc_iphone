@@ -181,7 +181,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = BF5846F610D9BAD000EE0B3E /* mvpmc */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* mvpmc */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* mvpmc */,
@@ -416,6 +416,7 @@
 			BFC1D7FE11309A49007284FA /* PlistBookmark */ = BFC1D7FE11309A49007284FA /* PlistBookmark */;
 			BFC1D7FF11309A49007284FA /* PlistBookmark */ = BFC1D7FF11309A49007284FA /* PlistBookmark */;
 			BFC1D80A11309AE0007284FA /* PlistBookmark */ = BFC1D80A11309AE0007284FA /* PlistBookmark */;
+			BFC1D80D11309B9B007284FA /* PlistBookmark */ = BFC1D80D11309B9B007284FA /* PlistBookmark */;
 			BFCA4F92110BA45C00143FB0 = BFCA4F92110BA45C00143FB0 /* PBXBookmark */;
 			BFCA4F93110BA45C00143FB0 = BFCA4F93110BA45C00143FB0 /* PBXBookmark */;
 			BFCA4F94110BA45C00143FB0 = BFCA4F94110BA45C00143FB0 /* PBXBookmark */;
@@ -2141,6 +2142,18 @@
 		rLoc = 9223372036854775807;
 	};
 	BFC1D80A11309AE0007284FA /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/gettler/iphone/mvpmc/entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	BFC1D80D11309B9B007284FA /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */;
 		fallbackIsa = PBXBookmark;

@@ -58,7 +58,7 @@
 
 	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
-	NSLog(@"waiting for data");
+	MVPMCLog(@"waiting for data");
 
 	time(&start);
 	t = start;
@@ -70,10 +70,10 @@
 	[self busy:NO];
 
 	if (connected == NO) {
-		NSLog(@"connection failed");
+		MVPMCLog(@"connection failed");
 		[mvpmc popup:@"Error!" message:@"MythTV connection failed!"];
 	} else {
-		NSLog(@"data loaded");
+		MVPMCLog(@"data loaded");
 		if ([mythtv numberOfSections] == 0) {
 			[mvpmc popup:@"Warning!" message:@"No recordings found!"];
 		}
@@ -320,9 +320,9 @@
 	}
 
 	if (n < 0) {
-		NSLog(@"search error");
+		MVPMCLog(@"search error");
 	} else {
-		NSLog(@"reload table with %d results", n);
+		MVPMCLog(@"reload table with %d results", n);
 		[self.tableView reloadData];
 	}
 }
@@ -333,7 +333,7 @@
 	searchScope = scope;
 
 	if (searchText != nil) {
-		NSLog(@"scope changed");
+		MVPMCLog(@"scope changed");
 		[self searchBarSearchButtonClicked:nil];
 	}
 }
@@ -341,7 +341,7 @@
 -(void)searchBar:(UISearchBar *)searchBar
    textDidChange:(NSString *)text
 {
-	NSLog(@"search text '%@'", text);
+	MVPMCLog(@"search text '%@'", text);
 
 	if (searchText != nil) {
 		[searchText release];

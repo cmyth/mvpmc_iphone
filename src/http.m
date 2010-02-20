@@ -217,7 +217,7 @@ err:
 	int attempts = 0;
 	long long w, wrote = 0;
 
-	NSLog(@"http server started");
+	MVPMCLog(@"http server started");
 
 	while (1) {
 		url_t *u;
@@ -240,10 +240,10 @@ err:
 		u = read_header(fd);
 
 		if (strcasecmp(u->command, "GET") == 0) {
-			NSLog(@"GET command");
+			MVPMCLog(@"GET command");
 			if (send_header(fd, u, length) == 0) {
 				w = send_data(fd, u, file);
-				NSLog(@"wrote %lld bytes", w);
+				MVPMCLog(@"wrote %lld bytes", w);
 				wrote += w;
 			}
 		}
@@ -255,7 +255,7 @@ err:
 		}
 	}
 
-	NSLog(@"server exiting, wrote %d bytes", wrote);
+	MVPMCLog(@"server exiting, wrote %d bytes", wrote);
 }
 
 static int
@@ -314,14 +314,14 @@ create_socket(int *f, int *p)
 		goto err;
 	}
 
-	NSLog(@"opening myth connection");
+	MVPMCLog(@"opening myth connection");
 
 	if ((conn=cmyth_conn_connect_ctrl(host, port, 16*1024,
 					  tcp_control)) == NULL) {
 		goto err;
 	}
 
-	NSLog(@"opening myth file");
+	MVPMCLog(@"opening myth file");
 
 #define MAX_BSIZE	(256*1024*3)
 	if ((file=cmyth_conn_connect_file(prog, conn, MAX_BSIZE,
@@ -331,7 +331,7 @@ create_socket(int *f, int *p)
 
 	length = cmyth_proginfo_length(prog);
 
-	NSLog(@"program length %d", length);
+	MVPMCLog(@"program length %d", length);
 
 	self = [super init];
 
@@ -357,7 +357,7 @@ err:
 }
 
 -(void)shutdown {
-	NSLog(@"shutdown httpd object");
+	MVPMCLog(@"shutdown httpd object");
 
 	if (thread) {
 		[thread cancel];
@@ -374,7 +374,7 @@ err:
 }
 
 - (void)dealloc {
-	NSLog(@"release httpd object");
+	MVPMCLog(@"release httpd object");
 
 	[self shutdown];
 	[super dealloc];
