@@ -80,7 +80,7 @@ done:
 
 	error = MYTHTV_ERROR_NONE;
 
-	const char *h = [hostName UTF8String];
+	char *h = (char*)[hostName UTF8String];
 
 	if ((control=cmyth_conn_connect_ctrl(h, hostPort, len, tcp)) == NULL) {
 		error = MYTHTV_ERROR_CONNECT_FAILED;
@@ -322,7 +322,7 @@ release_shows(struct mythtv_show *shows, int n)
 
 -(int)filterTitle:(NSString*)text
 {
-	int i, j;
+	int i;
 	int ret;
 
 	if ([self isConnected] == NO) {
@@ -391,8 +391,8 @@ release_shows(struct mythtv_show *shows, int n)
 					nFiltered++;
 					found = 1;
 				} else {
-					int n = filteredShows[nFiltered].n;
-					memcpy(filteredShows[nFiltered].episodes+n,
+					int x = filteredShows[nFiltered].n;
+					memcpy(filteredShows[nFiltered].episodes+x,
 					       episode, sizeof(*episode));
 					filteredShows[nFiltered].n++;
 				}
@@ -448,8 +448,8 @@ release_shows(struct mythtv_show *shows, int n)
 					nFiltered++;
 					found = 1;
 				} else {
-					int n = filteredShows[nFiltered].n;
-					memcpy(filteredShows[nFiltered].episodes+n,
+					int x = filteredShows[nFiltered].n;
+					memcpy(filteredShows[nFiltered].episodes+x,
 					       episode, sizeof(*episode));
 					filteredShows[nFiltered].n++;
 				}
@@ -522,7 +522,7 @@ release_shows(struct mythtv_show *shows, int n)
 	[lock unlock];
 }
 
--(VLC*)getVLC:(cmyth_proginfo_t*)prog
+-(VLC*)getVLC:(cmyth_proginfo_t)prog
 {
 	int i;
 	VLC *ret = nil;

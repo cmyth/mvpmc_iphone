@@ -40,7 +40,7 @@
 }
 
 -(void)server;
--(Httpd*)openWith:(cmyth_proginfo_t*)prog;
+-(Httpd*)openWith:(cmyth_proginfo_t)prog;
 -(int)portNumber;
 -(void)shutdown;
 
@@ -109,7 +109,7 @@ struct mythtv_show {
 -(void)filterCancel;
 -(BOOL)addVLC:(VLC*)vlc;
 -(void)removeVLC:(VLC*)vlc;
--(VLC*)getVLC:(cmyth_proginfo_t*)prog;
+-(VLC*)getVLC:(cmyth_proginfo_t)prog;
 
 @property (nonatomic) enum mythtv_error error;
 @property (retain,nonatomic) NSLock *lock;
@@ -143,7 +143,7 @@ typedef enum {
 @property (retain,nonatomic) NSLock *lock;
 
 -(void)transcoder;
--(VLC*)transcodeWith:(cmyth_proginfo_t*)program
+-(VLC*)transcodeWith:(cmyth_proginfo_t)program
 	    mythPath:(NSString*)myth
 	     vlcHost:(NSString*)host
 	     vlcPath:(NSString*)path;
@@ -151,7 +151,7 @@ typedef enum {
 -(float)transcodeProgress;
 -(int)portNumber;
 -(vlcTranscodeState)transcodeState;
--(cmyth_proginfo_t*)getProg;
+-(cmyth_proginfo_t)getProg;
 
 @end
 

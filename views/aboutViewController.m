@@ -57,8 +57,8 @@
 	NSString *ver =[[NSBundle mainBundle]
 			       objectForInfoDictionaryKey:@"CFBundleVersion"];
 	NSString *text = [NSString stringWithFormat:@"iPhone Version %@",ver];
-	NSString *ipaddr;
 #if 0
+	NSString *ipaddr;
 	NSHost *host = [NSHost currentHost];
 
 	if (host) {

@@ -30,7 +30,6 @@
 	NSString *searchText;
 }
 
--(void)eraseTable;
 -(void)busy:(BOOL)on;
 -(IBAction)hideKeyboard:(id)sender;
 

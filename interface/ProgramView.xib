@@ -363,7 +363,7 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">title</string>
+						<string key="label">progTitle</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="227298107"/>
 					</object>
@@ -698,7 +698,7 @@
 							<string>length</string>
 							<string>progress</string>
 							<string>subtitle</string>
-							<string>title</string>
+							<string>progTitle</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>

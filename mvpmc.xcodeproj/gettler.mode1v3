@@ -309,7 +309,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SettingsViewController.m</string>
+								<string>entitlements.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -317,11 +317,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SettingsViewController.m</string>
+										<string>entitlements.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BFC1D71A11306CBA007284FA</string>
+										<string>BFC1D80A11309AE0007284FA</string>
 										<key>history</key>
 										<array>
 											<string>BF58474410D9C8A900EE0B3E</string>
@@ -368,10 +368,10 @@
 											<string>BF5E9ADD1127386C002061D4</string>
 											<string>BFC1D6361128800C007284FA</string>
 											<string>BFC1D6731128D8B1007284FA</string>
-											<string>BFC1D67E112A3786007284FA</string>
 											<string>BFC1D6B1112B9BD3007284FA</string>
 											<string>BFC1D71811306CBA007284FA</string>
-											<string>BFC1D71911306CBA007284FA</string>
+											<string>BFC1D7FD11309A49007284FA</string>
+											<string>BFC1D7FE11309A49007284FA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -572,9 +572,9 @@
 		<string>BFC1D5FE11286296007284FA</string>
 		<string>BFC1D5FF11286296007284FA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>BF58472610D9C2F400EE0B3E</string>
 		<string>/Users/gettler/iphone/mvpmc/mvpmc.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>BF58472610D9C2F400EE0B3E</string>
 	</array>
 	<key>WindowString</key>
 	<string>353 242 785 634 0 0 1440 878 </string>
@@ -598,7 +598,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ProgramViewController.m</string>
+								<string>ProgramViewController.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

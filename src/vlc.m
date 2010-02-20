@@ -391,7 +391,7 @@ static int send_commands(int fd, const char *src, const char *dest,
 	return state;
 }
 
--(cmyth_proginfo_t*)getProg
+-(cmyth_proginfo_t)getProg
 {
 	return prog;
 }

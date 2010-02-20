@@ -295,7 +295,7 @@ create_socket(int *f, int *p)
 	return 0;
 }
 
--(Httpd*)openWith:(cmyth_proginfo_t*)prog
+-(Httpd*)openWith:(cmyth_proginfo_t)prog
 {
 	int tcp_control = 4096;
 	int tcp_program = 128*1024;

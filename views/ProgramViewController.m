@@ -22,11 +22,13 @@
 
 #import "mvpmc.h"
 
+#include "refmem/refmem.h"
+
 static Httpd *httpd;
 
 @implementation ProgramViewController
 
-@synthesize title;
+@synthesize progTitle;
 @synthesize subtitle;
 @synthesize description;
 @synthesize date;
@@ -228,7 +230,7 @@ static Httpd *httpd;
 	[mythtv removeVLC:file];
 }
 
--(void)setProgInfo:(cmyth_proginfo_t*)p
+-(void)setProgInfo:(cmyth_proginfo_t)p
 {
 	proginfo = p;
 }
@@ -296,7 +298,7 @@ static Httpd *httpd;
 
 	NSString *l = [NSString stringWithFormat:@"%.2d:%.2d",h,m];
 
-	title.text = t;
+	progTitle.text = t;
 	subtitle.text = s;
 	description.text = d;
 	date.text = start;

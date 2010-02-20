@@ -28,6 +28,7 @@
 @implementation MythViewController
 
 @synthesize lock;
+@synthesize search;
 
 -(IBAction) hideKeyboard:(id) sender
 {

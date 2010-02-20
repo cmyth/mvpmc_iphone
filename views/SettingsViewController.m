@@ -52,6 +52,8 @@
 
 -(IBAction) hideKeyboard:(id) sender
 {
+	NSLog(@"hide keyboard");
+
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
 	[userDefaults setObject:host.text forKey:@"myth_host"];
@@ -194,7 +196,7 @@
 	buttonRect = CGRectMake(130, offset+60, 60, 60);
 	btn = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
 	bgButton[1] = btn;
-	[btn setFrame:buttonRect];	
+	[btn setFrame:buttonRect];
 	[btn addTarget:self action:@selector(buttonPressed:)
 	     forControlEvents:UIControlEventTouchUpInside];
 	[[self view] addSubview:btn];

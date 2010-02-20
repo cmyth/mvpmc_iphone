@@ -24,7 +24,7 @@
 
 
 @interface ProgramViewController : UIViewController {
-	IBOutlet UILabel *title;
+	IBOutlet UILabel *progTitle;
 	IBOutlet UILabel *subtitle;
 	IBOutlet UITextView *description;
 	IBOutlet UILabel *date;
@@ -37,7 +37,7 @@
 	VLC *file;
 }
 
-@property (retain,nonatomic) UILabel *title;
+@property (retain,nonatomic) UILabel *progTitle;
 @property (retain,nonatomic) UILabel *subtitle;
 @property (retain,nonatomic) UITextView *description;
 @property (retain,nonatomic) UILabel *date;
@@ -45,7 +45,6 @@
 @property (retain,nonatomic) UIButton *back;
 @property (retain,nonatomic) UIProgressView *progress;
 @property (retain,nonatomic) UIImageView *background;
-@property (retain,nonatomic) VLC *file;
 
 -(IBAction) hide:(id) sender;
 -(IBAction) playOriginal:(id) sender;
@@ -54,7 +53,7 @@
 -(IBAction) stopTranscode:(id) sender;
 -(void)handleTimer:(NSTimer*)timer;
 
--(void)setProgInfo:(cmyth_proginfo_t*)p;
+-(void)setProgInfo:(cmyth_proginfo_t)p;
 
 -(void)play_movie:(int)port;
 

@@ -53,7 +53,6 @@
 	scroll.alwaysBounceVertical = YES;
 	scroll.alwaysBounceHorizontal = NO;
 	scroll.clipsToBounds = YES;
-	scroll.delegate = self;
 	scroll.scrollEnabled = YES;
 	scroll.showsVerticalScrollIndicator = YES;
 	scroll.showsHorizontalScrollIndicator = NO;
