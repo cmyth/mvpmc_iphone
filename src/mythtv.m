@@ -74,6 +74,8 @@ done:
 	int len = 16*1024;
 	int i, count;
 
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+
 	[lock lock];
 
 	MVPMCLog(@"connect to backend");
@@ -127,6 +129,8 @@ done:
 
 err:
 	[lock unlock];
+
+	[pool release];
 
 	MVPMCLog(@"thread finished");
 }

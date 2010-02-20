@@ -199,6 +199,8 @@ static int send_commands(int fd, const char *src, const char *dest,
 
 -(void)transcoder
 {
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+
 	const char *h = [vlc UTF8String];
 	int fd, ret;
 	struct sockaddr_in sa;
@@ -208,7 +210,7 @@ static int send_commands(int fd, const char *src, const char *dest,
 
 	if ((fd=socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		self->state = VLC_TRANSCODE_CONNECT_FAILED;
-		return;
+		goto finished;
 	}
 
 	sa.sin_family = AF_INET;
@@ -232,7 +234,7 @@ static int send_commands(int fd, const char *src, const char *dest,
 		MVPMCLog(@"VLC connect failed");
 		close(fd);
 		self->state = VLC_TRANSCODE_CONNECT_FAILED;
-		return;
+		goto finished;
 	}
 
 	setsockopt(fd, SOL_SOCKET, SO_NOSIGPIPE, (void *)&set, sizeof(int));
@@ -241,7 +243,7 @@ static int send_commands(int fd, const char *src, const char *dest,
 		MVPMCLog(@"VLC login failed");
 		close(fd);
 		self->state = VLC_TRANSCODE_CONNECT_FAILED;
-		return;
+		goto finished;
 	}
 
 	MVPMCLog(@"VLC password accepted");
@@ -257,7 +259,7 @@ static int send_commands(int fd, const char *src, const char *dest,
 	} else {
 		state = VLC_TRANSCODE_ERROR;
 		close(fd);
-		return;
+		goto finished;
 	}
 
 	const char *fn = (const char*) f;
@@ -325,6 +327,9 @@ static int send_commands(int fd, const char *src, const char *dest,
 	} else {
 		MVPMCLog(@"transcode is stopped");
 	}
+
+finished:
+	[pool release];
 }
 
 -(VLC*)transcodeWith:(cmyth_proginfo_t)program
