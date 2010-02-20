@@ -22,6 +22,8 @@
 
 #import "mvpmc.h"
 
+static Httpd *httpd;
+
 @implementation ProgramViewController
 
 @synthesize title;
@@ -46,15 +48,24 @@
 
 -(IBAction) hide:(id) sender
 {
+	[timer invalidate];
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction) playOriginal:(id) sender
 {
-	Httpd *h = [[Httpd alloc] openWith:proginfo];
+	NSLog(@"play original");
 
-	if (h) {
-		int port = [h portNumber];
+	if (httpd != nil) {
+		[httpd shutdown];
+		[httpd release];
+	}
+	httpd = [[Httpd alloc] openWith:proginfo];
+
+	NSLog(@"original file opened");
+
+	if (httpd) {
+		int port = [httpd portNumber];
 		[self play_movie:port];
 	} else {
 		[mvpmc popup:@"Error!" message:@"Failed to open file!"];
@@ -63,6 +74,8 @@
 
 -(IBAction) playTranscoded:(id) sender
 {
+	NSLog(@"play transcoded");
+
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString *www_base = [userDefaults stringForKey:@"www_base"];
 
@@ -72,8 +85,13 @@
 	}
 
 	if (file) {
-		[mvpmc popup:@"Error!" message:@"VLC transcode in progress!"];
-		return;
+		vlcTranscodeState state = [file transcodeState];
+		if ((state != VLC_TRANSCODE_STOPPED) &&
+		    (state != VLC_TRANSCODE_COMPLETE)) {
+			[mvpmc popup:@"Error!"
+			       message:@"VLC transcode in progress!"];
+			return;
+		}
 	}
 
 	char *str;
@@ -111,8 +129,9 @@
 		if (state == VLC_TRANSCODE_IN_PROGRESS) {
 			[mvpmc popup:@"Error!"
 			       message:@"VLC transcode is already running!"];
+			return;
 		}
-		return;
+		[file release];
 	}
 
 	file = [[VLC alloc] transcodeWith:proginfo
@@ -123,6 +142,8 @@
 		[mvpmc popup:@"Error!" message:@"VLC transcode failed!"];
 		return;
 	}
+
+	[mythtv addVLC:file];
 
 	progress.progress = 0.0;
 	progress.hidden = NO;
@@ -136,37 +157,47 @@
 
 }
 
--(void)handleTimer:(NSTimer*)timer
+-(void)handleTimer:(NSTimer*)t
 {
 	if (file) {
 		NSString *message = nil;
+		vlcTranscodeState state = [file transcodeState];
 
-		switch ([file transcodeState]) {
+		switch (state) {
 		case VLC_TRANSCODE_CONNECT_FAILED:
+			NSLog(@"VLC connect failed error");
 			message = @"VLC server not found!";
 			break;
 		case VLC_TRANSCODE_ERROR:
+			NSLog(@"VLC transcode failed error");
 			message = @"VLC transcode failed!";
 			break;
 		case VLC_TRANSCODE_STOPPED:
+		case VLC_TRANSCODE_COMPLETE:
 			[timer invalidate];
-			[file release];
-			file = nil;
-			return;
+			timer = nil;
+			break;
+		default:
+			break;
 		}
 
 		if (message) {
 			[timer invalidate];
+			timer = nil;
 			[mvpmc popup:@"Error!" message:message];
 			progress.hidden = YES;
 			return;
 
 		}
 
-		float p = [file transcodeProgress];
+		if (state == VLC_TRANSCODE_STOPPED) {
+			progress.hidden = YES;
+		} else {
+			float p = [file transcodeProgress];
 
-		progress.progress = p;
-		progress.hidden = NO;
+			progress.progress = p;
+			progress.hidden = NO;
+		}
 	}
 }
 
@@ -177,12 +208,24 @@
 	if (file == nil) {
 		[mvpmc popup:@"Error!" message:@"VLC transcode not in progress!"];
 		return;
+	} else {
+		switch ([file transcodeState]) {
+		case VLC_TRANSCODE_STARTING:
+		case VLC_TRANSCODE_IN_PROGRESS:
+			break;
+		default:
+			[mvpmc popup:@"Error!"
+			       message:@"VLC transcode not in progress!"];
+			return;
+		}
 	}
 
 	[file transcodeStop];
 
 	progress.progress = 0.0;
 	progress.hidden = YES;
+
+	[mythtv removeVLC:file];
 }
 
 -(void)setProgInfo:(cmyth_proginfo_t*)p
@@ -259,9 +302,22 @@
 	date.text = start;
 	length.text = l;
 
-	progress.hidden = YES;
-
 	[super viewDidLoad];
+
+	file = [mythtv getVLC:proginfo];
+
+	if (file == nil) {
+		progress.hidden = YES;
+	} else {
+		NSLog(@"found VLC transcode object");
+		progress.hidden = NO;
+		// Schedule timer to update progress
+		timer = [NSTimer scheduledTimerWithTimeInterval: 1.0
+				 target: self
+				 selector: @selector(handleTimer:)
+				 userInfo: nil
+				 repeats: YES];
+	}
 }
 
 /*
@@ -286,6 +342,7 @@
 
 
 - (void)dealloc {
+	NSLog(@"dealloc ProgramView");
 	[super dealloc];
 }
 

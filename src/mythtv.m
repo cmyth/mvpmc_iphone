@@ -485,6 +485,66 @@ release_shows(struct mythtv_show *shows, int n)
 	[lock unlock];
 }
 
+-(BOOL)addVLC:(VLC*)vlc
+{
+	int i;
+	BOOL ret = NO;
+
+	[lock lock];
+
+	for (i=0; i<MAX_VLC; i++) {
+		if (transcodeList[i] == nil) {
+			[vlc retain];
+			transcodeList[i] = vlc;
+			ret = YES;
+			break;
+		}
+	}
+
+	[lock unlock];
+
+	return ret;
+}
+
+-(void)removeVLC:(VLC*)vlc
+{
+	int i;
+
+	[lock lock];
+
+	for (i=0; i<MAX_VLC; i++) {
+		if (transcodeList[i] == vlc) {
+			transcodeList[i] = nil;
+			break;
+		}
+	}
+
+	[lock unlock];
+}
+
+-(VLC*)getVLC:(cmyth_proginfo_t*)prog
+{
+	int i;
+	VLC *ret = nil;
+
+	[lock lock];
+
+	for (i=0; i<MAX_VLC; i++) {
+		if (transcodeList[i] != nil) {
+			if ([transcodeList[i] getProg] == prog) {
+				ret = transcodeList[i];
+				break;
+			}
+		}
+	}
+
+	[lock unlock];
+
+	[ret retain];
+
+	return ret;
+}
+
 -(MythTV*)init
 {
 	self = [super init];

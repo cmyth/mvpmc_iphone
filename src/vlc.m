@@ -307,7 +307,11 @@ static int send_commands(int fd, const char *src, const char *dest,
 
 		issue_command(fd, cmd);
 
-		state = VLC_TRANSCODE_STOPPED;
+		if (progress == 1) {
+			state = VLC_TRANSCODE_COMPLETE;
+		} else {
+			state = VLC_TRANSCODE_STOPPED;
+		}
 	}
 
 	close(fd);
@@ -315,6 +319,12 @@ static int send_commands(int fd, const char *src, const char *dest,
 	[lock lock];
 	done = 2;
 	[lock unlock];
+
+	if (state == VLC_TRANSCODE_COMPLETE) {
+		NSLog(@"transcode is complete");
+	} else {
+		NSLog(@"transcode is stopped");
+	}
 }
 
 -(VLC*)transcodeWith:(cmyth_proginfo_t)program
@@ -379,6 +389,11 @@ static int send_commands(int fd, const char *src, const char *dest,
 -(vlcTranscodeState)transcodeState
 {
 	return state;
+}
+
+-(cmyth_proginfo_t*)getProg
+{
+	return prog;
 }
 
 @end

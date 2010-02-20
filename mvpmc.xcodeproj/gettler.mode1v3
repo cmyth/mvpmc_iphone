@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -266,14 +264,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
-									<integer>9</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -313,7 +309,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ScrollViewController.m</string>
+								<string>SettingsViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +317,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ScrollViewController.m</string>
+										<string>SettingsViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BFC1D65811289BA5007284FA</string>
+										<string>BFC1D71A11306CBA007284FA</string>
 										<key>history</key>
 										<array>
 											<string>BF58474410D9C8A900EE0B3E</string>
@@ -345,8 +341,6 @@
 											<string>BF8FF5CE10F9095300094FD8</string>
 											<string>BF8FF5DB10F90B0C00094FD8</string>
 											<string>BF8FF5E510F90CC000094FD8</string>
-											<string>BF8FF67110FA813E00094FD8</string>
-											<string>BF8FF91211021FDC00094FD8</string>
 											<string>BF8FF9791103C21500094FD8</string>
 											<string>BF8FF9851103C42C00094FD8</string>
 											<string>BF8FFA2F1103EC0300094FD8</string>
@@ -371,13 +365,13 @@
 											<string>BFC17315111F93C9005E5952</string>
 											<string>BFC173D51123A147005E5952</string>
 											<string>BFC17401112442DD005E5952</string>
-											<string>BFC1744B11259546005E5952</string>
 											<string>BF5E9ADD1127386C002061D4</string>
-											<string>BFC1D6341128800C007284FA</string>
-											<string>BFC1D6351128800C007284FA</string>
 											<string>BFC1D6361128800C007284FA</string>
-											<string>BFC1D64D11289A53007284FA</string>
-											<string>BFC1D64E11289A53007284FA</string>
+											<string>BFC1D6731128D8B1007284FA</string>
+											<string>BFC1D67E112A3786007284FA</string>
+											<string>BFC1D6B1112B9BD3007284FA</string>
+											<string>BFC1D71811306CBA007284FA</string>
+											<string>BFC1D71911306CBA007284FA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -579,8 +573,8 @@
 		<string>BFC1D5FF11286296007284FA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>BF58472610D9C2F400EE0B3E</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/gettler/iphone/mvpmc/mvpmc.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>353 242 785 634 0 0 1440 878 </string>
@@ -604,7 +598,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ScrollViewController.m</string>
+								<string>ProgramViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -675,7 +669,7 @@
 			<key>WindowToolGUID</key>
 			<string>BF58472610D9C2F400EE0B3E</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

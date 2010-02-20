@@ -44,7 +44,7 @@
 -(IBAction)display_help:(id)sender;
 -(void)animateTextField:(UITextField*)textField up:(BOOL)up;
 -(void)addParent:(id)sender;
--(void)buttonPressed;
+-(void)buttonPressed:(id)sender;
 
 @property (retain,nonatomic) UITextField *host;
 @property (retain,nonatomic) UITextField *port;

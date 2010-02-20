@@ -32,7 +32,7 @@
 	IBOutlet UIButton *back;
 	IBOutlet UIProgressView *progress;
 	IBOutlet UIImageView *background;
-	cmyth_proginfo_t *proginfo;
+	cmyth_proginfo_t proginfo;
 	NSTimer *timer;
 	VLC *file;
 }

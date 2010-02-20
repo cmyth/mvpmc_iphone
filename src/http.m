@@ -180,7 +180,7 @@ send_data(int fd, url_t *u, cmyth_file_t file)
 	pos = cmyth_file_seek(file, u->start, SEEK_SET);
 
 	while (pos <= (u->end)) {
-		int size, tot, len;
+		int size, tot, len, l;
 
 		size = ((u->end - pos) >= BSIZE) ? BSIZE : (u->end - pos + 1);
 
@@ -196,7 +196,8 @@ send_data(int fd, url_t *u, cmyth_file_t file)
 			tot += n;
 		}
 
-		if (my_write(fd, buf, len) != len) {
+		if ((l=my_write(fd, buf, len)) != len) {
+			wrote += l;
 			break;
 		}
 
@@ -213,19 +214,22 @@ err:
 
 -(void)server
 {
-	int fd;
 	int attempts = 0;
-	long long wrote = 0;
+	long long w, wrote = 0;
+
+	NSLog(@"http server started");
 
 	while (1) {
 		url_t *u;
 
+		fd = -1;
+
 		if (listen(sockfd, 5) != 0) {
-			return;
+			break;
 		}
 
 		if ((fd=accept(sockfd, NULL, NULL)) < 0) {
-			return;
+			break;
 		}
 
 		int set = 1;
@@ -236,13 +240,22 @@ err:
 		u = read_header(fd);
 
 		if (strcasecmp(u->command, "GET") == 0) {
+			NSLog(@"GET command");
 			if (send_header(fd, u, length) == 0) {
-				wrote += send_data(fd, u, file);
+				w = send_data(fd, u, file);
+				NSLog(@"wrote %lld bytes", w);
+				wrote += w;
 			}
 		}
 
 		close(fd);
+
+		if (w <= 0) {
+			break;
+		}
 	}
+
+	NSLog(@"server exiting, wrote %d bytes", wrote);
 }
 
 static int
@@ -301,10 +314,14 @@ create_socket(int *f, int *p)
 		goto err;
 	}
 
+	NSLog(@"opening myth connection");
+
 	if ((conn=cmyth_conn_connect_ctrl(host, port, 16*1024,
 					  tcp_control)) == NULL) {
 		goto err;
 	}
+
+	NSLog(@"opening myth file");
 
 #define MAX_BSIZE	(256*1024*3)
 	if ((file=cmyth_conn_connect_file(prog, conn, MAX_BSIZE,
@@ -314,10 +331,17 @@ create_socket(int *f, int *p)
 
 	length = cmyth_proginfo_length(prog);
 
+	NSLog(@"program length %d", length);
+
 	self = [super init];
 
-	[NSThread detachNewThreadSelector:@selector(server)
-		  toTarget:self withObject:nil];
+//	[NSThread detachNewThreadSelector:@selector(server)
+//		  toTarget:self withObject:nil];
+	thread = [[NSThread alloc] initWithTarget:self
+				   selector:@selector(server)
+				   object:nil];
+
+	[thread start];
 
 	return self;
 
@@ -330,6 +354,30 @@ err:
 -(int)portNumber
 {
 	return portno;
+}
+
+-(void)shutdown {
+	NSLog(@"shutdown httpd object");
+
+	if (thread) {
+		[thread cancel];
+		thread = nil;
+
+		close(sockfd);
+		close(fd);
+	}
+
+	ref_release(conn);
+	conn = NULL;
+	ref_release(file);
+	file = NULL;
+}
+
+- (void)dealloc {
+	NSLog(@"release httpd object");
+
+	[self shutdown];
+	[super dealloc];
 }
 
 @end

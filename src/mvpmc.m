@@ -71,6 +71,8 @@
 
 -(void)playURL:(NSURL*)URL
 {
+	NSLog(@"playing movie");
+
 	MPMoviePlayerController *player;
 
 	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];

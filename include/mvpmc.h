@@ -25,17 +25,24 @@
 
 #include <cmyth/cmyth.h>
 
+@class VLC;
+
+#define MAX_VLC		16
+
 @interface Httpd : NSObject {
 	cmyth_conn_t conn;
 	cmyth_file_t file;
 	int sockfd;
 	int portno;
+	int fd;
 	long long length;
+	NSThread *thread;
 }
 
 -(void)server;
 -(Httpd*)openWith:(cmyth_proginfo_t*)prog;
 -(int)portNumber;
+-(void)shutdown;
 
 @end
 
@@ -83,6 +90,7 @@ struct mythtv_show {
 	NSLock *lock;
 	NSThread *controlThread;
 	enum mythtv_error error;
+	VLC *transcodeList[MAX_VLC];
 }
 
 -(MythTV*)init;
@@ -99,6 +107,9 @@ struct mythtv_show {
 -(int)filterSubtitle:(NSString*)text;
 -(int)filterDescription:(NSString*)text;
 -(void)filterCancel;
+-(BOOL)addVLC:(VLC*)vlc;
+-(void)removeVLC:(VLC*)vlc;
+-(VLC*)getVLC:(cmyth_proginfo_t*)prog;
 
 @property (nonatomic) enum mythtv_error error;
 @property (retain,nonatomic) NSLock *lock;
@@ -140,6 +151,7 @@ typedef enum {
 -(float)transcodeProgress;
 -(int)portNumber;
 -(vlcTranscodeState)transcodeState;
+-(cmyth_proginfo_t*)getProg;
 
 @end
 
