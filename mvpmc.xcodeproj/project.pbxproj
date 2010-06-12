@@ -35,6 +35,7 @@
 		BF584B2610DDB95100EE0B3E /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584B2510DDB95100EE0B3E /* 108-badge.png */; };
 		BF584BAF10DE633900EE0B3E /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584BAE10DE633900EE0B3E /* splash2.png */; };
 		BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */; };
+		BF596A5011C423F70001AFE3 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596A4F11C423F70001AFE3 /* MainWindow-iPad.xib */; };
 		BF5CB1FA1106A2E400D06007 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = BF5CB1F91106A2E400D06007 /* COPYING */; };
 		BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF17A10F1291200094FD8 /* ProgramViewController.m */; };
 		BF8FF17D10F1291200094FD8 /* ProgramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF17B10F1291200094FD8 /* ProgramView.xib */; };
@@ -120,6 +121,7 @@
 		BF584B2510DDB95100EE0B3E /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "108-badge.png"; path = "icons/108-badge.png"; sourceTree = "<group>"; };
 		BF584BAE10DE633900EE0B3E /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash2.png; path = images/splash2.png; sourceTree = "<group>"; };
 		BF584E8B10DF2DE500EE0B3E /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
+		BF596A4F11C423F70001AFE3 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/interface/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		BF5CB1F91106A2E400D06007 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		BF8FF17910F1291200094FD8 /* ProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgramViewController.h; path = views/ProgramViewController.h; sourceTree = "<group>"; };
 		BF8FF17A10F1291200094FD8 /* ProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgramViewController.m; path = views/ProgramViewController.m; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* src */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				BF596A4E11C423F60001AFE3 /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -282,6 +285,14 @@
 				BF58470610D9BB9200EE0B3E /* SettingsViewController.h */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		BF596A4E11C423F60001AFE3 /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				BF596A4F11C423F70001AFE3 /* MainWindow-iPad.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		BFCA4F82110BA35B00143FB0 /* images */ = {
@@ -417,6 +428,7 @@
 				BFA40B951114E4D4006CD2AF /* url_background.png in Resources */,
 				BFA40D641115CF3F006CD2AF /* ScrollView.xib in Resources */,
 				BFC172F2111E166D005E5952 /* background_chooser.png in Resources */,
+				BF596A5011C423F70001AFE3 /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -472,6 +485,8 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -479,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,6 +505,8 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -517,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -529,6 +548,8 @@
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
 				PROVISIONING_PROFILE = "1A26C78B-AE63-4C26-8367-1CFCBB6140A2";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = AdHoc;
 		};
@@ -557,6 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jonathan Gettler";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
@@ -572,6 +594,8 @@
 				PRODUCT_NAME = mvpmc;
 				PROVISIONING_PROFILE = "1F426FED-7463-4A58-97BD-3BBE48647906";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
