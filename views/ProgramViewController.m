@@ -45,7 +45,7 @@ static Httpd *httpd;
 	url = [NSString stringWithFormat:@"http://127.0.0.1:%d/mythtv.m4v",port];
 	URL = [NSURL URLWithString: url];
 
-	[mvpmc playURL:URL];
+	[mvpmc playURL:URL id:self];
 }
 
 -(IBAction) hide:(id) sender
@@ -108,7 +108,9 @@ static Httpd *httpd;
 	url = [NSString stringWithFormat:@"%@/%@.mp4",www_base,fn];
 	URL = [NSURL URLWithString: url];
 
-	[mvpmc playURL:URL];
+	MVPMCLog(@"Play: %@", url);
+
+	[mvpmc playURL:URL id:self];
 }
 
 -(IBAction) transcode:(id) sender

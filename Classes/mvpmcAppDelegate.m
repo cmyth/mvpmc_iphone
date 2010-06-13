@@ -18,6 +18,7 @@
  */
 
 #import "mvpmcAppDelegate.h"
+#import "mvpmc.h"
 
 
 @implementation mvpmcAppDelegate
@@ -33,8 +34,10 @@
     
     // Override point for customization after app launch    
 
+	MVPMCLog(@"app loaded");
 	[window addSubview:tabBarController.view];
 	[window makeKeyAndVisible];
+	MVPMCLog(@"interface added");
 }
 
 /**

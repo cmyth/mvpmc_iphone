@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -266,13 +264,16 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>BF596A4E11C423F60001AFE3</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
-									<integer>13</integer>
+									<integer>19</integer>
+									<integer>9</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -311,7 +312,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>entitlements.plist</string>
+								<string>ProgramViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -319,17 +320,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>entitlements.plist</string>
+										<string>ProgramViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF596A5811C4241E0001AFE3</string>
+										<string>BF596C2F11C478960001AFE3</string>
 										<key>history</key>
 										<array>
 											<string>BF58474410D9C8A900EE0B3E</string>
 											<string>BF5849A110DD2BD300EE0B3E</string>
 											<string>BF584B4910DDBBD700EE0B3E</string>
-											<string>BFF0ED0310E40C3600A2CC94</string>
 											<string>BF9D84AD10E6DEE9009ADE21</string>
 											<string>BF8FEF2B10ED5F4B00094FD8</string>
 											<string>BF8FEF2C10ED5F4B00094FD8</string>
@@ -349,18 +349,14 @@
 											<string>BFCA4F93110BA45C00143FB0</string>
 											<string>BFCA4F94110BA45C00143FB0</string>
 											<string>BFCA4F96110BA45C00143FB0</string>
-											<string>BFCA4FAB110BA89700143FB0</string>
 											<string>BFA40A021112743B006CD2AF</string>
 											<string>BFA40A2E11127F7D006CD2AF</string>
-											<string>BFA40B3211149D58006CD2AF</string>
 											<string>BFA40B4F1114A50B006CD2AF</string>
 											<string>BFA40B891114E10E006CD2AF</string>
 											<string>BFA40C241115259E006CD2AF</string>
-											<string>BFA40C251115259E006CD2AF</string>
 											<string>BFA40DCE1115E683006CD2AF</string>
 											<string>BFA40E1F1116129A006CD2AF</string>
 											<string>BFA40EE81117D91A006CD2AF</string>
-											<string>BFA40F071117DF31006CD2AF</string>
 											<string>BF4F76A9111BCE8300132046</string>
 											<string>BFC17315111F93C9005E5952</string>
 											<string>BFC173D51123A147005E5952</string>
@@ -368,9 +364,14 @@
 											<string>BF5E9ADD1127386C002061D4</string>
 											<string>BFC1D6731128D8B1007284FA</string>
 											<string>BFC1D6B1112B9BD3007284FA</string>
-											<string>BFC1D71811306CBA007284FA</string>
 											<string>BFC1D7FD11309A49007284FA</string>
-											<string>BFC1D80D11309B9B007284FA</string>
+											<string>BF596A9E11C42B830001AFE3</string>
+											<string>BF596AC411C433260001AFE3</string>
+											<string>BF596AC511C433260001AFE3</string>
+											<string>BF596AC611C433260001AFE3</string>
+											<string>BF596B5111C44F2D0001AFE3</string>
+											<string>BF596C1B11C4754A0001AFE3</string>
+											<string>BF596C2011C475550001AFE3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -392,6 +393,8 @@
 							<string>259pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -568,7 +571,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>BF596C3011C478960001AFE3</string>
+		<string>BF596A7811C428450001AFE3</string>
+		<string>BF596A7911C428450001AFE3</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>BF58472610D9C2F400EE0B3E</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/gettler/iphone/mvpmc_universal/mvpmc.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -593,7 +601,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>ProgramViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -610,6 +618,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -771,13 +781,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>BFC1D5E41128617E007284FA</string>
+				<string>BF596A6911C427D10001AFE3</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>BFC1D5E51128617E007284FA</string>
-				<string>BFC1D5E61128617E007284FA</string>
-				<string>BFC1D5E71128617E007284FA</string>
-				<string>BFC1D5E81128617E007284FA</string>
-				<string>BFC1D5E91128617E007284FA</string>
+				<string>BF596A6A11C427D10001AFE3</string>
+				<string>BF596A6B11C427D10001AFE3</string>
+				<string>BF596A6C11C427D10001AFE3</string>
+				<string>BF596A6D11C427D10001AFE3</string>
+				<string>BF596A6E11C427D10001AFE3</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -941,7 +951,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>BFC1D5FD11286296007284FA</string>
+				<string>BF596A6F11C427D10001AFE3</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

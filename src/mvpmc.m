@@ -38,8 +38,15 @@
 -(void)movieLoad:(NSNotification*)note
 {
 	MPMoviePlayerController *player = [note object];
+	MPMovieLoadState loadState;
+	MPMoviePlaybackState playState;
 
 	MVPMCLog(@"preload done");
+
+	loadState = [player loadState];
+	playState = [player playbackState];
+
+	MVPMCLog(@"load state %d player state %d", loadState, playState);
 
 	NSError *error = [[note userInfo] objectForKey:@"error"];
 
@@ -51,7 +58,7 @@
 	}
 
 	[[NSNotificationCenter defaultCenter] removeObserver:self
-					      name:MPMoviePlayerContentPreloadDidFinishNotification
+					      name:MPMoviePlayerLoadStateDidChangeNotification
 					      object:player];
 }
 
@@ -65,16 +72,25 @@
 					      name:MPMoviePlayerPlaybackDidFinishNotification
 					      object:player];
 
+	[player.view removeFromSuperview];
+
+	[player stop];
 	[player release];
 }
 
 -(void)playURL:(NSURL*)URL
+	    id:(UIViewController*)vc;
 {
-	MVPMCLog(@"playing movie");
-
 	MPMoviePlayerController *player;
 
-	player = [[MPMoviePlayerController alloc] initWithContentURL: URL];
+	MVPMCLog(@"playing movie in view");
+
+	MPMoviePlayerViewController *playerViewController =
+		[[MPMoviePlayerViewController alloc] initWithContentURL:URL];
+
+	[vc.view addSubview:playerViewController.view];
+
+	player = [playerViewController moviePlayer];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self
 					      selector:@selector(movieDone:)
@@ -82,7 +98,7 @@
 					      object:player];
 	[[NSNotificationCenter defaultCenter] addObserver:self
 					      selector:@selector(movieLoad:)
-					      name:MPMoviePlayerContentPreloadDidFinishNotification
+					      name:MPMoviePlayerLoadStateDidChangeNotification
 					      object:player];
 
 	[player play];

@@ -58,7 +58,7 @@
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
--(void)playURL:(NSURL*)URL;
+-(void)playURL:(NSURL*)URL id:(UIViewController*)vc;
 -(void)movieDone:(NSNotification*)note;
 -(void)movieLoad:(NSNotification*)note;
 -(UIImage*)getBackgroundImage;
