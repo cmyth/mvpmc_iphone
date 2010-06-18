@@ -160,7 +160,7 @@ err:
 
 	[lock lock];
 
-	MVPMCLog(@"start connection");
+	MVPMCLog(@"start connection to %@", host);
 
 	if (hostName && [host isEqualToString: hostName] && (port == hostPort)) {
 		goto done;

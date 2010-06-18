@@ -42,7 +42,7 @@
 			<object class="IBUIWindow" id="117978783">
 				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
-				<string key="NSFrameSize">{768, 1004}</string>
+				<string key="NSFrameSize">{768, 1024}</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">10</int>
 					<object class="NSImage" key="NSImage">
@@ -9911,7 +9911,7 @@ AAEAAQABA</bytes>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="580332259"/>
-					<string key="IBUINibName">ScrollView</string>
+					<string key="IBUINibName">settings_ipad</string>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 						<int key="interfaceOrientation">1</int>
 					</object>
@@ -9939,24 +9939,6 @@ AAEAAQABA</bytes>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
 					</object>
-					<object class="IBUIViewController" id="512893396">
-						<string key="IBUITitle">URL</string>
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="6748513">
-							<string key="IBUITitle">URL</string>
-							<object class="NSCustomResource" key="IBUIImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">45-movie1.png</string>
-							</object>
-							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						</object>
-						<reference key="IBUIParentViewController" ref="580332259"/>
-						<string key="IBUINibName">URLView</string>
-						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-							<int key="interfaceOrientation">1</int>
-						</object>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<bool key="IBUIHorizontal">NO</bool>
-					</object>
 					<object class="IBUIViewController" id="452274721">
 						<string key="IBUITitle">About</string>
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="649235607">
@@ -9968,7 +9950,7 @@ AAEAAQABA</bytes>
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="580332259"/>
-						<string key="IBUINibName">aboutView</string>
+						<string key="IBUINibName">aboutView_ipad</string>
 						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 							<int key="interfaceOrientation">1</int>
 						</object>
@@ -10056,7 +10038,6 @@ AAEAAQABA</bytes>
 							<reference ref="368966256"/>
 							<reference ref="28218734"/>
 							<reference ref="197956149"/>
-							<reference ref="512893396"/>
 							<reference ref="452274721"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -10095,20 +10076,6 @@ AAEAAQABA</bytes>
 						<reference key="parent" ref="28218734"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">24</int>
-						<reference key="object" ref="512893396"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="6748513"/>
-						</object>
-						<reference key="parent" ref="580332259"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">25</int>
-						<reference key="object" ref="6748513"/>
-						<reference key="parent" ref="512893396"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">26</int>
 						<reference key="object" ref="452274721"/>
 						<object class="NSMutableArray" key="children">
@@ -10143,9 +10110,6 @@ AAEAAQABA</bytes>
 					<string>20.IBPluginDependency</string>
 					<string>21.IBPluginDependency</string>
 					<string>22.IBPluginDependency</string>
-					<string>24.CustomClassName</string>
-					<string>24.IBPluginDependency</string>
-					<string>25.IBPluginDependency</string>
 					<string>26.CustomClassName</string>
 					<string>26.IBPluginDependency</string>
 					<string>27.IBPluginDependency</string>
@@ -10169,13 +10133,10 @@ AAEAAQABA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>ScrollViewController</string>
+					<string>settings_ipad</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>MythViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>URLViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>aboutViewController</string>
@@ -10234,185 +10195,6 @@ AAEAAQABA</bytes>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">views/MythViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">ScrollViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">displayHelp:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">displayHelp:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">displayHelp:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>background</string>
-							<string>logo</string>
-							<string>scroll</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UIImageView</string>
-							<string>UIImageView</string>
-							<string>UIScrollView</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>background</string>
-							<string>logo</string>
-							<string>scroll</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">background</string>
-								<string key="candidateClassName">UIImageView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">logo</string>
-								<string key="candidateClassName">UIImageView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">scroll</string>
-								<string key="candidateClassName">UIScrollView</string>
-							</object>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">views/ScrollViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">URLViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>hideKeyboard:</string>
-							<string>play_movie:</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>hideKeyboard:</string>
-							<string>play_movie:</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBActionInfo">
-								<string key="name">hideKeyboard:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">play_movie:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>background</string>
-							<string>play</string>
-							<string>play_1</string>
-							<string>play_2</string>
-							<string>play_3</string>
-							<string>url</string>
-							<string>url_1</string>
-							<string>url_2</string>
-							<string>url_3</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UIImageView</string>
-							<string>UIButton</string>
-							<string>UIButton</string>
-							<string>UIButton</string>
-							<string>UIButton</string>
-							<string>UITextField</string>
-							<string>UITextField</string>
-							<string>UITextField</string>
-							<string>UITextField</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>background</string>
-							<string>play</string>
-							<string>play_1</string>
-							<string>play_2</string>
-							<string>play_3</string>
-							<string>url</string>
-							<string>url_1</string>
-							<string>url_2</string>
-							<string>url_3</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">background</string>
-								<string key="candidateClassName">UIImageView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">play</string>
-								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">play_1</string>
-								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">play_2</string>
-								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">play_3</string>
-								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">url</string>
-								<string key="candidateClassName">UITextField</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">url_1</string>
-								<string key="candidateClassName">UITextField</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">url_2</string>
-								<string key="candidateClassName">UITextField</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">url_3</string>
-								<string key="candidateClassName">UITextField</string>
-							</object>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">views/URLViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -10549,6 +10331,25 @@ AAEAAQABA</bytes>
 						<string key="minorKey"/>
 					</object>
 				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">settings_ipad</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">hideKeyboard:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">hideKeyboard:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">hideKeyboard:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">settings_ipad.h</string>
+					</object>
+				</object>
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
@@ -10574,14 +10375,12 @@ AAEAAQABA</bytes>
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>108-badge.png</string>
 				<string>19-gear.png</string>
-				<string>45-movie1.png</string>
 				<string>70-tv.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{21, 26}</string>
 				<string>{26, 26}</string>
-				<string>{19, 25}</string>
 				<string>{24, 24}</string>
 			</object>
 		</object>

@@ -56,7 +56,11 @@
 	scroll.scrollEnabled = YES;
 	scroll.showsVerticalScrollIndicator = YES;
 	scroll.showsHorizontalScrollIndicator = NO;
-	[scroll setContentSize:CGSizeMake(320, 640)];
+	if ([mvpmc isiPad]) {
+		[scroll setContentSize:CGSizeMake(768, 1024)];
+	} else {
+		[scroll setContentSize:CGSizeMake(320, 640)];
+	}
         [scroll setCanCancelContentTouches:NO];
         scroll.clipsToBounds = YES;
         scroll.indicatorStyle = UIScrollViewIndicatorStyleWhite;
@@ -64,7 +68,14 @@
 
 	logo.hidden = NO;
 
-	SettingsViewController *settings = [[SettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
+	SettingsViewController *settings;
+
+	if ([mvpmc isiPad]) {
+		settings = [[SettingsViewController alloc] initWithNibName:@"SettingsView_ipad" bundle:nil];
+	} else {
+		settings = [[SettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
+	}
+
 	settings.view.backgroundColor = [UIColor clearColor];
 	[settings addParent:self];
 	[scroll addSubview:settings.view];

@@ -128,7 +128,20 @@
 	image[1] = [UIImage imageNamed:@"stone_background.jpg"];
 	image[2] = [UIImage imageNamed:@"bricks_background.jpg"];
 
+	idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+
+	if (idiom == UIUserInterfaceIdiomPad) {
+		MVPMCLog(@"running on an iPad");
+	} else {
+		MVPMCLog(@"running on an iPhone");
+	}
+
 	return self;
+}
+
+-(BOOL)isiPad
+{
+	return (idiom == UIUserInterfaceIdiomPad);
 }
 
 @end

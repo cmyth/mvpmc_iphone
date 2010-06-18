@@ -36,6 +36,13 @@
 		BF584BAF10DE633900EE0B3E /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF584BAE10DE633900EE0B3E /* splash2.png */; };
 		BF584E8C10DF2DE500EE0B3E /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF584E8B10DF2DE500EE0B3E /* entitlements.plist */; };
 		BF596A8111C42A190001AFE3 /* MainWindow_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596A8011C42A190001AFE3 /* MainWindow_ipad.xib */; };
+		BF596C3B11C47B5C0001AFE3 /* aboutView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C3A11C47B5C0001AFE3 /* aboutView_ipad.xib */; };
+		BF596C4811C47CF90001AFE3 /* ScrollView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C4711C47CF90001AFE3 /* ScrollView_ipad.xib */; };
+		BF596C5211C47D7C0001AFE3 /* SettingsView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C5111C47D7C0001AFE3 /* SettingsView_ipad.xib */; };
+		BF596C8811C589C90001AFE3 /* settings_ipad.m in Sources */ = {isa = PBXBuildFile; fileRef = BF596C8611C589C90001AFE3 /* settings_ipad.m */; };
+		BF596C8911C589C90001AFE3 /* settings_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C8711C589C90001AFE3 /* settings_ipad.xib */; };
+		BF596C9811C58DA40001AFE3 /* LicenseView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C9711C58DA40001AFE3 /* LicenseView_ipad.xib */; };
+		BF596D0111CAED590001AFE3 /* program_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596D0011CAED590001AFE3 /* program_ipad.xib */; };
 		BF5CB1FA1106A2E400D06007 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = BF5CB1F91106A2E400D06007 /* COPYING */; };
 		BF8FF17C10F1291200094FD8 /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8FF17A10F1291200094FD8 /* ProgramViewController.m */; };
 		BF8FF17D10F1291200094FD8 /* ProgramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8FF17B10F1291200094FD8 /* ProgramView.xib */; };
@@ -122,6 +129,14 @@
 		BF584BAE10DE633900EE0B3E /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash2.png; path = images/splash2.png; sourceTree = "<group>"; };
 		BF584E8B10DF2DE500EE0B3E /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		BF596A8011C42A190001AFE3 /* MainWindow_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow_ipad.xib; path = interface/MainWindow_ipad.xib; sourceTree = "<group>"; };
+		BF596C3A11C47B5C0001AFE3 /* aboutView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = aboutView_ipad.xib; path = interface/aboutView_ipad.xib; sourceTree = "<group>"; };
+		BF596C4711C47CF90001AFE3 /* ScrollView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScrollView_ipad.xib; path = interface/ScrollView_ipad.xib; sourceTree = "<group>"; };
+		BF596C5111C47D7C0001AFE3 /* SettingsView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsView_ipad.xib; path = interface/SettingsView_ipad.xib; sourceTree = "<group>"; };
+		BF596C8511C589C90001AFE3 /* settings_ipad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = settings_ipad.h; path = views/settings_ipad.h; sourceTree = "<group>"; };
+		BF596C8611C589C90001AFE3 /* settings_ipad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = settings_ipad.m; path = views/settings_ipad.m; sourceTree = "<group>"; };
+		BF596C8711C589C90001AFE3 /* settings_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = settings_ipad.xib; path = interface/settings_ipad.xib; sourceTree = "<group>"; };
+		BF596C9711C58DA40001AFE3 /* LicenseView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LicenseView_ipad.xib; path = interface/LicenseView_ipad.xib; sourceTree = "<group>"; };
+		BF596D0011CAED590001AFE3 /* program_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = program_ipad.xib; path = interface/program_ipad.xib; sourceTree = "<group>"; };
 		BF5CB1F91106A2E400D06007 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		BF8FF17910F1291200094FD8 /* ProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgramViewController.h; path = views/ProgramViewController.h; sourceTree = "<group>"; };
 		BF8FF17A10F1291200094FD8 /* ProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgramViewController.m; path = views/ProgramViewController.m; sourceTree = "<group>"; };
@@ -207,6 +222,8 @@
 				BF596A4E11C423F60001AFE3 /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				BF596C9711C58DA40001AFE3 /* LicenseView_ipad.xib */,
+				BF596D0011CAED590001AFE3 /* program_ipad.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -267,6 +284,8 @@
 		BF584B4C10DDBBF400EE0B3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF596C8511C589C90001AFE3 /* settings_ipad.h */,
+				BF596C8611C589C90001AFE3 /* settings_ipad.m */,
 				BFA40D601115CF3F006CD2AF /* ScrollViewController.h */,
 				BFA40D611115CF3F006CD2AF /* ScrollViewController.m */,
 				BF8FF59010F8EC8400094FD8 /* LicenseViewController.h */,
@@ -290,7 +309,11 @@
 		BF596A4E11C423F60001AFE3 /* Resources-iPad */ = {
 			isa = PBXGroup;
 			children = (
+				BF596C3A11C47B5C0001AFE3 /* aboutView_ipad.xib */,
 				BF596A8011C42A190001AFE3 /* MainWindow_ipad.xib */,
+				BF596C8711C589C90001AFE3 /* settings_ipad.xib */,
+				BF596C4711C47CF90001AFE3 /* ScrollView_ipad.xib */,
+				BF596C5111C47D7C0001AFE3 /* SettingsView_ipad.xib */,
 			);
 			name = "Resources-iPad";
 			sourceTree = "<group>";
@@ -429,6 +452,12 @@
 				BFA40D641115CF3F006CD2AF /* ScrollView.xib in Resources */,
 				BFC172F2111E166D005E5952 /* background_chooser.png in Resources */,
 				BF596A8111C42A190001AFE3 /* MainWindow_ipad.xib in Resources */,
+				BF596C3B11C47B5C0001AFE3 /* aboutView_ipad.xib in Resources */,
+				BF596C4811C47CF90001AFE3 /* ScrollView_ipad.xib in Resources */,
+				BF596C5211C47D7C0001AFE3 /* SettingsView_ipad.xib in Resources */,
+				BF596C8911C589C90001AFE3 /* settings_ipad.xib in Resources */,
+				BF596C9811C58DA40001AFE3 /* LicenseView_ipad.xib in Resources */,
+				BF596D0111CAED590001AFE3 /* program_ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +483,7 @@
 				BFA40D631115CF3F006CD2AF /* ScrollViewController.m in Sources */,
 				BFC173531122E905005E5952 /* http.m in Sources */,
 				BFC173DF1123AA31005E5952 /* vlc.m in Sources */,
+				BF596C8811C589C90001AFE3 /* settings_ipad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

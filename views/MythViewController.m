@@ -38,7 +38,11 @@
 {
 	if (on == YES) {
 		active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
-		[active setCenter:CGPointMake(160.0f, 208.0f)];
+		if ([mvpmc isiPad]) {
+			[active setCenter:CGPointMake(384.0f, 512.0f)];
+		} else {
+			[active setCenter:CGPointMake(160.0f, 208.0f)];
+		}
 		[active setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
 		[active startAnimating];
 		[[self tableView] addSubview:active];
@@ -238,7 +242,13 @@
 	// [anotherViewController release];
 
 	cmyth_proginfo_t p = [mythtv progAtIndexPath:indexPath];
-	ProgramViewController *programViewController = [[ProgramViewController alloc] initWithNibName:@"ProgramView" bundle:nil];
+	ProgramViewController *programViewController;
+
+	if ([mvpmc isiPad]) {
+		programViewController = [[ProgramViewController alloc] initWithNibName:@"program_ipad" bundle:nil];
+	} else {
+		programViewController = [[ProgramViewController alloc] initWithNibName:@"ProgramView" bundle:nil];
+	}
 
 	[programViewController setProgInfo:p];
 	programViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

@@ -19,6 +19,7 @@
 
 #import "aboutViewController.h"
 #import "LicenseViewController.h"
+#import "mvpmc.h"
 
 
 @implementation aboutViewController
@@ -36,7 +37,15 @@
 
 -(IBAction)showLicense:(id)sender
 {
-	LicenseViewController *licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseView" bundle:nil];
+	LicenseViewController *licenseViewController;
+
+
+	if ([mvpmc isiPad]) {
+		licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseView_ipad" bundle:nil];
+	} else {
+		licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseView" bundle:nil];
+	}
+
 	licenseViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:licenseViewController animated:YES];
 	[licenseViewController release];
@@ -56,7 +65,7 @@
 - (void)viewDidLoad {
 	NSString *ver =[[NSBundle mainBundle]
 			       objectForInfoDictionaryKey:@"CFBundleVersion"];
-	NSString *text = [NSString stringWithFormat:@"iPhone Version %@",ver];
+	NSString *text;
 #if 0
 	NSString *ipaddr;
 	NSHost *host = [NSHost currentHost];
@@ -72,6 +81,12 @@
 #else
 	ip.text = @"";
 #endif
+
+	if ([mvpmc isiPad]) {
+		text = [NSString stringWithFormat:@"iPad Version %@",ver];
+	} else {
+		text = [NSString stringWithFormat:@"iPhone Version %@",ver];
+	}
 
 	version.text = text;
 

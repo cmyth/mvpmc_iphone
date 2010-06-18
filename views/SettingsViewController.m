@@ -173,9 +173,16 @@
 	[self.view addSubview:bgView];   
 	[self.view sendSubviewToBack:bgView];
 
-	int offset = 340;
+	int offset;
+	CGRect bgRect;
 
-	CGRect bgRect = CGRectMake(0, offset, 320, 180);
+	if ([mvpmc isiPad]) {
+		bgRect = CGRectMake(0, offset, 768, 180);
+		offset = 340;
+	} else {
+		bgRect = CGRectMake(0, offset, 320, 180);
+		offset = 340;
+	}
 	[bgView setFrame:bgRect];	
 
 	imageView.contentMode = UIViewContentModeScaleAspectFit;

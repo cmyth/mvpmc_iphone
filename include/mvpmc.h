@@ -55,6 +55,7 @@
 @interface MVPMC : NSObject {
 	UIImage *image[3];
 	int imageNumber;
+	UIUserInterfaceIdiom idiom;
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
@@ -63,6 +64,7 @@
 -(void)movieLoad:(NSNotification*)note;
 -(UIImage*)getBackgroundImage;
 -(void)setBackgroundImage:(int)index;
+-(BOOL)isiPad;
 
 @end
 
