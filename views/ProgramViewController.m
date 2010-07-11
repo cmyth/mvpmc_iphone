@@ -324,13 +324,15 @@ static Httpd *httpd;
 	}
 }
 
-/*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	// Return YES for supported orientations
+	if ([mvpmc isPlaying]) {
+		return YES;
+	} else {
+		return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	}
 }
-*/
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

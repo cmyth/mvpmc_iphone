@@ -52,10 +52,18 @@
 
 @end
 
+#define MAX_ETH_DEVS 32
+
 @interface MVPMC : NSObject {
 	UIImage *image[3];
 	int imageNumber;
 	UIUserInterfaceIdiom idiom;
+	int width, height;
+	char *if_names[MAX_ETH_DEVS];
+	char *ip_names[MAX_ETH_DEVS];
+	unsigned long ip_addrs[MAX_ETH_DEVS];
+	int addrs;
+	BOOL playing;
 }
 
 -(void)popup:(NSString*)title message:(NSString*)message;
@@ -65,6 +73,11 @@
 -(UIImage*)getBackgroundImage;
 -(void)setBackgroundImage:(int)index;
 -(BOOL)isiPad;
+-(int)screenWidth;
+-(int)screenHeight;
+-(NSString*)getIPAddress;
+-(void)discoverIPAddresses;
+-(BOOL)isPlaying;
 
 @end
 

@@ -163,9 +163,16 @@ static int send_commands(int fd, const char *src, const char *dest,
 	char *cmd_del = "del %s\n";
 	char *cmd_new = "new %s broadcast enabled\n";
 	char *cmd_input = "setup %s input %s/%s\n";
-	char *cmd_output = "setup %s output #transcode{width=480,canvas-height=320,vcodec=mp4v,vb=768,acodec=mp4a,ab=192,channels=2}:standard{access=file,mux=mp4,dst=%s/%s.mp4}\n";
+	char *cmd_output = "setup %s output #transcode{width=%d,canvas-height=%d,vcodec=mp4v,vb=768,acodec=mp4a,ab=192,channels=2}:standard{access=file,mux=mp4,dst=%s/%s.mp4}\n";
 	char *cmd_play = "control %s play\n";
 	char buf[512], id[128];
+	int vbr;
+
+	if ([mvpmc screenHeight] > 480) {
+		vbr = 1024;
+	} else {
+		vbr = 768;
+	}
 
 	snprintf(id, sizeof(id), "mvpmc.iphone.%s", file);
 
@@ -184,7 +191,8 @@ static int send_commands(int fd, const char *src, const char *dest,
 		return -1;
 	}
 
-	snprintf(buf, sizeof(buf), cmd_output, id, dest, file);
+	snprintf(buf, sizeof(buf), cmd_output, id,
+		 [mvpmc screenHeight], [mvpmc screenWidth], vbr, dest, file);
 	if (issue_command(fd, buf) != 0) {
 		return -1;
 	}

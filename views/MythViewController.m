@@ -38,11 +38,9 @@
 {
 	if (on == YES) {
 		active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
-		if ([mvpmc isiPad]) {
-			[active setCenter:CGPointMake(384.0f, 512.0f)];
-		} else {
-			[active setCenter:CGPointMake(160.0f, 208.0f)];
-		}
+		float x = [mvpmc screenWidth] / 2.0;
+		float y = [mvpmc screenHeight] / 2.0;
+		[active setCenter:CGPointMake(x, y)];
 		[active setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
 		[active startAnimating];
 		[[self tableView] addSubview:active];
@@ -246,12 +244,13 @@
 
 	if ([mvpmc isiPad]) {
 		programViewController = [[ProgramViewController alloc] initWithNibName:@"program_ipad" bundle:nil];
+		programViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	} else {
 		programViewController = [[ProgramViewController alloc] initWithNibName:@"ProgramView" bundle:nil];
+		programViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	}
 
 	[programViewController setProgInfo:p];
-	programViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:programViewController animated:YES];
 	[programViewController release];
 }

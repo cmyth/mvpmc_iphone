@@ -176,13 +176,9 @@
 	int offset;
 	CGRect bgRect;
 
-	if ([mvpmc isiPad]) {
-		bgRect = CGRectMake(0, offset, 768, 180);
-		offset = 340;
-	} else {
-		bgRect = CGRectMake(0, offset, 320, 180);
-		offset = 340;
-	}
+	offset = [mvpmc screenWidth] + 20;
+	bgRect = CGRectMake(0, offset, [mvpmc screenWidth], 180);
+
 	[bgView setFrame:bgRect];	
 
 	imageView.contentMode = UIViewContentModeScaleAspectFit;

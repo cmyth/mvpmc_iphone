@@ -56,11 +56,7 @@
 	scroll.scrollEnabled = YES;
 	scroll.showsVerticalScrollIndicator = YES;
 	scroll.showsHorizontalScrollIndicator = NO;
-	if ([mvpmc isiPad]) {
-		[scroll setContentSize:CGSizeMake(768, 1024)];
-	} else {
-		[scroll setContentSize:CGSizeMake(320, 640)];
-	}
+	[scroll setContentSize:CGSizeMake([mvpmc screenWidth], [mvpmc screenHeight])];
         [scroll setCanCancelContentTouches:NO];
         scroll.clipsToBounds = YES;
         scroll.indicatorStyle = UIScrollViewIndicatorStyleWhite;

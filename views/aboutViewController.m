@@ -42,11 +42,12 @@
 
 	if ([mvpmc isiPad]) {
 		licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseView_ipad" bundle:nil];
+		licenseViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	} else {
 		licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseView" bundle:nil];
+		licenseViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	}
 
-	licenseViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:licenseViewController animated:YES];
 	[licenseViewController release];
 }
@@ -63,24 +64,22 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	[super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
 	NSString *ver =[[NSBundle mainBundle]
 			       objectForInfoDictionaryKey:@"CFBundleVersion"];
 	NSString *text;
-#if 0
 	NSString *ipaddr;
-	NSHost *host = [NSHost currentHost];
 
-	if (host) {
-		NSString *address = [host address];
-		ipaddr = [NSString stringWithFormat:@"IP Address: %@", address];
+	ipaddr = [mvpmc getIPAddress];
+
+	if (ipaddr) {
+		ip.text = ipaddr;
 	} else {
-		ipaddr = @"IP Address: Unknown";
+		ip.text = @"";
 	}
-
-	ip.text = ipaddr;
-#else
-	ip.text = @"";
-#endif
 
 	if ([mvpmc isiPad]) {
 		text = [NSString stringWithFormat:@"iPad Version %@",ver];
@@ -90,7 +89,7 @@
 
 	version.text = text;
 
-	[super viewDidLoad];
+	[super viewWillAppear:animated];
 }
 
 /*
