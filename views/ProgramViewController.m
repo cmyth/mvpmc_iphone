@@ -247,6 +247,11 @@ static Httpd *httpd;
 
 - (void)viewWillAppear:(BOOL)animated {
 	background.image = [mvpmc getBackgroundImage];
+	MVPMCLog(@"program view will appear");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	MVPMCLog(@"program view did appear");
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -255,6 +260,8 @@ static Httpd *httpd;
 	time_t sec;
 	int h, m;
 	char *str;
+
+	MVPMCLog(@"program loads");
 
 	str = cmyth_proginfo_title(proginfo);
 	t = [[NSString alloc] initWithUTF8String:str];

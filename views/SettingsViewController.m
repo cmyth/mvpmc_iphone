@@ -95,8 +95,11 @@
 -(void)busy:(BOOL)on
 {
 	if (on == YES) {
+		float x, y;
 		active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
-		[active setCenter:CGPointMake(160.0f, 208.0f)];
+		x = [mvpmc screenWidth] / 2.0;
+		y = [mvpmc screenHeight] / 2.0;
+		[active setCenter:CGPointMake(x, y)];
 		[active setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
 		[active startAnimating];
 		[[self view] addSubview:active];
@@ -123,6 +126,8 @@
 {
 	int index;
 
+	MVPMCLog(@"Button pressed");
+
 	if (sender == bgButton[0]) {
 		index = 0;
 	} else if (sender == bgButton[1]) {
@@ -130,6 +135,7 @@
 	} else if (sender == bgButton[2]) {
 		index = 2;
 	} else {
+		MVPMCLog(@"button error!!!");
 		return;
 	}
 

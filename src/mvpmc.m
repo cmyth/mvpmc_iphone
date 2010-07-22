@@ -133,7 +133,7 @@
 
 -(void)setBackgroundImage:(int)index
 {
-	if ((index < 0) || (index >= 2)) {
+	if ((index < 0) || (index > 2)) {
 		return;
 	}
 

@@ -266,15 +266,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>BF596A4E11C423F60001AFE3</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
-									<integer>9</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -314,7 +311,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>settings_ipad.m</string>
+								<string>COPYING</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +319,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>settings_ipad.m</string>
+										<string>COPYING</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF1A72F911EA6CD600161CFE</string>
+										<string>BF1A73DA11F7E7A200161CFE</string>
 										<key>history</key>
 										<array>
 											<string>BF58474410D9C8A900EE0B3E</string>
@@ -349,7 +346,6 @@
 											<string>BFCA4F92110BA45C00143FB0</string>
 											<string>BFCA4F93110BA45C00143FB0</string>
 											<string>BFCA4F94110BA45C00143FB0</string>
-											<string>BFCA4F96110BA45C00143FB0</string>
 											<string>BFA40A021112743B006CD2AF</string>
 											<string>BFA40A2E11127F7D006CD2AF</string>
 											<string>BFA40B4F1114A50B006CD2AF</string>
@@ -363,18 +359,19 @@
 											<string>BFC17401112442DD005E5952</string>
 											<string>BFC1D6731128D8B1007284FA</string>
 											<string>BFC1D6B1112B9BD3007284FA</string>
-											<string>BF596A9E11C42B830001AFE3</string>
 											<string>BF596AC411C433260001AFE3</string>
 											<string>BF596AC511C433260001AFE3</string>
-											<string>BF596C5C11C47FEF0001AFE3</string>
 											<string>BF596C9E11C58DD10001AFE3</string>
 											<string>BF596C9F11C58DD10001AFE3</string>
 											<string>BF596D1511CAF4A40001AFE3</string>
 											<string>BF1A721311EA04D000161CFE</string>
 											<string>BF1A722A11EA05B000161CFE</string>
 											<string>BF1A723B11EA095C00161CFE</string>
-											<string>BF1A729F11EA488A00161CFE</string>
-											<string>BF1A72A611EA48AB00161CFE</string>
+											<string>BF1A731611EA78F700161CFE</string>
+											<string>BF1A732A11EA7A8700161CFE</string>
+											<string>BF1A738711EAB77300161CFE</string>
+											<string>BF1A738811EAB77300161CFE</string>
+											<string>BF1A738911EAB77300161CFE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -572,7 +569,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>BF1A72FA11EA6CD600161CFE</string>
+		<string>BF1A73DB11F7E7A200161CFE</string>
 		<string>BF1A71EE11E9057200161CFE</string>
 		<string>BF1A71DF11E9021D00161CFE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -602,7 +599,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>settings_ipad.m</string>
+								<string>ProgramViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

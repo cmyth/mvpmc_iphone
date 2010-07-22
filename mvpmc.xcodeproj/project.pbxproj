@@ -39,7 +39,6 @@
 		BF596A8111C42A190001AFE3 /* MainWindow_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596A8011C42A190001AFE3 /* MainWindow_ipad.xib */; };
 		BF596C3B11C47B5C0001AFE3 /* aboutView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C3A11C47B5C0001AFE3 /* aboutView_ipad.xib */; };
 		BF596C4811C47CF90001AFE3 /* ScrollView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C4711C47CF90001AFE3 /* ScrollView_ipad.xib */; };
-		BF596C5211C47D7C0001AFE3 /* SettingsView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C5111C47D7C0001AFE3 /* SettingsView_ipad.xib */; };
 		BF596C8811C589C90001AFE3 /* settings_ipad.m in Sources */ = {isa = PBXBuildFile; fileRef = BF596C8611C589C90001AFE3 /* settings_ipad.m */; };
 		BF596C8911C589C90001AFE3 /* settings_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C8711C589C90001AFE3 /* settings_ipad.xib */; };
 		BF596C9811C58DA40001AFE3 /* LicenseView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF596C9711C58DA40001AFE3 /* LicenseView_ipad.xib */; };
@@ -133,7 +132,6 @@
 		BF596A8011C42A190001AFE3 /* MainWindow_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow_ipad.xib; path = interface/MainWindow_ipad.xib; sourceTree = "<group>"; };
 		BF596C3A11C47B5C0001AFE3 /* aboutView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = aboutView_ipad.xib; path = interface/aboutView_ipad.xib; sourceTree = "<group>"; };
 		BF596C4711C47CF90001AFE3 /* ScrollView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScrollView_ipad.xib; path = interface/ScrollView_ipad.xib; sourceTree = "<group>"; };
-		BF596C5111C47D7C0001AFE3 /* SettingsView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsView_ipad.xib; path = interface/SettingsView_ipad.xib; sourceTree = "<group>"; };
 		BF596C8511C589C90001AFE3 /* settings_ipad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = settings_ipad.h; path = views/settings_ipad.h; sourceTree = "<group>"; };
 		BF596C8611C589C90001AFE3 /* settings_ipad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = settings_ipad.m; path = views/settings_ipad.m; sourceTree = "<group>"; };
 		BF596C8711C589C90001AFE3 /* settings_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = settings_ipad.xib; path = interface/settings_ipad.xib; sourceTree = "<group>"; };
@@ -316,7 +314,6 @@
 				BF596C8711C589C90001AFE3 /* settings_ipad.xib */,
 				BF596D0011CAED590001AFE3 /* program_ipad.xib */,
 				BF596C4711C47CF90001AFE3 /* ScrollView_ipad.xib */,
-				BF596C5111C47D7C0001AFE3 /* SettingsView_ipad.xib */,
 			);
 			name = "Resources-iPad";
 			sourceTree = "<group>";
@@ -457,7 +454,6 @@
 				BF596A8111C42A190001AFE3 /* MainWindow_ipad.xib in Resources */,
 				BF596C3B11C47B5C0001AFE3 /* aboutView_ipad.xib in Resources */,
 				BF596C4811C47CF90001AFE3 /* ScrollView_ipad.xib in Resources */,
-				BF596C5211C47D7C0001AFE3 /* SettingsView_ipad.xib in Resources */,
 				BF596C8911C589C90001AFE3 /* settings_ipad.xib in Resources */,
 				BF596C9811C58DA40001AFE3 /* LicenseView_ipad.xib in Resources */,
 				BF596D0111CAED590001AFE3 /* program_ipad.xib in Resources */,
@@ -506,7 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -523,6 +519,7 @@
 				PROVISIONING_PROFILE = "EDD1FCE1-7CE5-49A2-B299-7D80751571AE";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -530,7 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -545,6 +542,7 @@
 				PROVISIONING_PROFILE = "EDD1FCE1-7CE5-49A2-B299-7D80751571AE";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
@@ -573,7 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -588,6 +586,7 @@
 				PROVISIONING_PROFILE = "EDD1FCE1-7CE5-49A2-B299-7D80751571AE";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = armv7;
 			};
 			name = AdHoc;
 		};
@@ -616,7 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
@@ -634,6 +633,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = armv7;
 			};
 			name = Distribution;
 		};
