@@ -87,7 +87,7 @@
 								</object>
 								<object class="NSCustomResource" key="IBUINormalImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">Help</string>
+									<string key="NSResourceName">Help.tiff</string>
 								</object>
 							</object>
 						</object>

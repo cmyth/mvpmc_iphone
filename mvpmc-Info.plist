@@ -9,7 +9,12 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>mvpmc_button.png</string>
+	<string></string>
+	<key>Icon files</key>
+	<array>
+		<string>Icon.png</string>
+		<string>Icon-72.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>org.mvpmc.mvpmc</string>
 	<key>CFBundleInfoDictionaryVersion</key>

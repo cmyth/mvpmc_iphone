@@ -16,11 +16,12 @@
 		28C3AD8A0F43EF2300507BA6 /* mvpmc.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 28C3AD890F43EF2300507BA6 /* mvpmc.xcdatamodel */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		BF1A72B611EA497400161CFE /* HelpView_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1A72B511EA497400161CFE /* HelpView_ipad.xib */; };
+		BF1A740F11F7F0A700161CFE /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1A740E11F7F0A700161CFE /* Icon-72.png */; };
 		BF58470910D9BB9200EE0B3E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58470710D9BB9200EE0B3E /* SettingsViewController.m */; };
 		BF58470A10D9BB9200EE0B3E /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58470810D9BB9200EE0B3E /* SettingsView.xib */; };
 		BF58471010D9BC4600EE0B3E /* MythViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58470E10D9BC4600EE0B3E /* MythViewController.m */; };
 		BF58471110D9BC4600EE0B3E /* MythView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58470F10D9BC4600EE0B3E /* MythView.xib */; };
-		BF58471510D9BC8F00EE0B3E /* mvpmc_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471410D9BC8F00EE0B3E /* mvpmc_button.png */; };
+		BF58471510D9BC8F00EE0B3E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471410D9BC8F00EE0B3E /* Icon.png */; };
 		BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */; };
 		BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF58474910D9DDE900EE0B3E /* Settings.bundle */; };
 		BF58477210D9E3C100EE0B3E /* URLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58477010D9E3C100EE0B3E /* URLViewController.m */; };
@@ -105,13 +106,14 @@
 		32CA4F630368D1EE00C91783 /* mvpmc_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mvpmc_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* mvpmc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mvpmc-Info.plist"; sourceTree = "<group>"; };
 		BF1A72B511EA497400161CFE /* HelpView_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpView_ipad.xib; path = interface/HelpView_ipad.xib; sourceTree = "<group>"; };
+		BF1A740E11F7F0A700161CFE /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "images/Icon-72.png"; sourceTree = "<group>"; };
 		BF58470610D9BB9200EE0B3E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = views/SettingsViewController.h; sourceTree = "<group>"; };
 		BF58470710D9BB9200EE0B3E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = views/SettingsViewController.m; sourceTree = "<group>"; };
 		BF58470810D9BB9200EE0B3E /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsView.xib; path = interface/SettingsView.xib; sourceTree = "<group>"; };
 		BF58470D10D9BC4600EE0B3E /* MythViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MythViewController.h; path = views/MythViewController.h; sourceTree = "<group>"; };
 		BF58470E10D9BC4600EE0B3E /* MythViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MythViewController.m; path = views/MythViewController.m; sourceTree = "<group>"; };
 		BF58470F10D9BC4600EE0B3E /* MythView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MythView.xib; path = interface/MythView.xib; sourceTree = "<group>"; };
-		BF58471410D9BC8F00EE0B3E /* mvpmc_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mvpmc_button.png; path = images/mvpmc_button.png; sourceTree = "<group>"; };
+		BF58471410D9BC8F00EE0B3E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = images/Icon.png; sourceTree = "<group>"; };
 		BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mvpmc_logo.png; path = images/mvpmc_logo.png; sourceTree = "<group>"; };
 		BF58474910D9DDE900EE0B3E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BF58476F10D9E3C100EE0B3E /* URLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLViewController.h; path = views/URLViewController.h; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		BFCA4F82110BA35B00143FB0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BF1A740E11F7F0A700161CFE /* Icon-72.png */,
 				BFC172F1111E166D005E5952 /* background_chooser.png */,
 				BFA40B941114E4D4006CD2AF /* url_background.png */,
 				BFA40B3A11149D77006CD2AF /* slate_background.jpg */,
@@ -342,7 +345,7 @@
 				BF58499110DD2A0A00EE0B3E /* 70-tv.png */,
 				BF58498D10DD299E00EE0B3E /* 19-gear.png */,
 				BF58471610D9BC9F00EE0B3E /* mvpmc_logo.png */,
-				BF58471410D9BC8F00EE0B3E /* mvpmc_button.png */,
+				BF58471410D9BC8F00EE0B3E /* Icon.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -418,7 +421,7 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				BF58470A10D9BB9200EE0B3E /* SettingsView.xib in Resources */,
 				BF58471110D9BC4600EE0B3E /* MythView.xib in Resources */,
-				BF58471510D9BC8F00EE0B3E /* mvpmc_button.png in Resources */,
+				BF58471510D9BC8F00EE0B3E /* Icon.png in Resources */,
 				BF58471710D9BC9F00EE0B3E /* mvpmc_logo.png in Resources */,
 				BF58474A10D9DDE900EE0B3E /* Settings.bundle in Resources */,
 				BF58477310D9E3C100EE0B3E /* URLView.xib in Resources */,
@@ -458,6 +461,7 @@
 				BF596C9811C58DA40001AFE3 /* LicenseView_ipad.xib in Resources */,
 				BF596D0111CAED590001AFE3 /* program_ipad.xib in Resources */,
 				BF1A72B611EA497400161CFE /* HelpView_ipad.xib in Resources */,
+				BF1A740F11F7F0A700161CFE /* Icon-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +508,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,6 +522,7 @@
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
 				PROVISIONING_PROFILE = "EDD1FCE1-7CE5-49A2-B299-7D80751571AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = armv7;
@@ -529,6 +535,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +547,7 @@
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
 				PROVISIONING_PROFILE = "EDD1FCE1-7CE5-49A2-B299-7D80751571AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = armv7;
@@ -573,6 +581,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,6 +593,7 @@
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
 				PROVISIONING_PROFILE = "EDD1FCE1-7CE5-49A2-B299-7D80751571AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = armv7;
@@ -615,9 +625,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Gettler (895MLPDY4F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jonathan Gettler";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jonathan Gettler";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -629,11 +639,11 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "mvpmc-Info.plist";
 				PRODUCT_NAME = mvpmc;
-				PROVISIONING_PROFILE = "EDD1FCE1-7CE5-49A2-B299-7D80751571AE";
+				PROVISIONING_PROFILE = "1F426FED-7463-4A58-97BD-3BBE48647906";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F426FED-7463-4A58-97BD-3BBE48647906";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv6";
 			};
 			name = Distribution;
 		};
